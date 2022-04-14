@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Sistema de recomendação de compra de carros
 
 

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Imprima a série de Fibonacci até o N-enésimo (N) elemento, sendo N informado pelo usuário
 n2  = 0
 n1  = 1

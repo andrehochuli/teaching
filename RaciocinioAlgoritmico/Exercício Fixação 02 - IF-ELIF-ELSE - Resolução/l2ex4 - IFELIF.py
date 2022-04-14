@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Informe o imposto a recolher de um salário, seguindo a tabela abaixo:
 
 
@@ -22,7 +23,7 @@ else:
 
 vlr_imp = sal * aliquota
 
-print("O valor a recolher é de %.2f: ", vlr_imp)
+print("O valor a recolher eh de %.2f: " % (vlr_imp))
 
 
           

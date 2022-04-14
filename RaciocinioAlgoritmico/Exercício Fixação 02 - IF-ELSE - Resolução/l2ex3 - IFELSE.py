@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Informe o dia da semana a partir de um número entre 1 e 7. 
 #Exemplo, 1- Domingo, 2- Segunda etc. 
 #Se digitar outro valor deve aparecer “valor inválido”)

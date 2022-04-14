@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Informe se um número é múltiplo de um número N qualquer
 
 #Dica: Um número é múltiplo de N se for divisível por N

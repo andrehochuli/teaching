@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #A partir de três notas de um aluno e informe o conceito a partir da média:
 #Média de aproveitamento                  Conceito
 #Entre 9.0 e 10.0                              A

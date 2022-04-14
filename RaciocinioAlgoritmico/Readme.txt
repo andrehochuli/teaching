@@ -1,1 +1,1 @@
-Exercises for teaching basic computer programming logic
+Exercícios de Lógica de Programação

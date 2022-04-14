@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Informe o maior número entre dois números quaisquer
 #Desconsidere neste momento dois números iguais
 

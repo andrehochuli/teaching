@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Verifique entre duas pessoas quem tem o maior nome e a mais velha. 
 #DICA1: use a função len() para calcular o tamanho de um nome)
 #DICA2: Atente-se ao que foi solicitado, informa a pessoa mais velha, nao a idade

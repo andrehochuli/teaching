@@ -1,9 +1,10 @@
+# -*- coding: utf-8 -*-
 #10 elementos de fibonacci
 
 n2  = 0
 n1  = 1
 
-#Altero o final de linha para imprimir um espaço ao invés de nova linha
+#Altero o final de linha para imprimir um espaÃ§o ao invÃ©s de nova linha
 print(n2, end=' ') 
 print(n1, end=' ') 
 

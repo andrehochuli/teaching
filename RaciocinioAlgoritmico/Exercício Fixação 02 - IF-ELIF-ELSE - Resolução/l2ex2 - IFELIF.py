@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #1.	Um estabelecimento, fornece uma comissão progressiva aos seus vendedores:
 #a.	5%, para vendas até R$ 100,00
 #b.	6% para vendas até R$ 500,00

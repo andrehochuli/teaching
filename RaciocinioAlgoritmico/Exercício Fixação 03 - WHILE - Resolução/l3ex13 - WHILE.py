@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Juros Compostos: Sabendo-se o valor de uma casa atualmente, 
 #calcule quanto ela valia X anos atras. Imprima ano a ano o valor atualizado da casa.
 

@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 #2.	Solicite uma senha ao usuário. Conte quantas vezes ele errou.
 
 
-senha = '@652AbYU'
+senha = '652AbYU'
 count = 0
 passwd = ''
 

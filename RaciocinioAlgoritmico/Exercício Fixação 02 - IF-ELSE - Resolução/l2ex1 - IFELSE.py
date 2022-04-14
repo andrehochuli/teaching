@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Informe se uma pessoa tem o mesmo nome que você
 nome1 = input("Digite um nome: ")
 

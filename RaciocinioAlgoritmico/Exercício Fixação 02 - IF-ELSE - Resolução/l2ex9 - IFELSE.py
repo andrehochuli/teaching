@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #A partir de três notas de um aluno e informe se ele passou por média (7.0 ou mais)
 
 n1 = float(input("Digite a primeira nota: "))

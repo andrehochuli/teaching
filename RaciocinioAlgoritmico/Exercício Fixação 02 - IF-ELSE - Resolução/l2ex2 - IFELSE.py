@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Informe se a pessoa digitou uma vogal ou consoante
 L = input("Digite uma letra: ")
 

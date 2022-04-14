@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Altere o programa anterior para mostrar a soma do intervalo de números
 
 #Faça um programa que receba dois números inteiros e

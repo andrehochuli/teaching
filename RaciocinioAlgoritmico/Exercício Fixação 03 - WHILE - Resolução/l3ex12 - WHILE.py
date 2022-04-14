@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Juros Compostos: Calcule quanto um investimento deve render em X anos. Imprima a evolução do montante ano a ano
 valor = float(input("Qual o montante a ser investido?"))
 juros = float(input("Qual a taxa de juros anual?"))

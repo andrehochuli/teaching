@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Informe se uma pessoa pode doar sangue (entre 18 e 59 anos)
 
 ano = int(input("Digite seu ano de nascimento: "))

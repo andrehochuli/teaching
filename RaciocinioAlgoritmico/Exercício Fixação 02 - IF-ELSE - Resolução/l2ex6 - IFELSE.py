@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Informe se um ano é bissexto ou não.
 #Anos bissextos são aqueles que são múltiplos de 4, como 1996, 2000, 2004 etc (que podem ser divididos por 4 deixando resto 0).
 #Porém, há uma exceção: múltiplos de 100 que não sejam múltiplos de 400.

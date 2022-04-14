@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Informe se um número é par (Use o módulo da divisão (%))
 
 #Dica: Número par é todo numero divisível por 2, logo, os demais são impares

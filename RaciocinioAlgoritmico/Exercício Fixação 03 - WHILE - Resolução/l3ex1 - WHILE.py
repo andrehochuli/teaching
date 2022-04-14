@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 #1.	Solicite números até que se digite um número primo
 
 n_primo = False
+n=0 
 
 #Enquanto nao for primo
 while (n_primo != True):
@@ -22,4 +24,4 @@ while (n_primo != True):
         
         
 
-print('Foi digitado o primo %d. Programa encerrado.' %(n))
+print('Foi digitado o primo %d. Programa encerrado.' % (n) )

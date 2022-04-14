@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Detetive: Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
 
 #“Telefonou para a vítima? “

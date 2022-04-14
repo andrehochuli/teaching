@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #10.	Altere o programa anterior para imprimir até o N-enésimo elemento out até que elemento seja menor seja 500.
 n2  = 0
 n1  = 1

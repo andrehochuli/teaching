@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #Peça o login e senha de uma pessoa e informe se o login é valido.
 
 user = input("Digite seu usuário: ")

@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 #Implemente um seletor de canais para informar que canal a pessoa está assistindo:
 num = input("Digite o número do canal: ")
 num = int(num)
+
 
 
 if (num == 2):
