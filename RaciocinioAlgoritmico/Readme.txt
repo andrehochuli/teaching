@@ -1,0 +1,1 @@
+Exercises for teaching basic computer programming logic
