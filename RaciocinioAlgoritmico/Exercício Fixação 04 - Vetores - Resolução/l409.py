@@ -1,22 +1,30 @@
-#Imprimir de forma ordenada
-
+#Imprimir de forma ordenada (Selection Sort Algorithm)
+		
 import random
 vet = []
 
 for i in range(0,10):
     vet.append(random.randint(1000,30000))
 
-#Sobrescrevo com um vetor menor para validar a logica
-vet = [5,4,2,1,3,1]
-
-tam = len(nfs)
+tam = len(vet)
 
 
-for idx_i in range(0,tam):    
-    menor_elem = vet[idx_i]
-    menor_idx = idx_i
-    for idx_
-    if vet[idx] < menor:
-        menor = 
+print(vet)
+for i in range(0,tam):
+
+    #Indice do menor elemento
+    menor = i
+    for j in range(i+1,tam):
+        if vet[j] < vet[menor]:
+            menor = j
+
+    #Troca das posicoes
+    temp = vet[i]    
+    vet[i] = vet[menor] 
+    vet[menor] = temp;
+
+
+
+print(vet)
          
     
