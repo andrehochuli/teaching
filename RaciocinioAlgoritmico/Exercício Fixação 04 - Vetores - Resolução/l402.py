@@ -20,8 +20,9 @@ for i in range(0,tam):
 
     if vet[i] < menor:
         menor = vet[i]
-    if vet[i] < menor:
-        menor = vet[i]
+    
+    if vet[i] > maior:
+        maior = vet[i]
         
     soma += vet[i]
 
