@@ -9,7 +9,7 @@ for i in range(0,10):
 #Encontrando o menor
 menor = vet[0]
 for i in range(0,10):
-    if vet[i] < menor
+    if vet[i] < menor:
         menor = vet[i]
 
 print("Menor: ", menor)
