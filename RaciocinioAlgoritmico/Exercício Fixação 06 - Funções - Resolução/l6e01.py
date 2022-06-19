@@ -22,8 +22,8 @@ def menor_elem(vet):
 #inv()
 def vet_inv(vet):
     inverso = []
-
-    for i in (len(vet) - 1, -1, -1):
+    
+    for i in range(len(vet)-1, -1, -1):
         inverso.append(vet[i])
 
     return inverso
@@ -119,3 +119,8 @@ print('%c e %c sao digitos? %r, %r' % (d,c,resp1,resp2))
 resp1 = ischar(d) 
 resp2 = ischar(c) 
 print('%c e %c sao caracteres? %r, %r' % (d,c,resp1,resp2))
+
+vet= [10,20,30,40]
+vet_inverso = vet_inv(vet)
+print("Vetor Original ", vet)
+print("Vetor inverso", vet_inverso)
