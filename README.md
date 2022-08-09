@@ -1,2 +1,6 @@
 # Teaching
-Teaching Materials for Computer Sciences and related subjects
+Teaching Materials for Computer Science and related disciplines 
+
+Everyone can reuse for non-commercial purposes.
+
+
