@@ -1,0 +1,13 @@
+S. Ouellet, “Real-time emotion recognition for gaming using deep
+convolutional network features,” arXiv preprint arXiv:1408.3750, 2014.
+
+LOSO - 94\% - CONCANADE
+
+
+FERAtt: Facial Expression Recognition with Attention Net
+LOSO - CONCANADE
+
+
+Facial Expression Recognition: A Cross-Database Evaluation of Features and Classifiers
+(JAFFE) - LOSO
+
