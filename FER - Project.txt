@@ -5,9 +5,17 @@ LOSO - 94\% - CONCANADE
 
 
 FERAtt: Facial Expression Recognition with Attention Net
-LOSO - CONCANADE
+LOSO - CONH-KANADE
 
 
 Facial Expression Recognition: A Cross-Database Evaluation of Features and Classifiers
 (JAFFE) - LOSO
+
+Deep Facial Expression Recognition: A Survey
+
+https://arxiv.org/pdf/2204.12624.pdf
+
+https://ieeexplore.ieee.org/abstract/document/9498888
+
+
 
