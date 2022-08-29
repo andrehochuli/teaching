@@ -1,6 +1,6 @@
 # Teaching
 Teaching Materials for Computer Science and related disciplines 
 
-Everyone can reuse for non-commercial purposes.
+You are free to use these materials for non-commercial purposes.
 
 
