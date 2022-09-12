@@ -4,9 +4,9 @@ Class #03 - Lecture #03 - Morphology
 Class #04 - Lecture #04 - Finding Components
 Class #05 -    PJBL1    - Plate Recognition
 Class #06 - Lecture #05 - Feature Extraction 
-Class #07 - Lecture #06 - Pattern Recognition
+Class #07 - Lecture #06 - Feature Extraction 
 Class #08 - Lecture #07 - Pattern Recognition
-Class #09 -  PJBL2/TDE  - Simpson Recognition
+Class #09 -  PJBL2/TDE  - Simpson Recognition 
 Class #10 - Lecture #08 - Deep Learning
 Class #11 - Lecture #09 - Convolutional Neural Networks
 Class #12 - Lecture #10 - Data Augmentation
