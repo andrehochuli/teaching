@@ -5,7 +5,7 @@ Class #04 - Lecture #04 - Finding Components
 Class #05 -    PJBL1    - Plate Recognition
 Class #06 - Lecture #05 - Feature Extraction (Projections)
 Class #07 - Lecture #06 - Feature Extraction (PCA, Sobel, Laplace and Canny)
-Class #08 - Lecture #07 - Feature Recognition (KNN, LDA, QDA, Logistic Regression, Random Forest, SVM)
+Class #08 - Lecture #07 - Feature Recognition 
 Class #09 -  PJBL2/TDE  - Simpson Recognition 
 Class #10 - Lecture #08 - Deep Learning
 Class #11 - Lecture #09 - Convolutional Neural Networks
