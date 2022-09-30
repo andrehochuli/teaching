@@ -1,6 +1,6 @@
 #1 - Visao Computacional (Imagem, Ferramentas de Desenho e Cor)
 #2 - Filtros, Detecção de Componentes e Descritores de Características
-#3 - Engenharia de Características e Classificação
+#3 - Engenharia de Características (Contorno/Textura e Classificação)
 #4 - Deep Learning (CNN, Data Augmentation, etc)
 #5 - Object Detector
 #6 - GANs (Treinamento Generativo)
