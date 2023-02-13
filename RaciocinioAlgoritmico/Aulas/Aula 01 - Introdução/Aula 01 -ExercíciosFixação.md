@@ -50,7 +50,7 @@ largura = 65.21
 
 area = comprimento * largura
 
-print("A área é de", area,,"metros quadrados")
+print("A área é de", area,"metros quadrados")
 ```
 
 ### 6 - Calcule a metragem quadrada de uma casa com 3 pavimentos
@@ -123,7 +123,7 @@ print("A média de idade é de", media ,"anos")
 ## 9 - Calcular a gorjeta de N% 
 ```
 valor_conta = 325.50
-perc_gorjet = 0.1 #10%
+perc_gorjeta = 0.1 #10%
 gorjeta = valor_conta * perc_gorjeta
 
 print("O Garçom receberá: ", gorjeta)
@@ -135,7 +135,7 @@ comprimento = 12.5
 largura = 5.35
 pavimentos = 3
 area = comprimento * largura * pavimentos
-print("A casa tem", area, "metros quadrados" % area)
+print("A casa tem", area, "metros quadrados")
 
 ```
 
