@@ -17,9 +17,9 @@ else:
 letra = input("Digite uma letra: ")
 
 
-if letra == "a" or letra == "e" or letra == "i" 
-	or letra == "o" or letra == "u" or letra == "A" 
-		or letra == "E" or letra == "I" or letra == "O" 
+if letra == "a" or letra == "e" or letra == "i" \
+	or letra == "o" or letra == "u" or letra == "A"\
+		or letra == "E" or letra == "I" or letra == "O"\
 			or letra == "U":
     
     print("A letra digitada é uma vogal")
@@ -106,14 +106,14 @@ else:
   print(num, "não é múltiplo de", n)
 ```
 
-### 9. A partir de três notas de um aluno e informe se ele passou por média (7.0 ou mais)
+### 9. A partir de três notas de um aluno e informe se ele passou por média (70.0 ou mais)
 ```
 nota1 = float(input("Digite a primeira nota: "))
 nota2 = float(input("Digite a segunda nota: "))
 nota3 = float(input("Digite a terceira nota: "))
 
 media = (nota1 + nota2 + nota3) / 3
-if media >= 7.0:
+if media >= 70.0:
   print("Aluno aprovado com média", media)
 else:
   print("Aluno reprovado com média", media)
@@ -121,7 +121,7 @@ else:
 
 ### 10. Verifique entre duas pessoas quem tem o maior nome e a mais velha.
 ```
-nnome1 = input("Digite o nome da primeira pessoa: ")
+nome1 = input("Digite o nome da primeira pessoa: ")
 idade1 = int(input("Digite a idade da primeira pessoa: "))
 nome2 = input("Digite o nome da segunda pessoa: ")
 idade2 = int(input("Digite a idade da segunda pessoa: "))
