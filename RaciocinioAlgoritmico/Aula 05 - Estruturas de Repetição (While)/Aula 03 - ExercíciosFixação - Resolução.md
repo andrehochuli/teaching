@@ -133,3 +133,41 @@ while tentativas < 5:
 else:
     print(f"Você não conseguiu adivinhar o número em 5 tentativas. O número era {numero}.")
 ```
+### 11. Você deve implementar um sistema de votação. A eleição deve ser decidida entre dois candidatos: "Joao da Silva - 28765"  "Carlos Alberto - 32928"). Faça um algoritmo que fique computando os votos até que a opção "ENCERRAR" seja digitada. Apresente também a opção de mostrar resultados parciais.
+```jose_votos = 0
+carlos_votos = 0
+
+while True:
+    print("Digite o número do candidato que deseja votar:")
+    print("28765 - Joao da Silva")
+    print("32928 - Carlos Alberto")
+    print("Digite ENCERRAR para encerrar a votação")
+    print("Digite RESULTADO para ver o resultado parcial da votação")
+    voto = input()
+
+    if voto == "ENCERRAR":
+        break
+
+    if voto == "RESULTADO":
+        print("Resultado parcial da votação:")
+        print("Joao da Silva: " + str(jose_votos) + " votos")
+        print("Carlos Alberto: " + str(carlos_votos) + " votos")
+    elif voto == "28765":
+        jose_votos += 1
+        print("Voto registrado para Joao da Silva")
+    elif voto == "32928":
+        carlos_votos += 1
+        print("Voto registrado para Carlos Alberto")
+    else:
+        print("Opção inválida. Tente novamente.")
+
+print("Resultado final da votação:")
+print("Joao da Silva: " + str(jose_votos) + " votos")
+print("Carlos Alberto: " + str(carlos_votos) + " votos")
+if jose_votos > carlos_votos:
+    print("Joao da Silva foi eleito.")
+elif carlos_votos > jose_votos:
+    print("Carlos Alberto foi eleito.")
+else:
+    print("Houve empate na votação.")
+```
