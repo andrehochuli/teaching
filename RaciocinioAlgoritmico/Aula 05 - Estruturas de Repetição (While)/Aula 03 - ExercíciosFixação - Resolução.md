@@ -133,8 +133,16 @@ while tentativas < 5:
 else:
     print(f"Você não conseguiu adivinhar o número em 5 tentativas. O número era {numero}.")
 ```
-### 11. Você deve implementar um sistema de votação. A eleição deve ser decidida entre dois candidatos: "Joao da Silva - 28765"  "Carlos Alberto - 32928"). Faça um algoritmo que fique computando os votos até que a opção "ENCERRAR" seja digitada. Apresente também a opção de mostrar resultados parciais.
-```jose_votos = 0
+
+### 11. Você deve implementar um sistema de votação. A eleição deve ser decidida entre dois candidatos: 
+- "Joao da Silva - 28765"  
+- "Carlos Alberto - 32928"
+
+Faça um algoritmo que fique computando os votos até que a opção "ENCERRAR" seja digitada. 
+Apresente também a opção de mostrar resultados parciais.
+
+```
+jose_votos = 0
 carlos_votos = 0
 
 while True:
