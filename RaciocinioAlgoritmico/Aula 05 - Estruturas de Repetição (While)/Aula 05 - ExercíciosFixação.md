@@ -18,9 +18,10 @@
 
 ### 9. Escreva um programa que exiba uma tabela de conversão de graus Celsius para Fahrenheit, de -10 até 100 celsius.
 
-### 10. Escreva um programa que gere um número aleatório entre 1 e 100 e peça para o usuário adivinhá-lo em até 5 tentativas.
+### 10. Escreva um programa que gere um número aleatório entre 1 e 100 e peça para o usuário adivinhá-lo em até 5 tentativas. (Dê dicas de se está proximo ou não (quente e frio))
 
-### 11. Você deve implementar um sistema de votação. A eleição deve ser decidida entre dois candidatos: 
+### 11. Você deve implementar um sistema de votação. A eleição deve ser decidida entre dois candidatos:
+
 - "Joao da Silva - 28765"  
 - "Carlos Alberto - 32928"
 
