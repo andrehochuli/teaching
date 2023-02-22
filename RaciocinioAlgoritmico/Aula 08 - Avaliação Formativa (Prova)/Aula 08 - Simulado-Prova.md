@@ -1,12 +1,10 @@
-# Aula 08 - Avaliação Somativa (6 Pontos)
+# Aula 08 - Avaliação Somativa
 
 ## Simulado de Prova
 
         Este simulado visa orientar o estudo individual do aluno para a avaliação. A prova será aplicada em papel, cabendo ao aluno demostrar a lógica de programação sem o auxilio do computador. 
 
         A prova será apresentada com 5 a 7 questões, sobre estruturas de seleção (IF-ELIF-ELSE) e laços de repetição (while / for). O nível das questões é similar ao demostrado abaixo:
-
-
 
 ### a. Estruturas de Seleção (If-Elif-Else)
 
@@ -78,22 +76,83 @@
 
     Decida qual a estrutura mais adequada e implemente a solução:
 
-1. Escreva um programa que receba um número e calcule a soma dos seus dígitos. 
+1. Escreva um programa que receba um número e calcule a soma dos seus dígitos.
 
-2. Escreva um programa que receba um número e verifique se ele é um palíndromo (ou seja, se lido da direita para a esquerda, ele é o mesmo número). 
+2. Escreva um programa que receba um número e verifique se ele é um palíndromo (ou seja, se lido da direita para a esquerda, ele é o mesmo número).
 
 3. Escreva um programa que receba uma palavra e imprima cada letra separadamente.
 
-4. Escreva um programa que receba uma palavra e imprima se ela é um palíndromo ou não. 
+4. Escreva um programa que receba uma palavra e imprima se ela é um palíndromo ou não.
 
-5. Escreva um programa que receba um número e verifique se ele é primo. 
+5. Escreva um programa que receba um número e verifique se ele é primo.
 
-6. Escreva um programa que imprima todos os números primos entre 1 e 100. 
+6. Escreva um programa que imprima todos os números primos entre 1 e 100.
 
-7. Escreva um programa que receba uma lista de números e calcule a média aritmética. 
+7. Escreva um programa que receba uma lista de números e calcule a média aritmética.
 
-8. Escreva um programa que receba uma lista de números e calcule a soma dos números pares. 
+8. Escreva um programa que receba uma lista de números e calcule a soma dos números pares.
 
-9. Escreva um programa que receba uma lista de palavras e imprima a palavra mais longa. 
+9. Escreva um programa que receba uma lista de palavras e imprima a palavra mais longa.
 
-10. Escreva um programa que receba um número e imprima a sequência de Fibonacci até esse número. 
+10. Escreva um programa que receba um número e imprima a sequência de Fibonacci até esse número.
+
+### e. Testes de Mesa
+
+1. Qual o valor de 'a' e 'b' ao final do algoritmo?
+   
+   ```python
+   a = 10
+   b = 20
+   
+   temp = a
+   a=b
+   b=temp
+   
+   print(a,b)
+   ```
+
+2. Qual o valor de 'x' ao final do algoritmo?
+   
+   ```python
+   i=10
+   x=i
+   for i in range(6,1,-1):
+       if i % 3 == 0: 
+           x=x*i    
+   
+   print(x)
+   ```
+
+3. Qual o valor de 'i' e 'x' ao final do algoritmo?
+   
+   ```python
+   i=4
+   x=5
+   
+   while i < 30:    
+       if i%5 == 0:
+           i+=5
+           x=x*1
+   
+       elif i%2 == 0:
+           i+=4
+           x=x*2
+   
+       else:
+           i+=2
+           x=x*3
+   
+   print(i,x)
+   ```
+
+4. Para que o programa encerre com o 'termo' == 128, qual o valor inicial de n ?
+
+```python
+n = ?
+termo = 1
+for i in range(0,n-1,1):
+    termo *= 2
+    print(termo)
+```
+
+E o que será impresso na tela? 
