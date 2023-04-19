@@ -107,12 +107,20 @@
 - O que é uma probabilidade a posteriori e a priori? Como isso é aplicado no Naive Bayes?
 
 - Dado dataset de frutas abaixo:
+  
+  
 
-<img title="" src="./images/2023-04-18-18-09-08-image.png" alt="" data-align="inline" width="542">
+<img title="" src="./images/2023-04-18-18-09-08-image.png" alt="" data-align="center" width="542">
+
+
 
   Aplique o algoritmo Naive Bayes para determinar a probalidade e classes das amostras abaixo:
 
-<img title="" src="images/2023-04-19-09-31-12-2023-04-18-18-10-13-image.png" alt="" data-align="inline">
+
+
+<img title="" src="images/2023-04-19-09-31-12-2023-04-18-18-10-13-image.png" alt="" data-align="center">
+
+
 
 - Como aplicar o modelo Naive Bayes datasets com  atributos númericos, tais como como peso, altura, salario, etc? De exemplos.
 
@@ -130,19 +138,19 @@
 
 - Analisando as fronteiras de decisão, o que se pode infererir quanto a generalização do modelo? Quais classes devem sofrer perdas de acurácia e porque?
 
-        Modelo A
+        **Modelo A**
 
-<img title="" src="images/2023-04-19-09-44-06-image.png" alt="" data-align="left" width="250">
+<img title="" src="images/2023-04-19-09-44-06-image.png" alt="" data-align="center" width="250">
 
-     Modelo B
+    **Modelo B**
 
-<img title="" src="images/2023-04-19-09-42-33-image.png" alt="" width="190" data-align="left">
+<img title="" src="images/2023-04-19-09-42-33-image.png" alt="" width="190" data-align="center">
 
        
 
-    Modelo C
+    **Modelo C**
 
-<img title="" src="https://i.stack.imgur.com/taWXA.png" alt="python - SVM: plot decision surface when working with more than 2 features  - Stack Overflow" width="351" data-align="left">
+<img title="" src="https://i.stack.imgur.com/taWXA.png" alt="python - SVM: plot decision surface when working with more than 2 features  - Stack Overflow" width="351" data-align="center">
 
 - O que determinas as métricas de acurácia e recall?
 
