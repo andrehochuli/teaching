@@ -87,10 +87,14 @@
 - Qual a classe da amostra de teste para K=3 e K=5, abaixo?
   
   <img title="" src="./images/2023-04-18-17-59-41-image.png" alt="" width="339" data-align="center">
-
-- Considere o seguinte dataset e a amostra de teste abaixo:<img title="" src="./images/2023-04-18-17-37-15-image.png" alt="" width="520" data-align="center">
   
-  - Utilizando a distância Euclidiana abaixo, qual o resultado da amostra para K=1 e K=3?
+  
+  
+  Considere o seguinte dataset e a amostra de teste abaixo:<img title="" src="./images/2023-04-18-17-37-15-image.png" alt="" width="520" data-align="center">
+  
+  
+  
+      Utilizando a distância Euclidiana abaixo, qual o resultado da amostra para K=1 e K=3?
 
 <img title="" src="./images/2023-04-18-17-40-35-image.png" alt="" data-align="center" width="264">
 
@@ -104,11 +108,19 @@
 
 - Análise as matrizes de confusão abaixo e discuta cada caso, quanto a:
 
-- Dado dataset de frutas abaixo:<img title="" src="./images/2023-04-18-18-09-08-image.png" alt="" data-align="center" width="542">
+- Dado dataset de frutas abaixo:
   
-  - Aplique o algoritmo Naive Bayes para determinar a probalidade e classes das amostras abaixo:
-    
-    <img title="" src="images/2023-04-19-09-31-12-2023-04-18-18-10-13-image.png" alt="" data-align="center">
+  
+  
+  <img title="" src="./images/2023-04-18-18-09-08-image.png" alt="" data-align="center" width="542">
+  
+  
+  
+  Aplique o algoritmo Naive Bayes para determinar a probalidade e classes das amostras abaixo:
+  
+  
+  
+  <img title="" src="images/2023-04-19-09-31-12-2023-04-18-18-10-13-image.png" alt="" data-align="center">
 
 - Como aplicar o modelo Naive Bayes em datasets númericos, como atributos como peso, altura, salario, etc? De exemplos.
 
