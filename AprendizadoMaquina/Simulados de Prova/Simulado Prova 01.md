@@ -56,7 +56,7 @@
 
 - O que é a normalização de atributos? Porque isso é importante? Normalize as features abaixo por minmax():
   
-  <img title="" src="data:image/png;base64,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" alt="How to Scale data into the 0-1 range using Min-Max Normalization. -  Knowledge Transfer" data-align="center" width="293"><img title="" src="file:///home/aghochuli/.var/app/com.github.marktext.marktext/config/marktext/images/2023-04-19-09-21-16-image.png" alt="" data-align="center" width="212">
+  <img title="" src="data:image/png;base64,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" alt="How to Scale data into the 0-1 range using Min-Max Normalization. -  Knowledge Transfer" data-align="center" width="293"><img title="" src="images/2023-04-19-09-21-16-image.png" alt="" data-align="center" width="212">
 
 - O que é a redução de atributos, e quando podemos aplicá-la?
 
@@ -108,11 +108,9 @@
   
   - Aplique o algoritmo Naive Bayes para determinar a probalidade e classes das amostras abaixo:
     
-    <img src="file:///home/aghochuli/.var/app/com.github.marktext.marktext/config/marktext/images/2023-04-19-09-31-12-2023-04-18-18-10-13-image.png" title="" alt="" data-align="center">
+    <img title="" src="images/2023-04-19-09-31-12-2023-04-18-18-10-13-image.png" alt="" data-align="center">
 
 - Como aplicar o modelo Naive Bayes em datasets númericos, como atributos como peso, altura, salario, etc? De exemplos.
-
-
 
 #### Algoritmo Decision Tree
 
@@ -124,29 +122,31 @@
 
 - Considerando o dataset de frutas acima, calcule a entropia e o ganho de informação para a característica 'Tamanho'.
 
-
-
 #### Análise Crítica
 
 - Analisando as fronteiras de decisão de um modelo, o que se pode infererir quanto a generalização do modelo? Quais classes devem sofrer perdas de acurácia?
 
         Modelo A
 
-<img src="file:///home/aghochuli/.var/app/com.github.marktext.marktext/config/marktext/images/2023-04-19-09-44-06-image.png" title="" alt="" data-align="center">
+<img title="" src="images/2023-04-19-09-44-06-image.png" alt="" data-align="center">
 
         Modelo B
 
-<img title="" src="file:///home/aghochuli/.var/app/com.github.marktext.marktext/config/marktext/images/2023-04-19-09-42-33-image.png" alt="" width="217" data-align="center">
+<img title="" src="images/2023-04-19-09-42-33-image.png" alt="" width="217" data-align="center">
 
-       Modelo C
+       
+
+Modelo C
 
 <img title="" src="https://i.stack.imgur.com/taWXA.png" alt="python - SVM: plot decision surface when working with more than 2 features  - Stack Overflow" width="344" data-align="center">
+
+
 
 - O que é acurácia, recall?
 
 - Porque a acurácia geral não é uma boa métrica? Dê um exemplo
 
-- Calcule a acurácia do modelo a partir da matriz de confusão abaixo:<img title="" src="https://datatron.com/wp-content/uploads/2021/03/actual-prediction.png" alt="What is a Confusion Matrix in Machine Learning?" width="279" data-align="center">
+- Calcule a acurácia do modelo a partir da matriz de confusão abaixo:<img title="" src="https://datatron.com/wp-content/uploads/2021/03/actual-prediction.png" alt="What is a Confusion Matrix in Machine Learning?" width="230" data-align="center">
 
 - Dados as matrizes de confusão abaixo, análise os casos individualmente quanto:
   
@@ -162,11 +162,11 @@
     
     Caso B
     
-    <img title="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqsf9EpkqDpXyEG96oaWn8A96wP7ekB96SxA&usqp=CAU" alt="Evaluating a Classification Model Machine Learning, Deep Learning, and Computer Vision" data-align="center" width="384">
+    <img title="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqsf9EpkqDpXyEG96oaWn8A96wP7ekB96SxA&usqp=CAU" alt="Evaluating a Classification Model Machine Learning, Deep Learning, and Computer Vision" data-align="center" width="311">
 
-            Caso C:
+             Caso C:
 
-   <img title="" src="https://cdn-images-1.medium.com/max/1600/0*9dlgBM9YK_UQnUtN." alt="Avaliação do Modelo de Classificação BLOG DO ZOUZA" data-align="center" width="432">
+   <img title="" src="https://cdn-images-1.medium.com/max/1600/0*9dlgBM9YK_UQnUtN." alt="Avaliação do Modelo de Classificação BLOG DO ZOUZA" data-align="center" width="370">
 
             Caso D:
 
