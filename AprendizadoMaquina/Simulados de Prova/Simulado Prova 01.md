@@ -89,9 +89,9 @@
 - Qual a classe da amostra de teste para K=3 e K=5, abaixo?
   
   <img title="" src="./images/2023-04-18-17-59-41-image.png" alt="" width="339" data-align="center">
-
+  
   Considere o seguinte dataset e a amostra de teste abaixo:<img title="" src="./images/2023-04-18-17-37-15-image.png" alt="" width="520" data-align="center">
-
+  
       Utilizando a distância Euclidiana abaixo, qual o resultado da amostra para K=1 e K=3?
 
 <img title="" src="./images/2023-04-18-17-40-35-image.png" alt="" data-align="center" width="245">
@@ -170,4 +170,4 @@
 
             Caso D:
 
-<img title="" src="images/imbalanced.png" alt="Avaliação do Modelo de Classificação BLOG DO ZOUZA" data-align="center" width="352">
+<img title="" src="file:///run/user/1003/doc/ff8690d1/imbalanced.png" alt="Avaliação do Modelo de Classificação BLOG DO ZOUZA" data-align="center" width="352">
