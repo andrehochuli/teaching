@@ -105,18 +105,18 @@ x = int(input("Digite um número: "))
 
 res = 1
 if x < 5:
-    print("Menor que 5")
-    res = x * 3
+  print("Menor que 5")
+  res = x * 3
 
-  elif x < 10:
-    print("Menor que 10")
-    res = x * 2
+elif x < 10:
+  print("Menor que 10")
+  res = x * 2
 
-  elif x < 15:
-    print("Menor que 15")
-    res = x * 1
+elif x < 15:
+  print("Menor que 15")
+  res = x * 1
 
-  print(res)  
+print(res)  
 ```
 
 f. Apresente os valores de x e y para que os prints sejam executados, como se pede:
