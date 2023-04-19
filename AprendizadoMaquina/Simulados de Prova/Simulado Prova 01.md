@@ -18,7 +18,7 @@
 
 - Dado o dataset abaixo, determine o que são atributos e o que são classes (target):
 
-<img title="" src="./images/2023-04-18-15-37-06-image.png" alt="" width="485" data-align="inline">
+<img title="" src="./images/2023-04-18-15-37-06-image.png" alt="" width="485" data-align="center"> 
 
 - Quais etapas possui um fluxo (pipeline) de aprendizado de máquina?   
 
@@ -27,6 +27,8 @@
 - Como abordar classificação multi-classes a partir de modelos binários?
 
 - Diferencie a técnica One vs One e One vs All
+  
+  
 
 #### Análise Exploratória
 
@@ -91,8 +93,10 @@
 - Qual a classe da amostra de teste para K=3 e K=5, abaixo?
   
   <img title="" src="./images/2023-04-18-17-59-41-image.png" alt="" width="339" data-align="center">
-
-- Considere o seguinte dataset e a amostra de teste abaixo:<img title="" src="./images/2023-04-18-17-37-15-image.png" alt="" width="520" data-align="center">
+  
+  
+  
+  Considere o seguinte dataset e a amostra de teste abaixo:<img title="" src="./images/2023-04-18-17-37-15-image.png" alt="" width="520" data-align="center">
   
       Utilizando a distância Euclidiana abaixo, qual o resultado da amostra para K=1 e K=3?
 
@@ -107,20 +111,12 @@
 - O que é uma probabilidade a posteriori e a priori? Como isso é aplicado no Naive Bayes?
 
 - Dado dataset de frutas abaixo:
-  
-  
 
 <img title="" src="./images/2023-04-18-18-09-08-image.png" alt="" data-align="center" width="542">
 
-
-
   Aplique o algoritmo Naive Bayes para determinar a probalidade e classes das amostras abaixo:
 
-
-
 <img title="" src="images/2023-04-19-09-31-12-2023-04-18-18-10-13-image.png" alt="" data-align="center">
-
-
 
 - Como aplicar o modelo Naive Bayes datasets com  atributos númericos, tais como como peso, altura, salario, etc? De exemplos.
 
