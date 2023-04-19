@@ -27,8 +27,6 @@
 - Como abordar classificação multi-classes a partir de modelos binários?
 
 - Diferencie a técnica One vs One e One vs All
-  
-  
 
 #### Análise Exploratória
 
@@ -93,8 +91,6 @@
 - Qual a classe da amostra de teste para K=3 e K=5, abaixo?
   
   <img title="" src="./images/2023-04-18-17-59-41-image.png" alt="" width="339" data-align="center">
-  
-  
   
   Considere o seguinte dataset e a amostra de teste abaixo:<img title="" src="./images/2023-04-18-17-37-15-image.png" alt="" width="520" data-align="center">
   
@@ -178,4 +174,4 @@
 
             **Caso D:**
 
-<img title="" src="file:///run/user/1003/doc/ff8690d1/imbalanced.png" alt="   asd" data-align="center" width="396">
+![sss](./images/imbalanced.png)
