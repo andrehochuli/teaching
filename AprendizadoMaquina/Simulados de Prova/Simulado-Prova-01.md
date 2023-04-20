@@ -54,11 +54,11 @@
 
         
 
-- O que é a normalização de atributos? Porque isso é importante? Normalize as features abaixo por minmax():
-  
-  <img title="" src="file:///run/user/1003/doc/b00ff372/euclidiana.png" alt="ss" data-align="center" width="134">
-  
-  <img title="" src="images/2023-04-19-09-21-16-image.png" alt="" data-align="center">
+O que é a normalização de atributos? Porque isso é importante? Normalize as features abaixo por minmax():
+
+<img title="" src="./images/euclidiana.png" alt="ss" data-align="center" width="134">
+
+<img title="" src="images/2023-04-19-09-21-16-image.png" alt="" data-align="center">
 
 - O que é a redução de atributos e quando devemos aplicá-la?
 
@@ -92,7 +92,15 @@
   
   <img title="" src="./images/2023-04-18-17-59-41-image.png" alt="" width="339" data-align="center">
   
-  Considere o seguinte dataset e a amostra de teste abaixo:<img title="" src="./images/2023-04-18-17-37-15-image.png" alt="" width="520" data-align="center">
+  
+  
+  Considere o seguinte dataset e a amostra de teste abaixo:
+  
+  
+  
+  <img title="" src="./images/2023-04-18-17-37-15-image.png" alt="" width="520" data-align="inline">
+  
+  
   
       Utilizando a distância Euclidiana abaixo, qual o resultado da amostra para K=1 e K=3?
 
@@ -150,7 +158,7 @@
 
 - Calcule a acurácia  a partir da matriz de confusão abaixo:
   
-  <img title="" src="file:///run/user/1003/doc/b5c7835a/cf_matrix_a.png" alt="asd" width="207" data-align="center">
+  <img title="" src="./images/cf_matrix_a.png" alt="asd" width="207" data-align="center">
 
 - Dados as matrizes de confusão abaixo, análise os casos individualmente quanto:
   
@@ -174,4 +182,4 @@
 
             **Caso D:**
 
-![sss](./images/imbalanced.png)
+<img src="./images/imbalanced.png" title="" alt="sss" data-align="center">
