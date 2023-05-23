@@ -16,7 +16,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
    
    # Imprimindo o vetor na tela
    print(vetor)
-   
    ```
    
    ```python
@@ -31,7 +30,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
    
    # Imprimindo o vetor na tela
    print(vetor)
-   
    ```
 
 2. Crie um vetor de 20 elementos incrementando-os de 5 em 5
@@ -46,7 +44,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
    
    # Imprimindo o vetor na tela
    print(vetor)
-   
    ```
 
 3. Crie um vetor contendo N elementos digitados pelo usuário
@@ -65,10 +62,7 @@ Para estes exercícios, é importante que você não utilize funções built-in 
    
    # Imprimindo o vetor na tela
    print(vetor)
-   
    ```
-   
-   
 
 4. Enquanto o usuário não digitar números negativos, adicione elementos ao vetor:
    
@@ -84,10 +78,7 @@ Para estes exercícios, é importante que você não utilize funções built-in 
    
    # Imprimindo o vetor na tela
    print(vetor)
-   
    ```
-   
-   
 
 5. Crie um vetor contendo somente elementos pares, digitados pelo usuário. Quando digitar 0, imprima todo o vetor na tela e encerre.
    
@@ -104,7 +95,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
    
    # Imprimindo o vetor na tela
    print(vetor)
-   
    ```
 
 6. Para cada posição [i] do vetor, imprima o valor atual, seu antecessor e sucessor
@@ -116,7 +106,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
        print("Valor atual:", vetor[i])
        print("Antecessor:", vetor[i-1])
        print("Sucessor:", vetor[i+1])
-   
    ```
 
 7. Apresente a soma dos elementos opostos de um vetor de 100 elementos
@@ -129,7 +118,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
        soma += vetor[i] + vetor[99-i]
    
    print("A soma dos elementos opostos do vetor é:", soma)
-   
    ```
 
 8. Compute a média e o desvio padrão de um vetor
@@ -150,7 +138,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
    # Imprimindo os resultados
    print("Média:", media)
    print("Desvio padrão:", desvio_padrao)
-   
    ```
 
 9. Crie um vetor aleatorio. Posteriormente apresente a soma dos pares e depois dos múltiplos de 5. Também, crie um vetor com os múltiplos de 10 do vetor original.
@@ -187,7 +174,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
            mult_10.append(vetor[i])
        i += 1
    print("Vetor com os múltiplos de 10 do vetor original:", mult_10)
-   
    ```
 
 10. Crie dois vetores de 5 elementos cada, e posteriormente crie um terceiro resultante da soma deste dois
@@ -207,7 +193,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
     for i in range(5):
         vetor3.append(vetor1[i] + vetor2[i])
     print("Vetor 3 (soma de Vetor 1 e Vetor
-    
     ```
 
 11. Dado um vetor de 20 elementos, divida este em dois sub-vetores de 10 elementos 
@@ -227,7 +212,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
             sub_vetor2.append(vetor[i])
     print("Sub-vetor 1:", sub_vetor1)
     print("Sub-vetor 2:", sub_vetor2)
-    
     ```
 
 12. Encontre o maior elemento de um vetor
@@ -246,7 +230,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
     
     # Imprimindo o resultado na tela
     print("Maior elemento do vetor:", maior_elemento)
-    
     ```
 
 13. Encontre os dois maiores elementos de um vetor
@@ -270,7 +253,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
     # Imprimindo o resultado na tela
     print("Maior elemento do vetor:", maior_elemento)
     print("Segundo maior elemento do vetor:", segundo_maior_elemento)
-    
     ```
 
 14. Dado um vetor, crie um segundo vetor rotulando os indices do primeiro que contem valores acima (1) e abaixo da média (-1). Se caso for exatamente a média, então rotule como (0):
@@ -299,7 +281,6 @@ Para estes exercícios, é importante que você não utilize funções built-in 
     
     print("Vetor original:", vetor)
     print("Rotulos:", rotulos)
-    
     ```
 
 15. Dado um vetor de 20 elementos, imprima o vetor como se fosse uma piramide:
@@ -341,7 +322,7 @@ Para estes exercícios, é importante que você não utilize funções built-in 
         print()
     ```
 
-16. Contrua e descontrua a pirâmide (dos exercíciso 14 e 15)
+17. Contrua e descontrua a pirâmide (dos exercíciso 14 e 15)
     
     ```python
     
