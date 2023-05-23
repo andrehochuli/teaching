@@ -55,18 +55,12 @@ Para estes exercícios, é importante que você não utilize funções built-in 
     Ex: [10,20,30,40,50,60]
     
     
-    10         60
-    
-      20     50        
-      
-        30 40
-        
-        30 40         
-        
-      20     50       
-      
-    10         60
-    
+    10..........60
+      20......50
+        30..40
+        30..40
+      20......50
+    10..........60    
 
 18. Dado um vetor qualquer , apresente este vetor de forma ordenada
     
