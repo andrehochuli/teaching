@@ -50,15 +50,24 @@ Para estes exercícios, é importante que você não utilize funções built-in 
 
 16. Contrua e descontrua a pirâmide (dos exercício 14 e 15)
 
-17. Dado um vetor qualquer , apresente este vetor de forma ordenada
+17. Dado um vetor qualquer, apresente os elementos em forma de 'X'.
+    Ex: [10,20,30,40,50,60]
+    10            60
+       20      50 
+         30 40 
+         30 40
+      20       50 
+    10            60
+
+18. Dado um vetor qualquer , apresente este vetor de forma ordenada
     
     [5,2,1,3,4] ==> [1,2,3,4,5]
 
-18. Maior sequência de '0' em um vetor
+20. Maior sequência de '0' em um vetor
     
     [1,0,0,1,1,0,1,**0,0,0,0**,1,1,0,0,0] ==> 4
 
-19. Maior sequência de um vetor
+21. Maior sequência de um vetor
     
     [64,65,12,13,14,15,21,**33,34,35,36,37**,100,91,9,93,94]
     
