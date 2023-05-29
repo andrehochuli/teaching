@@ -56,14 +56,42 @@ Para estes exercícios, é importante que você não utilize funções built-in 
     
     [5,2,1,3,4] ==> [1,2,3,4,5]
 
-20. Maior sequência de '0' em um vetor
+19. Maior sequência de '0' em um vetor
     
     [1,0,0,1,1,0,1,**0,0,0,0**,1,1,0,0,0] ==> 4
 
-21. Maior sequência de um vetor
+20. Maior sequência de um vetor
     
     [64,65,12,13,14,15,21,**33,34,35,36,37**,100,91,9,93,94]
     
     valores = [33,34,35,36,37] 
     
     idxs = [7,8,9,10,11]
+
+21. Implemente um validador de CPF. Pesquise na internet como o cálculo é realizado
+
+Strings:
+
+21.   A partir de uma frase digitada pelo usuário, determine:
+
+    a. Quantidade de espaços em branco
+
+    b. Quantidade de letras maiúsculas
+
+    c. Quantidade de caracteres especiais
+
+22. Faça um algoritmo que converte letra maiúscula em minúscula e vice-versa.
+
+23. Validador de Senha
+    
+    a. 10 caractereses
+    
+    b. Não contem números em sequência 
+    
+    c. 2 Caracteres Especiais
+    
+    d. 2 Letras maiúsculas
+
+24. Código Morse: Converta um string morse (' ', '.', '-') em uma string alpha-númerica
+
+    
