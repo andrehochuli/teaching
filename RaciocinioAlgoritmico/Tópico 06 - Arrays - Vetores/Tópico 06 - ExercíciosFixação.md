@@ -48,7 +48,7 @@ Para estes exercícios, é importante que você não utilize funções built-in 
 
 15. Imprima na ordem inversa o exercício 14.
 
-16. Contrua e descontrua a pirâmide (dos exercício 14 e 15)
+16. Contrua e descontrua a pirâmide (dos exercícios 14 e 15)
 
 17. Dado um vetor qualquer, apresente os elementos em forma de 'X'.
 

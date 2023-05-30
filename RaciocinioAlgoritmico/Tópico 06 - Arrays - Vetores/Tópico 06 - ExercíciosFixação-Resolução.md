@@ -310,7 +310,7 @@ Para estes exercícios, é importante que você não utilize funções built-in 
         print()
     ```
 
-16. Imprima a piramide invertida o exercício 14.
+16. Imprima a piramide invertida o exercício 15.
     
     ```python
     vet = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
@@ -322,8 +322,209 @@ Para estes exercícios, é importante que você não utilize funções built-in 
         print()
     ```
 
-17. Contrua e descontrua a pirâmide (dos exercíciso 14 e 15)
+17. Contrua e descontrua a pirâmide (dos exercícios 15 e 16)
+
+18. ```python
+    vet = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    
+    n = len(vet)
+    #Construção
+    for i in range(n):    
+        for j in range(i+1):
+            #end=' ' para nao pular de linha
+            print(vet[j], end=" ")
+        print('')
+    
+    #Desconstruçã
+    for i in range(n-1,0,-1):    
+        for j in range(i+1):
+            #end=' ' para nao pular de linha
+            print(vet[j], end=" ")
+        print('')
+    ```
+
+19. Dado um vetor qualquer, apresente os elementos em forma de 'X'.
     
     ```python
+    vet = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    
+    tam = len(vet)
+    for i in range(tam):  
+      opt = (tam - 1) - i   
+      #percorre o vetor decisindo quando
+      #imprimir o valor ou ' '  
+      for j in range(tam):
+        if (j == i or j == opt):
+          print(vet[j],end=' ')
+        else:
+          print(' ',end=' ')
+      
+      print('\n')
     
     ```
+
+20. Dado um vetor qualquer , apresente este vetor de forma ordenada:
+    
+    ```python
+    #Selection Sort
+    arr = [5,1,3,4,2]
+    n = len(arr)
+    for i in range(n-1):
+        min_index = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+    
+        tmp = arr[i]  
+        arr[i] = arr[min_index]
+        arr[min_index] = tmp 
+    
+    print(arr)
+    ```
+    
+    ```python
+    #Insert sort
+    arr = [5,1,3,4,2]
+    n = len(arr)
+    for i in range(1, n):
+            key = arr[i]
+            j = i - 1
+            while j >= 0 and arr[j] > key:
+                arr[j + 1] = arr[j]
+                j -= 1        
+            arr[j + 1] = key
+    ```
+
+21. Maior sequência de '0' em um vetor:  [1,0,0,1,1,0,1,**0,0,0,0**,1,1,0,0,0] ==> 4
+    
+    ```python
+    vetor = [1,0,0,0,1,0,0,1,1,0,0,0,0,0]
+    max_zeros = 0  # Sequência máxima de zeros
+    current_zeros = 0  # Sequência atual de zeros
+    
+    for num in vetor:
+        if num == 0:
+            current_zeros += 1
+        else:
+            if current_zeros > max_zeros:
+                max_zeros = current_zeros
+            current_zeros = 0
+    
+    # Verificar a sequência final, se necessário
+    if current_zeros > max_zeros:
+        max_zeros = current_zeros
+    
+    print(max_zeros)
+    ```
+
+22. Maior sequência de um vetor:[-80,-79, **20, 21, 22, 23**, 45,9,10,11]
+    
+    ```python
+    vetor = [-80,-79, 20, 21, 22, 23, 45, 9, 10, 11]
+    
+    #armazena os indices das sequência
+    max_idxs = [] #maior sequência 
+    idxs = [0]  #sequencia atual
+    
+    for i in range(1,len(vetor)-1):
+        #comparo o atual com o anterior
+        if vetor[i-1] + 1 == vetor[i]:        
+            idxs.append(i)        
+        else:
+          #verifica se a sequencia é a maior
+          if len(idxs) > len(max_idxs):        
+            max_idxs = idxs
+    
+          #reinicio a sequencia atual
+          idxs = [i]
+          
+    #Indices
+    print(max_idxs)
+    
+    #itero em indices para obter valores
+    for idx in max_idxs:
+      print(vetor[idx], end = ' ')
+    ```
+    
+    
+    
+    # Strings
+    
+    Nesta seção sugere-se o uso da tabela ASCII. Evite as funções 'built-in' como upper(), lower(), isdigit(), etc. 
+
+1. A partir de uma frase digitada pelo usuário, determine:
+   
+       a. Quantidade de espaços em branco
+   
+       b. Quantidade de letras maiúsculas
+   
+       c. Quantidade de caracteres especiais
+   
+   ```python
+   espacos_em_branco = 0
+   letras_maiusculas = 0
+   caracteres_especiais = 0
+   
+   frase = 'O dia est@ muit0 Bon1t0'
+   
+   for caractere in frase:
+       if ord(caractere) == ord(" "):
+           espacos_em_branco += 1
+       elif ord("A") <= ord(caractere) <= ord("Z"):
+           letras_maiusculas += 1
+       elif not (ord("a") <= ord(caractere) <= ord("z")) and not (ord("0") <= ord(caractere) <= ord("9")):
+           caracteres_especiais += 1
+   print(f"Frase: {frase}")
+   print(f"Espacos: {espacos_em_branco}")
+   print(f"Maiusculas: {letras_maiusculas}")
+   print(f"Especiais: {caracteres_especiais}")
+   ```
+
+2. Faça um algoritmo que converte letra maiúscula em minúscula e vice-versa.
+   
+   ```python
+   texto = "Viva, estamos APRENDENDO Ascii"
+   texto_convertido = ""
+   
+   for caractere in texto:
+   
+       codigo_ascii = ord(caractere)
+   
+       #eh maiuscula?
+       if ord('A') <= codigo_ascii <= ord('Z'):
+           # Converte de maiúscula para minúscula
+           codigo_ascii += 32
+       
+       #eh minuscula?
+       elif ord('a') <= codigo_ascii <= ord('z'):
+           # Converte de minúscula para maiúscula        
+           codigo_ascii -= 32
+   
+       
+       texto_convertido += chr(codigo_ascii) 
+   
+   print(texto_convertido)
+   ```
+
+3. Validador de Senha
+   
+   a. 10 caracteres
+   b. Não contem números em sequência
+   c. 2 Caracteres Especiais
+   d. 2 Letras maiúsculas
+   
+   ```python
+   
+   ```
+
+4. Implemente um validador de CPF. Pesquise na internet como o cálculo é realizado
+   
+   ```python
+   
+   ```
+
+5. Código Morse: Converta um string morse (' ', '.', '-') em uma string alpha-númerica
+   
+   ```python
+   
+   ```
