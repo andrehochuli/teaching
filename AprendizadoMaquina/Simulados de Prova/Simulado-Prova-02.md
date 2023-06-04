@@ -1,6 +1,6 @@
 # SIMULADO DE PROVA
 
-A seguir é apresentado uma série de questões para nortear o estudo. A apresentação 
+A seguir é apresentado uma série de questões para nortear o estudo. 
 
 ## APRENDIZADO DE MÁQUINA NÃO-SUPERVISIONADO
 
