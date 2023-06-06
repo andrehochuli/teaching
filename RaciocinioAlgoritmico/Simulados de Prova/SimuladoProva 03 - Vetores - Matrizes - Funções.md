@@ -164,19 +164,25 @@ b. Adicione números ao vetor, até que a soma deles ultrapasse 100mil.
 
 c. Dado um vetor de 100 posições, calcule a média dos elementos múltiplos de 5
 
-c. Dado um vetor de N posições, cálcule a soma dos produtos, sendo o índice o fato de multiplicação. Exemplo:
+d. Dado um vetor de N posições, cálcule a soma dos produtos, sendo o índice o fato de multiplicação. Exemplo:
 
     [9,2,3,7,19,.....] = 9x0 + 2x1 + 3x2, 7x3, 19x4 .....
 
-d. Encontre o maior elemento de um vetor. 
+e. Determine uma \textbf{função} que recebe um valor N e cria um vetor contendo a série de fibonacci até N.
 
-e. Ordene um vetor númerico
+f. Converta números binários em decimais. Considere a entrada do binário em formato texto.
 
-f. Ordene uma string qualquer: "casario" -> "aaciors"
+![](/home/aghochuli/.var/app/com.github.marktext.marktext/config/marktext/images/2023-06-06-18-58-11-image.png)
 
-g. Crie uma função que conta quantos digitos tem uma string
+g. Encontre o maior elemento de um vetor. 
 
-h. Imprima uma string em ordem crescente, exemplo : "casaco"
+h. Ordene um vetor númerico
+
+i. Ordene uma string qualquer: "casario" -> "aaciors"
+
+j. Crie uma função que conta quantos digitos tem uma string
+
+k. Imprima uma string em ordem crescente, exemplo : "casaco"
 
 ```
 c
@@ -187,11 +193,9 @@ casac
 casaco
 ```
 
+l. Crie um validador de senha, considerando que a senha deve ter 8 dígitos, sendo ao menos 3 caracteres maiusculos e três númericos
 
-
-i. Crie um validador de senha, considerando que a senha deve ter 8 dígitos, sendo ao menos 3 caracteres maiusculos e três númericos
-
-j. Uma senha númerica não pode conter sequências de três digitos, determine se a senha é válida:
+m. Uma senha númerica não pode conter sequências de três digitos, determine se a senha é válida:
 
     4578218 -> válido
 
@@ -200,6 +204,8 @@ j. Uma senha númerica não pode conter sequências de três digitos, determine 
     4587618-> inválida (876)
 
     Neste caso, implemente uma função que recebe três números e determine se estão em sequência.
+
+n. Determine uma função que recebe um vetor e verifica se o vetor é ordenado (return 1) ou não (return 1). Na função principal, chame a função e avalie o retorno, imprimindo na tela ou não ordenado.
 
     
 
