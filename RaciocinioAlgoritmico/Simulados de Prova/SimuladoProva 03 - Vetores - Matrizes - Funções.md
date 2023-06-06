@@ -182,7 +182,7 @@ e. Determine uma função que recebe um valor N e cria um vetor contendo a séri
 
 f. Converta números binários em decimais. Considere a entrada do binário em formato texto.
 
-![](/home/aghochuli/.var/app/com.github.marktext.marktext/config/marktext/images/2023-06-06-18-58-11-image.png)
+![](/home/aghochuli/Pictures/Screenshot%20from%202023-06-06%2018-43-24.png)
 
 g. Encontre o maior elemento de um vetor. 
 
