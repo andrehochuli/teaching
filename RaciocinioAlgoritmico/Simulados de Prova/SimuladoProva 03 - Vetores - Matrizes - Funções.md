@@ -180,9 +180,13 @@ e. Determine uma função que recebe um valor N e cria um vetor contendo a séri
 
     
 
-f. Converta números binários em decimais. Considere a entrada do binário em formato texto.
+f. Converta números binários em decimais. Considere a entrada do binário em formato texto. (Dica: É similar a soma dos opostos de um vetor)
 
-![](/home/aghochuli/Pictures/Screenshot%20from%202023-06-06%2018-43-24.png)
+        "1011" -> $1x2^3 + 0x2^2 + 1x2^1 + 1x2^0=  11$
+
+        "10101" -> $1x2^4 + 0x2^3 + 1x2^2 + 0x2^1 + 1x2^0 = 21$
+
+
 
 g. Encontre o maior elemento de um vetor. 
 
