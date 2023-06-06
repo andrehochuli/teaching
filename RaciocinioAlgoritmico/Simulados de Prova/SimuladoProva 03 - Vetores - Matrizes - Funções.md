@@ -168,7 +168,17 @@ d. Dado um vetor de N posições, cálcule a soma dos produtos, sendo o índice 
 
     [9,2,3,7,19,.....] = 9x0 + 2x1 + 3x2, 7x3, 19x4 .....
 
-e. Determine uma \textbf{função} que recebe um valor N e cria um vetor contendo a série de fibonacci até N.
+e. Determine uma função que recebe um valor N e cria um vetor contendo a série de fibonacci até N.
+
+    def **fibo**(n):
+
+        ....    
+
+        ....    
+
+        return vet
+
+    
 
 f. Converta números binários em decimais. Considere a entrada do binário em formato texto.
 
