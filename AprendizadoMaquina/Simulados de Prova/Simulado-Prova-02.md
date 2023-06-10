@@ -93,7 +93,7 @@ No caso de algumas figuras não aparecerem, opte pela opção em *pdf*
 
 ![redes_recorrentes.png](images/redes_recorrentes.png)
 
-<img src="file:///home/aghochuli/Documents/teaching/AprendizadoMaquina/Simulados%20de%20Prova/images/rnn_lstm.png" title="" alt="rnn_lstm.png" data-align="center">
+<img title="" src="./images/rnn_lstm.png" alt="" data-align="center" width="347">
 
 1. O que significa o termo recorrente nesse tipo de rede? 
 2. O que é recorrente, o dado ou o modelo?
