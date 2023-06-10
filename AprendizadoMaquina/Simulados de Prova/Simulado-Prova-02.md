@@ -91,7 +91,7 @@ No caso de algumas figuras não aparecerem, opte pela opção em *pdf*
 
 ## Redes Neurais Recorrentes
 
-![redes_recorrentes.png](/home/aghochuli/Documents/teaching/AprendizadoMaquina/Simulados%20de%20Prova/images/redes_recorrentes.png)
+![redes_recorrentes.png](images/redes_recorrentes.png)
 
 <img src="file:///home/aghochuli/Documents/teaching/AprendizadoMaquina/Simulados%20de%20Prova/images/rnn_lstm.png" title="" alt="rnn_lstm.png" data-align="center">
 
