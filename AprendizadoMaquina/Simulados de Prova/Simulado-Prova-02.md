@@ -2,6 +2,8 @@
 
 A seguir é apresentado uma série de questões para nortear o estudo. 
 
+No caso de algumas figuras não aparecerem, opte pela opção em *pdf*
+
 ## APRENDIZADO DE MÁQUINA NÃO-SUPERVISIONADO
 
 1. Quais são as principais diferenças entre aprendizado supervisionado e não supervisionado?
@@ -40,41 +42,39 @@ A seguir é apresentado uma série de questões para nortear o estudo.
 
 Claro! Aqui estão 10 questões de prova sobre Bagging e Boosting:
 
-1. Explique o conceito de aprendizado em conjunto (ensemble learning) e como isso se relaciona com o Bagging e o Boosting.
+1. O que é Bagging e como ele funciona? Descreva as etapas principais envolvidas no algoritmo de Bagging.
 
-2. O que é Bagging e como ele funciona? Descreva as etapas principais envolvidas no algoritmo de Bagging.
+2. Em nível de instâncias e atributos, como gerar diversidade a partir de uma mesmo dataset?
 
-3. Em nível de instâncias e atributos, como gerar diversidade a partir de uma mesmo dataset?
+3. Qual é o objetivo do uso da amostragem de bootstrap no Bagging? Como isso ajuda a melhorar o desempenho do conjunto?
 
-4. Qual é o objetivo do uso da amostragem de bootstrap no Bagging? Como isso ajuda a melhorar o desempenho do conjunto?
-
-5. Qual a técnica de re-amostragem ilustradas pela figuras abaixo:
+4. Qual a técnica de re-amostragem ilustradas pela figuras abaixo:
    
    ![](/home/aghochuli/.var/app/com.github.marktext.marktext/config/marktext/images/2023-06-04-14-35-22-image.png)
    
    ![](/home/aghochuli/.var/app/com.github.marktext.marktext/config/marktext/images/2023-06-04-14-36-38-image.png)
 
-6. Como o Random Forest gera diversidade? É possível gerar diversidade a nível de nodo da sub-árvore ?
+5. Como o Random Forest gera diversidade? É possível gerar diversidade a nível de nodo da sub-árvore ?
 
-7. O que é Boosting e como ele funciona? Explique a ideia de adicionar iterativamente aprendizes fracos para criar um aprendiz forte no Boosting.
+6. O que é Boosting e como ele funciona? Explique a ideia de adicionar iterativamente aprendizes fracos para criar um aprendiz forte no Boosting.
 
-8. Qual é a principal diferença entre Bagging e Boosting em termos de como os aprendizes base são treinados e combinados?
+7. Qual é a principal diferença entre Bagging e Boosting em termos de como os aprendizes base são treinados e combinados?
 
-9. Descreva o algoritmo Random Forest. Como ele difere de uma única árvore de decisão?
+8. Descreva o algoritmo Random Forest. Como ele difere de uma única árvore de decisão?
 
-10. Descreva o algoritmo AdaBoost, uma implementação popular do Boosting. Como ele atribui pesos às amostras de treinamento para focar nas instâncias classificadas incorretamente?
+9. Descreva o algoritmo AdaBoost, uma implementação popular do Boosting. Como ele atribui pesos às amostras de treinamento para focar nas instâncias classificadas incorretamente?
 
-11. Quais são alguns aprendizes fracos comumente usados em algoritmos de Boosting? Como eles contribuem para o desempenho geral do conjunto?
+10. Quais são alguns aprendizes fracos comumente usados em algoritmos de Boosting? Como eles contribuem para o desempenho geral do conjunto?
 
-12. Explique o conceito de Boosting com reamostragem. Como isso lida com instâncias difíceis de classificar no conjunto de treinamento?
+11. Explique o conceito de Boosting com reamostragem. Como isso lida com instâncias difíceis de classificar no conjunto de treinamento?
 
-13. Compare e contraste Bagging e Boosting em termos de sua abordagem para reduzir o viés e a variância no modelo de conjunto.
+12. Compare e contraste Bagging e Boosting em termos de sua abordagem para reduzir o viés e a variância no modelo de conjunto.
 
-14. O que é a seleção dinâmica de classificadores? 
+13. O que é a seleção dinâmica de classificadores? 
 
-15. O que é um meta-classifier? Como ele se comporta nas técnicas de seleção dinâmica e stacking?
+14. O que é um meta-classifier? Como ele se comporta nas técnicas de seleção dinâmica e stacking?
 
-16. Quais são os atributos e classes do meta classifier em ambas abordagens?
+15. Quais são os atributos e classes do meta classifier em ambas abordagens?
 
 ## Deep Learning
 
