@@ -33,10 +33,10 @@ No caso de algumas figuras não aparecerem, opte pela opção em *pdf*
 13. O que significa um índice silhoueta -1,0 e 1?
 
 14. Quais são as métricas de avaliação comumente utilizadas para medir a qualidade dos clusters gerados por um algoritmo de clustering?
-
-15. O que você pode discutir sobre os resultados abaixo?
     
-    <img title="" src="file:///home/aghochuli/.var/app/com.github.marktext.marktext/config/marktext/images/2023-06-04-14-29-39-image.png" alt="" width="720" data-align="center">
+    O que você pode discutir sobre os resultados abaixo?
+    
+    <img title="" src="./images/Clustering.png" alt="" width="720" data-align="center">
 
 ## Agrupamentos ou Conjuntos (Ensembles)
 
@@ -76,6 +76,8 @@ No caso de algumas figuras não aparecerem, opte pela opção em *pdf*
 
 ## Deep Learning
 
+![](./images/cnn_arq.png "re-amostragem")
+
 1. O que é o Deep Learning e qual é a diferença em relação a outros métodos de aprendizado de máquina?
 2. Quais são os principais desafios enfrentados pelo Deep Learning? (Base, Custo Computacional, Ajuste dos Dados)
 3. O que é uma rede neural convolucional (CNN) e em que tipo de problema ela é comumente aplicada?
@@ -88,6 +90,10 @@ No caso de algumas figuras não aparecerem, opte pela opção em *pdf*
 10. Podemos usar uma CNN para extrair características? Porque as características são chamadas de profundas?
 
 ## Redes Neurais Recorrentes
+
+![redes_recorrentes.png](/home/aghochuli/Documents/teaching/AprendizadoMaquina/Simulados%20de%20Prova/images/redes_recorrentes.png)
+
+<img src="file:///home/aghochuli/Documents/teaching/AprendizadoMaquina/Simulados%20de%20Prova/images/rnn_lstm.png" title="" alt="rnn_lstm.png" data-align="center">
 
 1. O que significa o termo recorrente nesse tipo de rede? 
 2. O que é recorrente, o dado ou o modelo?
