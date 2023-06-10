@@ -48,9 +48,9 @@ No caso de algumas figuras não aparecerem, opte pela opção em *pdf*
 
 4. Qual a técnica de re-amostragem ilustradas pela figuras abaixo:
    
-   ![](/home/aghochuli/.var/app/com.github.marktext.marktext/config/marktext/images/2023-06-04-14-35-22-image.png)
+   ![](./images/reamostragem.png "re-amostragem")
    
-   ![](/home/aghochuli/.var/app/com.github.marktext.marktext/config/marktext/images/2023-06-04-14-36-38-image.png)
+   
 
 5. Como o Random Forest gera diversidade? É possível gerar diversidade a nível de nodo da sub-árvore ?
 
