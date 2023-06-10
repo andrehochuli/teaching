@@ -40,8 +40,6 @@ No caso de algumas figuras não aparecerem, opte pela opção em *pdf*
 
 ## Agrupamentos ou Conjuntos (Ensembles)
 
-Claro! Aqui estão 10 questões de prova sobre Bagging e Boosting:
-
 1. O que é Bagging e como ele funciona? Descreva as etapas principais envolvidas no algoritmo de Bagging.
 
 2. Em nível de instâncias e atributos, como gerar diversidade a partir de uma mesmo dataset?
