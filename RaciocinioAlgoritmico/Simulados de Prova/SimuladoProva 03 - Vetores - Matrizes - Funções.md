@@ -58,6 +58,7 @@ def altera(a,b):
 
     return a,b
 
+vet = [4,6,4,1,2,9,13]
 tam = len(vet)
 for i in range(tam):    
     m = i        
