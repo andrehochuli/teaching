@@ -155,7 +155,7 @@ resultado = modifica(texto)
 print(resultado)
 ```
 
-**OBS**: Em teste de mesa, podem existir váriações destes exercícios, no qual se pede para corrigir o código apresentado.
+**OBS**: Em teste de mesa, podem existir variações destes exercícios, no qual se pede para corrigir o código apresentado.
 
 # 2. Implemente o que se pede
 
