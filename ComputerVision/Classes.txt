@@ -2,7 +2,7 @@ Class #01 - Lecture #01 - Computer Vision and Image Processing
 Class #02 - Lecture #02 - Image Filtering
 Class #03 - Lecture #03 - Morphology
 Class #04 - Lecture #04 - Finding Components
-Class #05 -    PJBL1    - Plate Recognition
+Class #05 -    PJBL1    - TBF
 Class #06 - Lecture #05 - Feature Extraction (Projections)
 Class #07 - Lecture #06 - Feature Extraction (PCA, Sobel, Laplace and Canny)
 Class #08 - Lecture #07 - Feature Recognition 
