@@ -58,6 +58,7 @@ def altera(a,b):
 
     return a,b
 
+vet = [4,6,4,1,2,9,13]
 tam = len(vet)
 for i in range(tam):    
     m = i        
@@ -154,7 +155,7 @@ resultado = modifica(texto)
 print(resultado)
 ```
 
-**OBS**: Em teste de mesa, podem existir váriações destes exercícios, no qual se pede para corrigir o código apresentado.
+**OBS**: Em teste de mesa, podem existir variações destes exercícios, no qual se pede para corrigir o código apresentado.
 
 # 2. Implemente o que se pede
 
