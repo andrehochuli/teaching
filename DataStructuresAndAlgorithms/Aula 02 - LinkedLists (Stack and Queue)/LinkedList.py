@@ -125,6 +125,7 @@ llist.push(50)
 llist.push(60)
 llist.push(70)
 
+llist.push(55,3)
 llist.print()
 print('--Removing from tail ---')
 llist.pop(-1)
