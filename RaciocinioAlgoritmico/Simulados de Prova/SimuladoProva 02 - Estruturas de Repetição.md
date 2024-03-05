@@ -16,12 +16,12 @@ r = int(input("Razao: "))
 
 
 while (n < 100 and soma < 100):
-  
+
   i += 1
-  
+
   if i % 5 != 0: 
     n -= 1
-  
+
   soma += r
 
 print(n, i, soma)
@@ -41,11 +41,11 @@ b. Com relação ao código abaixo, marque a opção correta:
   soma = 0
   
   while (soma < x*y or x < y):
-      
+  
       soma = y - x
       x += soma
       y -= soma    
-    
+  
   print(x, y, soma)
   ```
 
@@ -125,7 +125,6 @@ while i <= 100:
         i = i + 1
 
 print("A soma dos números pares entre 0 e 100 é: ", soma_pares)
-
 ```
 
 **c. Soma os múltiplos de 4 e 8:  **
@@ -137,14 +136,12 @@ soma = 0
 while i < 100:
     if i % 8 == 0 or i % 4 == 0:
       i = i + 1
-          
+
     soma = soma + i
-    
+
 
 print("A soma dos números múltiplos de 4 e 8 simultaneos é: ", soma)
 ```
-
-
 
 ### 3. Implemente o que se pede
 
@@ -157,8 +154,6 @@ ou não.
 c. Escreva um programa que solicite ao usuário um número e, em seguida, imprima todos os divisores de 2...9
 
 d. Enquanto a soma não ultrapassar 10000, fique solicitando números ao usuário
-
-
 
 e. Calcule o IMC (Índice de Massa Corporal), para pessoas variando de 60 a 90 kgs e altura de 1,60 a 1,90 metros. Considere incremento de 5 kgs para o peso, e 0,10 cm para a altura. Também informe em qual classe de IMC a pessoa se encontra
 
