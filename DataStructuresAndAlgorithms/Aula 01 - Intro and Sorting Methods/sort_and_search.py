@@ -12,7 +12,10 @@ def linear_search(arr, element):
         if num == element:
             return i
     return -1
-        
+
+def insert_sort():
+
+	return vet
 
 size = 1000000  # Tamanho do vetor
 
@@ -23,9 +26,9 @@ arr = np.random.randint(-99999999, 99999999, size)
 sorted_arr = sorted(arr) #deverá ser implementa no trabalho
 
 
-
 # Para garantir que o valor vai existir, seleciona um número aleatório presente no vetor 
 target_element = np.random.choice(arr)
+target_element = sorted_arr[300000]
 
 # Medir o tempo para encontrar o elemento no vetor desordenado (busca linear)
 start_time = time.time()
