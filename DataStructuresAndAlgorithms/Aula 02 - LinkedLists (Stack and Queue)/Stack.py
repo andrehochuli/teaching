@@ -1,4 +1,4 @@
-#@Author: Prof. Andre Hochuli @data: 08/2022
+#@Author: Prof. Andre Hochuli @data: 08/2022 @updated 08/2024
 
 # Node class
 class Node:
