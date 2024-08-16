@@ -1,4 +1,5 @@
 import numpy as np
+
 def hash_str(s):
 
     p = 31;
