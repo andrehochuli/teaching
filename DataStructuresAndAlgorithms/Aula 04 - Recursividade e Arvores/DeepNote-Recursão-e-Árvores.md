@@ -1,0 +1,1 @@
+[DeepNote - Recursão e Árvores](https://deepnote.com/workspace/lecture-02-data-structure-7cd4b609-3a3d-491b-8195-7223c50f949c/project/Recursao-e-Arvores-a90e834a-bd07-4ec2-85d3-57a09943c88c/notebook/503b33c913df414d8c63c47b827ded32)
