@@ -1,0 +1,170 @@
+###########Dataset de notas######################
+X = np.array([[7, 9, 7],
+              [3, 7, 3],
+              [10, 10, 10],
+              [8, 5, 10],
+              [4, 5, 7],
+              [4, 9, 2],
+              [7, 6, 8],
+              [3, 5, 5]])
+
+y = np.array([1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0])
+
+w,b = fit(X, y,
+          learning_rate=0.001,
+          epochs=9)
+################################################          
+          
+###################Testar algumas notas          #############
+y_pred = predict([1,8,8],w,b)
+print(y_pred)
+###################################################################
+
+################ Criar dataset de medias robusto##################
+import random
+from sklearn.model_selection import train_test_split
+
+np.random.seed(42)
+
+n_samples = 250
+X1 = np.random.randint(8, 11, (n_samples, 3))
+X2 = np.random.randint(5, 11, (n_samples, 3))
+X3 = np.random.randint(4, 11, (n_samples, 3))
+X4 = np.random.randint(4, 7, (n_samples, 3))
+X5 = np.random.randint(3, 9, (n_samples, 3))
+X6 = np.random.randint(3, 11, (n_samples, 3))
+X7 = np.random.randint(3, 11, (n_samples, 3))
+
+
+# Concatenar todos os conjuntos em um único array
+X = np.concatenate((X1, X2, X3, X4, X5, X6, X7), axis=0)
+
+
+# Calcular y com base na condição média >= 7
+y = np.array([1 if np.mean(x) >= 7 else 0 for x in X])
+
+print(np.unique(y,return_counts=True))
+# Exibir os primeiros exemplos e suas respectivas classes
+for i in range(20):
+    print(f"Amostra: {X[i]}, Classe: {y[i]}")
+
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2)
+
+print(np.unique(y_train,return_counts=True))
+print(np.unique(y_test,return_counts=True))
+
+##########################Embaralhar os índices#################################
+
+# Embaralhar os índices
+indices = np.arange(X.shape[0])
+np.random.shuffle(indices)
+
+# Aplicar os índices embaralhados para X_new e y_new
+X = X[indices]
+
+
+
+############### DATASET IRIS ####################
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+
+data = load_iris()
+X = data['data']
+y = data['target']
+
+X_train, X_test, y_train, y_test = train_test_split(X,y)
+
+
+w,b = fit(X_train,y_train,learning_rate=0.001, epochs=100)
+
+y_pred = predict(X_test,w,b)
+
+print(classification_report(y_test,y_pred))
+
+
+
+#######################visualizações 3D#######################################
+import plotly.graph_objs as go
+import plotly.express as px
+
+
+# Criar o gráfico 3D com Plotly, colorindo por y_new
+fig = px.scatter_3d(x=X[:, 0], y=X[:, 1], z=X[:, 2], color=y.astype(str))
+
+# Configurar os rótulos dos eixos
+fig.update_layout(scene=dict(
+    xaxis_title='Eixo X',
+    yaxis_title='Eixo Y',
+    zaxis_title='Eixo Z'
+))
+
+# Mostrar o gráfico interativo
+fig.show()
+
+
+#################visualização 3d lado a lado (train e test)##################################
+import plotly.graph_objs as go
+import plotly.express as px
+import plotly.subplots as sp
+
+# Criar gráficos 3D com Plotly
+fig = sp.make_subplots(rows=1, cols=2, subplot_titles=('Treinamento', 'Teste'),
+                       specs=[[{'type': 'scatter3d'}, {'type': 'scatter3d'}]])
+
+# Gráfico 3D para o conjunto de treinamento
+fig.add_trace(
+    go.Scatter3d(
+        x=X_train[:, 0],
+        y=X_train[:, 1],
+        z=X_train[:, 2],
+        mode='markers',
+        marker=dict(size=5, color=y_train, colorscale='Viridis', colorbar=dict(title='Classe')),
+        name='Treinamento'
+    ),
+    row=1, col=1
+)
+
+# Gráfico 3D para o conjunto de teste
+fig.add_trace(
+    go.Scatter3d(
+        x=X_test[:, 0],
+        y=X_test[:, 1],
+        z=X_test[:, 2],
+        mode='markers',
+        marker=dict(size=5, color=y_test, colorscale='Viridis', colorbar=dict(title='Classe')),
+        name='Teste'
+    ),
+    row=1, col=2
+)
+
+# Configurar os rótulos dos eixos e a perspectiva da câmera
+fig.update_layout(
+    scene1=dict(
+        xaxis_title='Eixo X',
+        yaxis_title='Eixo Y',
+        zaxis_title='Eixo Z',
+        camera=dict(
+            eye=dict(x=1.25, y=1.25, z=1.25)
+        )
+    ),
+    scene2=dict(
+        xaxis_title='Eixo X',
+        yaxis_title='Eixo Y',
+        zaxis_title='Eixo Z',
+        camera=dict(
+            eye=dict(x=1.25, y=1.25, z=1.25)
+        )
+    ),
+    title='Distribuição dos Dados de Treinamento e Teste'
+)
+
+# Mostrar o gráfico interativo
+fig.show()
