@@ -156,10 +156,13 @@ Aumentar o valor de K pode ajudar a suavizar esse efeito, pois o algoritmo consi
 | 1                | 3                | 3                | B                |
 | 2                | 1                | 1                | A                |
 | 3                | 1                | 2                | A                |
-|------------------|------------------|------------------|------------------|
-|------------------|------------------|------------------|------------------|
+-----------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------
 | **2**            | **1**            | **1**            | **Amostra de Teste** |
-|------------------|------------------|------------------|------------------|
+-----------------------------------------------------------------------------
 
 e utilizando a distância euclidiana: qual o resultado da amostra para K=3 e K=5?
 
@@ -205,25 +208,20 @@ Resultado: A amostra de teste seria classificada como pertencente à **Classe B*
   O Naive Bayes é um algoritmo de classificação baseado no Teorema de Bayes, que assume que todas as características (atributos) são independentes umas das outras. Ele calcula a probabilidade de uma amostra pertencer a cada classe e escolhe a classe com a maior probabilidade. A "ingenuidade" (naive) vem da suposição de independência entre as características, o que nem sempre é realista, mas o modelo ainda pode fornecer boas classificações.
 
 - **O que seria atributos dependentes e indepentes ?
-  ### Exemplos de Atributos **Independentes** e **Dependentes**:
-
-- **Exemplo de Atributos Independentes**:  
+  
   Imagine que estamos tentando prever se uma pessoa gosta de um tipo de comida com base em dois atributos:  
   1. **Altura** (em metros)  
   2. **Cor dos olhos** (azul, castanho, verde, etc.)
 
   Esses dois atributos são **independentes** porque o valor de um não afeta o outro. A altura de uma pessoa não tem qualquer influência na cor dos seus olhos.
 
-- **Exemplo de Atributos Dependentes**:  
   Agora, considere um cenário de previsão de saúde cardiovascular com base em dois atributos:  
   1. **Peso** (em kg)  
   2. **Índice de Massa Corporal (IMC)**
 
   Esses atributos são **dependentes** porque o IMC é calculado diretamente com base no peso e na altura da pessoa. Se o peso de uma pessoa aumentar, seu IMC provavelmente aumentará também, indicando uma relação direta entre os dois atributos.
 
-### Conclusão:
-No Naive Bayes, assume-se que todos os atributos são independentes (mesmo quando não são), o que facilita os cálculos, mas pode perder nuances importantes quando há dependências entre os atributos.
-  
+Conclusão: No Naive Bayes, assume-se que todos os atributos são independentes (mesmo quando não são), o que facilita os cálculos, mas pode perder nuances importantes quando há dependências entre os atributos. Por isso o termo 'ingênuo' (naive). 
 
 - **O que é uma probabilidade a posteriori e a priori? Como isso é aplicado no Naive Bayes?**  
   - **Probabilidade a priori**: é a probabilidade inicial de um evento ocorrer antes de observar qualquer dado, como a probabilidade de uma pessoa pertencer à classe "A" ou "B" sem considerar as características.  
@@ -257,6 +255,8 @@ Aqui está a imagem visual ilustrando o exemplo (jogar tennis?) de uma árvore d
 - Analisando as fronteiras de decisão, o que se pode inferir quanto à generalização do modelo? Quais classes devem sofrer perdas de acurácia e por quê?
 
         **Modelo A**
+        
+Dado que algumas as classes têm sobreposição no espaço de atributos, como no caso das classes cinza e vermelha, o modelo enfrenta dificuldades para traçar uma fronteira de decisão clara entre essas classes. Isso ocorre porque os atributos disponíveis não são suficientes para distinguir corretamente as classes, ou há ruído nos dados, o que cria áreas de incerteza. Nessas regiões de sobreposição, pequenas variações nos dados podem resultar em classificações incorretas, causando confusão entre as classes. A fronteira de decisão para a classe azul, sendo bem separada, não enfrenta esse problema, mas as classes cinza e vermelha apresentam maior ambiguidade. Isso indica que o modelo conseguirá classificar bem as amostras da classe azul, mas não as demais. Pouco confusão (falso positivo) deve ocorrer com a azul, mas sim entre as cinzas e vermelhos.
 
 <img title="" src="images/2023-04-19-09-44-06-image.png" alt="" data-align="center" width="250">
 
@@ -264,12 +264,36 @@ Aqui está a imagem visual ilustrando o exemplo (jogar tennis?) de uma árvore d
 
 <img title="" src="images/2023-04-19-09-42-33-image.png" alt="" width="190" data-align="center">
 
+Dado que as classes azul e vermelha têm fronteiras bem definidas no espaço de atributos, o modelo consegue traçar uma separação clara entre elas. Isso indica que os atributos escolhidos são eficazes para distinguir as classes, com pouca ou nenhuma sobreposição. Como resultado, o modelo tem alta confiança ao classificar instâncias como azul ou vermelho. Essa definição clara das fronteiras minimiza a incerteza, reduzindo o risco de erros de classificação. A ausência de áreas de sobreposição entre essas classes garante uma melhor generalização do modelo para novos dados, evitando confusão entre elas. 
+
     **Modelo C**
 
 <img title="" src="https://i.sstatic.net/taWXA.png" alt="python - SVM: plot decision surface when working with more than 2 features  - Stack Overflow" width="351" data-align="center">
 
-- O que determinam as métricas de acurácia e recall?
-- Por que a acurácia geral não é uma boa métrica? Dê um exemplo.
+Dado que há mínima sobreposição entre as classes azul e vermelha, a fronteira de decisão ainda é bem definida na maior parte do espaço de atributos, mas existem pequenas regiões onde as classes se sobrepõem. Nesses casos, o modelo pode classificar a maioria das instâncias corretamente, mas algumas podem gerar falsos positivos ou falsos negativos nas áreas de sobreposição.
+
+- **O que determinam as métricas de acurácia e recall?**
+
+  - **Acurácia**: A acurácia é a métrica que mede a proporção de previsões corretas feitas pelo modelo em relação ao total de previsões. Ela é determinada pela fórmula:
+    \[
+    \text{Acurácia} = \frac{\text{Previsões Corretas}}{\text{Total de Previsões}}
+    \]
+    Embora seja uma métrica geral para medir a performance do modelo, ela não considera como as classes estão distribuídas no dataset, o que pode ser problemático em cenários de classes desbalanceadas.
+  
+  - **Recall**: O recall mede a capacidade do modelo de identificar corretamente as instâncias positivas de uma determinada classe. A fórmula é:
+    \[
+    \text{Recall} = \frac{\text{Verdadeiros Positivos}}{\text{Verdadeiros Positivos} + \text{Falsos Negativos}}
+    \]
+    Ele foca na capacidade do modelo de capturar todos os exemplos reais de uma classe, sendo especialmente útil em problemas onde é mais importante evitar falsos negativos (como detecção de fraudes ou diagnósticos médicos).
+
+---
+
+- **Por que a acurácia geral não é uma boa métrica? Dê um exemplo.**
+
+  A acurácia geral pode ser uma métrica **enganosa** em problemas de **classes desbalanceadas**, onde uma classe é muito mais frequente que a outra(s). Nesses casos, o modelo pode ter uma acurácia aparentemente alta, mesmo que não esteja identificando corretamente a classe minoritária.
+
+  **Exemplo**:
+  Suponha que em um problema de detecção de fraudes, 95% das transações sejam legítimas e apenas 5% sejam fraudulentas. Se o modelo sempre prever que todas as transações são legítimas, ele terá uma **acurácia de 95%**, o que parece bom. No entanto, o modelo nunca está identificando as fraudes (classe de interesse), o que torna essa acurácia inútil. Nesses casos, métricas como **recall** ou **F1-score** são mais apropriadas, pois focam no desempenho do modelo em classes específicas e minoritárias.
 - Calcule a acurácia a partir da matriz de confusão abaixo:
 
 <img title="" src="./images/cf_matrix_a.png" alt="asd" width="207" data-align="center">
