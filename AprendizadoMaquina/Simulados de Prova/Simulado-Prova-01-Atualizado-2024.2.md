@@ -109,6 +109,8 @@ A Distribuição A tende a ser mais fácil para um modelo de classificação, en
  - **Defina o algoritmo KNN. Forneça um exemplo lúdico**
    
     O K-Nearest Neighbors (KNN) é um algoritmo de aprendizado supervisionado que classifica uma nova instância com base na classe mais comum entre seus "K" vizinhos mais próximos, usando uma     métrica de distância, como a distância Euclidiana. Em outras palavras, a classe da nova amostra será a classe predominante entre os K vizinhos mais próximos.
+   
+    ![image](https://github.com/user-attachments/assets/12c0fb58-ab31-4ac4-a1db-8598a141b814)
 
     Imagine que você está em uma festa e não conhece ninguém. Você quer descobrir se deve ficar no grupo de pessoas que estão discutindo tecnologia ou se deve se juntar ao grupo que está         conversando sobre esportes. Você decide usar o "algoritmo KNN" para tomar essa decisão.
 
