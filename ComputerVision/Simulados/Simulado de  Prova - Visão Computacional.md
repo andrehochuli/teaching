@@ -91,7 +91,7 @@ plt.show()
 
 ```
 
-![image.png](images//image%206.png)
+![image.png](images//image6.png)
 
 ```python
 result = cv2.bitwise_and(img, img, mask=thresh_h)
@@ -103,7 +103,7 @@ plt.show()
 
 ```
 
-![image.png](images//image%207.png)
+![image.png](images//image7.png)
 
 # Convoluções
 
@@ -119,16 +119,16 @@ plt.show()
 5. Que operações estão sendo realizadas abaixo ? 
     1. Exemplo 1
     
-    ![image.png](images//image%208.png)
+    ![image.png](images//image8.png)
     
     b. Exemplo 2
     
 
-    ![image.png](images//image%209.png)
+    ![image.png](images//image9.png)
 
 6. A Figura abaixo representa o que ? 
     
-    ![image.png](images//image%2010.png)
+    ![image.png](images//image10.png)
     
     1. Histograma
     2. Convolução
@@ -136,7 +136,7 @@ plt.show()
 
 7. Qual a provável técnica abaixo: 
     
-    ![image.png](images//image%2011.png)
+    ![image.png](images//image11.png)
     
     1. Binarização
     2. Filtre da Média ou Mediana
@@ -144,25 +144,25 @@ plt.show()
 
 8. O processo abaixo utiliza morfologia matemática. Defina a ordem das operações
 
-    ![image.png](images//image%2012.png)
+    ![image.png](images//image12.png)
 
 # Pipeline de Segmentação
 
 1. Crie um pseudo-código para o seguinte pipeline: 
     1. Encontrar bolas de Tennis
     
-    ![image.png](images//image%2013.png)
+    ![image.png](images//image13.png)
     
 
     2. Segmente os componentes de texto:
 
-    ![image.png](images//image%2014.png)
+    ![image.png](images//image14.png)
 
 # Descritores de características
 
 1. Dado a imagem abaixo, que tipo de descritor de características voce decidiria usar, assinale uma opção:
 
-    ![image.png](images//image%2015.png)
+    ![image.png](images//image15.png)
 
     a. Forma / Borda
    
@@ -172,7 +172,7 @@ plt.show()
 
 3. Dado a imagem abaixo, apos realizar a segmentação, que tipo de descritor de características voce decidiria usar para diferenciar as moedas, assinale uma opção:
     
-    ![image.png](images//image%2016.png)
+    ![image.png](images//image16.png)
     
 
     a. Forma / Borda
@@ -183,4 +183,4 @@ plt.show()
 
 4. Imagine um problema em que voce tenha que classificar os dois tipos de objetos abaixo. Que tipo de descritor seria mais adequado? Considere os objetos já segmentados
 
-    ![image.png](images//image%2017.png)
+    ![image.png](images//image17.png)
