@@ -147,15 +147,58 @@ Aumentar o valor de K pode ajudar a suavizar esse efeito, pois o algoritmo consi
 
 - Qual a classe da amostra de teste para K=3 e K=5, abaixo?
 
-<img title="" src="./images/2023-04-18-17-59-41-image.png" alt="" width="339" data-align="center">
+| Característica 1 | Característica 2 | Característica 3 | Target           |
+|------------------|------------------|------------------|------------------|
+| 0                | 0                | 3                | B                |
+| 1                | 1                | 0                | B                |
+| 3                | 0                | 0                | A                |
+| 2                | 2                | 2                | B                |
+| 1                | 3                | 3                | B                |
+| 2                | 1                | 1                | A                |
+| 3                | 1                | 2                | A                |
+|------------------|------------------|------------------|------------------|
+|------------------|------------------|------------------|------------------|
+| **2**            | **1**            | **1**            | **Amostra de Teste** |
+|------------------|------------------|------------------|------------------|
 
-- Considere o seguinte dataset e a amostra de teste abaixo:
-
-<img title="" src="./images/2023-04-18-17-37-15-image.png" alt="" width="520" data-align="inline">
-
-      Utilizando a distância Euclidiana abaixo, qual o resultado da amostra para K=1 e K=3?
+Utilizando a distância Euclidiana abaixo, qual o resultado da amostra para K=1 e K=3?
 
 <img title="" src="./images/2023-04-18-17-40-35-image.png" alt="" data-align="center" width="245">
+
+### Cálculo da Distância Euclidiana entre a Amostra de Teste e a Primeira Amostra
+
+A fórmula para a distância euclidiana é dada por:
+
+\[
+d = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + (x_3 - y_3)^2}
+\]
+
+Onde:
+- \(x_1, x_2, x_3\) são as características da **amostra de teste** \([2, 1, 1]\).
+- \(y_1, y_2, y_3\) são as características da **primeira amostra** \([0, 0, 3]\).
+
+Substituindo os valores:
+
+\[
+d = \sqrt{(0 - 2)^2 + (0 - 1)^2 + (3 - 1)^2}
+\]
+
+Calculando cada termo:
+
+\[
+d = \sqrt{(-2)^2 + (-1)^2 + (2)^2}
+\]
+
+\[
+d = \sqrt{4 + 1 + 4} = \sqrt{9}
+\]
+
+Portanto, a distância euclidiana entre a amostra de teste e a primeira amostra é:
+
+\[
+d = 3.0
+\]
+
 
 #### Algoritmo Naive Bayes
 
