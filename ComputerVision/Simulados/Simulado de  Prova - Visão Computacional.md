@@ -160,7 +160,7 @@ plt.show()
 
 # Descritores de características
 
-1. Dado a imagem abaixo, que tipo de descritor de características voce decidiria usar:
+1. Dado a imagem abaixo, que tipo de descritor de características voce decidiria usar, assinale uma opção:
 
     ![image.png](images//image%2015.png)
 
@@ -170,7 +170,7 @@ plt.show()
    
     c. Projeção de Histograma
 
-3. Dado a imagem abaixo, apos realizar a segmentação, que tipo de descritor de características voce decidiria usar para diferenciar as moedas:
+3. Dado a imagem abaixo, apos realizar a segmentação, que tipo de descritor de características voce decidiria usar para diferenciar as moedas, assinale uma opção:
     
     ![image.png](images//image%2016.png)
     
