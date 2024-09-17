@@ -26,7 +26,7 @@ Este simulado direciona os estudos sobre os temas que podem ser cobrados. As que
 
 1. Porque o sistema de cor RGB não é tão eficiente para segmentação? 
 
-1. Imagine que você tenha que segmentar um objeto de cor vermelha (tomate). Discuta os limites da solução usando RGB. Tome como base o split dos canais e o histograma da cor vermelha, abaixo representados:
+1. Imagine que você tenha que segmentar um objeto de cor vermelha (tomate). Discuta os limites da solução usando RGB. Leve em conta o split dos canais e o histograma da cor vermelha, abaixo representados:
 
     ![image.png](images//image2.png)
 
