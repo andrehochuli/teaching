@@ -136,7 +136,7 @@ A Distribuição A tende a ser mais fácil para um modelo de classificação, en
 
 <img title="" src="./images/2023-04-18-17-34-51-image.png" alt="" data-align="center">
 
-Classes bem definidas (esqueda):
+Classes bem definidas (esquerda):
 Em um dataset onde as classes estão bem separadas, um valor de K pequeno, como K = 1, tende a funcionar bem, pois a distância até o vizinho mais próximo já será suficiente para classificar corretamente a nova instância.
 Se K for aumentado, o algoritmo ainda tende a classificar corretamente, pois a maioria dos vizinhos próximos pertencerá à mesma classe, e as classes são claramente distintas.
 Dataset com overlap (sobreposição entre as classes):
@@ -145,7 +145,7 @@ Classes com sobreposição (direita):
 Em um dataset com sobreposição entre as distribuições, um valor pequeno de K (como K = 1) pode tornar o modelo mais suscetível a ruídos. Isso porque um único vizinho pode pertencer à classe errada devido à sobreposição das classes, resultando em classificações incorretas.
 Aumentar o valor de K pode ajudar a suavizar esse efeito, pois o algoritmo considerará um número maior de vizinhos, o que pode permitir que a classe majoritária dos vizinhos mais próximos "corrija" o impacto do ruído ou da sobreposição. No entanto, se K for muito grande, o modelo pode incluir muitos vizinhos distantes de outras classes, prejudicando a precisão.
 
-- Qual a classe da amostra de teste para K=3 e K=5, abaixo?
+- Considerando o dataset abaixo:
 
 | Característica 1 | Característica 2 | Característica 3 | Target           |
 |------------------|------------------|------------------|------------------|
@@ -161,43 +161,14 @@ Aumentar o valor de K pode ajudar a suavizar esse efeito, pois o algoritmo consi
 | **2**            | **1**            | **1**            | **Amostra de Teste** |
 |------------------|------------------|------------------|------------------|
 
-Utilizando a distância Euclidiana abaixo, qual o resultado da amostra para K=1 e K=3?
+e utilizando a distância euclidiana: qual o resultado da amostra para K=3 e K=5?
 
 <img title="" src="./images/2023-04-18-17-40-35-image.png" alt="" data-align="center" width="245">
 
-### Cálculo da Distância Euclidiana entre a Amostra de Teste e a Primeira Amostra
+Exemplo: Cálculo da Distância Euclidiana entre a Amostra de Teste e a Primeira Amostra
 
-A fórmula para a distância euclidiana é dada por:
+![image](https://github.com/user-attachments/assets/b751dbea-2756-4d2c-bc38-67e5dca568e6)
 
-\[
-d = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + (x_3 - y_3)^2}
-\]
-
-Onde:
-- \(x_1, x_2, x_3\) são as características da **amostra de teste** \([2, 1, 1]\).
-- \(y_1, y_2, y_3\) são as características da **primeira amostra** \([0, 0, 3]\).
-
-Substituindo os valores:
-
-\[
-d = \sqrt{(0 - 2)^2 + (0 - 1)^2 + (3 - 1)^2}
-\]
-
-Calculando cada termo:
-
-\[
-d = \sqrt{(-2)^2 + (-1)^2 + (2)^2}
-\]
-
-\[
-d = \sqrt{4 + 1 + 4} = \sqrt{9}
-\]
-
-Portanto, a distância euclidiana entre a amostra de teste e a primeira amostra é:
-
-\[
-d = 3.0
-\]
 
 
 #### Algoritmo Naive Bayes
