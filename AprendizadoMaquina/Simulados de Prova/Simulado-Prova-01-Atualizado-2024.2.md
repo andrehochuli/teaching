@@ -101,15 +101,32 @@ A Distribuição A mostra fronteiras de decisão mais definidas, pois as amostra
 
 A Distribuição A tende a ser mais fácil para um modelo de classificação, enquanto a Distribuição B representa um cenário mais complexo, onde as classes são mais difíceis de separar.
 
-- O que é a normalização de atributos? Por que isso é importante?
+- **O que é a normalização de atributos? Por que isso é importante?**  
+  A normalização de atributos é o processo de ajustar os valores das variáveis em um conjunto de dados para que eles fiquem dentro de uma mesma escala (geralmente entre 0 e 1). Isso é importante para algoritmos como o KNN, pois ele se baseia em cálculos de distância. Se os atributos tiverem escalas muito diferentes, um atributo com valores maiores pode dominar o cálculo da distância e, consequentemente, influenciar a decisão final de forma desproporcional.
 
-#### Algoritmo KNN
+ #### Algoritmo KNN
 
-- Descreva em poucas linhas o algoritmo KNN. Se preferir, faça um desenho auxiliar e explique.
-- O KNN funciona somente para 2 classes (binário)? 
-- Qual a desvantagem do KNN em datasets grandes? Por exemplo, com 100 mil amostras e 2000 atributos?
-- O KNN reduz o espaço de características? E o espaço de busca? Justifique.
-- O que é o parâmetro K do KNN? Como ele impacta na classificação? Justifique.
+ - **Defina o algoritmo KNN. Forneça um exemplo lúdico
+  O K-Nearest Neighbors (KNN) é um algoritmo de aprendizado supervisionado que classifica uma nova instância com base na classe mais comum entre seus "K" vizinhos mais próximos, usando uma métrica de distância, como a distância Euclidiana. Em outras palavras, a classe da nova amostra será a classe predominante entre os K vizinhos mais próximos.
+
+  Imagine que você está em uma festa e não conhece ninguém. Você quer descobrir se deve ficar no grupo de pessoas que estão discutindo tecnologia ou se deve se juntar ao grupo que está conversando sobre esportes. Você decide usar o "algoritmo KNN" para tomar essa decisão.
+
+Suponha que você observe que há 10 pessoas próximas a você. O **KNN** pede para você observar os **K** vizinhos mais próximos. Se escolher **K = 3**, você vai ouvir as três pessoas mais próximas e perceber que duas delas estão falando sobre tecnologia e uma sobre esportes. Como a maioria está falando sobre tecnologia, você decide se juntar ao grupo tecnológico.
+
+Agora, se escolher **K = 7**, você vai observar sete pessoas e descobrir que quatro estão discutindo esportes e três estão falando sobre tecnologia. Neste caso, você provavelmente vai decidir se juntar ao grupo esportivo.
+
+- **O KNN funciona somente para 2 classes (binário)?**  
+  Não, o KNN pode ser aplicado tanto para classificação binária quanto para multi-classes. O algoritmo simplesmente observa os K vizinhos mais próximos e atribui à amostra a classe que é mais comum entre eles, independentemente de quantas classes existam.
+  
+- **Qual a desvantagem do KNN em datasets grandes? Por exemplo, com 100 mil amostras e 2000 atributos?**  
+  Uma grande desvantagem do KNN em datasets grandes é que ele é computacionalmente custoso. Como o algoritmo precisa calcular as distâncias entre a amostra de teste e todas as outras amostras do conjunto de dados, a complexidade computacional aumenta significativamente com o número de amostras e de atributos. Isso pode resultar em tempos de processamento lentos, especialmente para grandes datasets.
+  
+- **O KNN reduz o espaço de características? E o espaço de busca? Justifique.**  
+  Não, o KNN não reduz o espaço de características ou de busca. Ele utiliza todas as características do conjunto de dados original para calcular as distâncias. O espaço de busca (quantidade de instâncias a serem comparadas) e o número de características permanecem os mesmos, o que aumenta a complexidade conforme o tamanho do dataset cresce.
+
+- **O que é o parâmetro K do KNN? Como ele impacta na classificação? Justifique.**  
+  O parâmetro "K" representa o número de vizinhos mais próximos que o algoritmo considera ao classificar uma nova amostra. Um valor menor de K (como 1) pode tornar o modelo mais sensível a ruídos, enquanto valores maiores de K podem tornar a classificação mais estável, pois ela será baseada em um maior número de vizinhos. No entanto, um valor de K muito alto pode incluir amostras de outras classes e reduzir a precisão do modelo. O valor de K ideal é geralmente encontrado por meio de experimentação.
+
 - Analisando as seguintes distribuições, em qual o algoritmo KNN deve performar melhor? Por quê? 
   
   - Qual o impacto de um K maior e menor em cada uma das distribuições?
