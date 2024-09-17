@@ -22,15 +22,15 @@ Este simulado direciona os estudos sobre os temas que podem ser cobrados. As que
     
 4. A imagem abaixo é resultante de um processo de binarização? 
 
-    ![image.png](images//image%201.png)
+    ![image.png](images//image1.png)
 
 1. Porque o sistema de cor RGB não é tão eficiente para segmentação? 
 
 1. Imagine que você tenha que segmentar um objeto de cor vermelha (tomate). Discuta os limites da solução usando RGB. Tome como base o split dos canais e o histograma da cor vermelha, abaixo representados:
 
-    ![image.png](images//image%202.png)
+    ![image.png](images//image2.png)
 
-    ![image.png](images//image%203.png)
+    ![image.png](images//image3.png)
 
 1. Abaixo é proposto um algoritmo de segmentação para bolas de tennis. Responda:
     1. O algoritmo usa qual espaço de cor?
