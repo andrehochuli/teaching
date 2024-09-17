@@ -259,10 +259,10 @@ Aqui está a imagem visual ilustrando o exemplo (jogar tennis?) de uma árvore d
 - Analisando as fronteiras de decisão, o que se pode inferir quanto à generalização do modelo? Quais classes devem sofrer perdas de acurácia e por quê?
 
         **Modelo A**
-        
-Dado que algumas as classes têm sobreposição no espaço de atributos, como no caso das classes cinza e vermelha, o modelo enfrenta dificuldades para traçar uma fronteira de decisão clara entre essas classes. Isso ocorre porque os atributos disponíveis não são suficientes para distinguir corretamente as classes, ou há ruído nos dados, o que cria áreas de incerteza. Nessas regiões de sobreposição, pequenas variações nos dados podem resultar em classificações incorretas, causando confusão entre as classes. A fronteira de decisão para a classe azul, sendo bem separada, não enfrenta esse problema, mas as classes cinza e vermelha apresentam maior ambiguidade. Isso indica que o modelo conseguirá classificar bem as amostras da classe azul, mas não as demais. Pouco confusão (falso positivo) deve ocorrer com a azul, mas sim entre as cinzas e vermelhos.
 
 <img title="" src="images/2023-04-19-09-44-06-image.png" alt="" data-align="center" width="250">
+
+Dado que algumas as classes têm sobreposição no espaço de atributos, como no caso das classes cinza e vermelha, o modelo enfrenta dificuldades para traçar uma fronteira de decisão clara entre essas classes. Isso ocorre porque os atributos disponíveis não são suficientes para distinguir corretamente as classes, ou há ruído nos dados, o que cria áreas de incerteza. Nessas regiões de sobreposição, pequenas variações nos dados podem resultar em classificações incorretas, causando confusão entre as classes. A fronteira de decisão para a classe azul, sendo bem separada, não enfrenta esse problema, mas as classes cinza e vermelha apresentam maior ambiguidade. Isso indica que o modelo conseguirá classificar bem as amostras da classe azul, mas não as demais. Pouco confusão (falso positivo) deve ocorrer com a azul, mas sim entre as cinzas e vermelhos.
 
     **Modelo B**
 
