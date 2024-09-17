@@ -189,3 +189,9 @@ plt.show()
 4. Imagine um problema em que voce tenha que classificar os dois tipos de objetos abaixo. Que tipo de descritor seria mais adequado? Considere os objetos já segmentados
 
     ![image.png](images//image17.png)
+
+    a. Forma / Borda
+
+    b. Textura
+
+    c. Projeção de Histograma
