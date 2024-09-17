@@ -88,7 +88,7 @@
 ![image](https://github.com/user-attachments/assets/50bc58c9-40ea-486e-8f60-25fda22ce86c)
 
 
-#### Análise Inicial
+### Análise Inicial
 
 - Porque é interessante visualizar a distribuição dos dados? O que desejamos verificar com isso?
   Ao plotar distribuições, podemos verificar como os dados estão espalhados, se estão balanceados entre as classes e como as variáveis se comportam, permitindo ajustes ou tratamentos antes da modelagem.
@@ -104,9 +104,10 @@ A Distribuição A tende a ser mais fácil para um modelo de classificação, en
 - **O que é a normalização de atributos? Por que isso é importante?**  
   A normalização de atributos é o processo de ajustar os valores das variáveis em um conjunto de dados para que eles fiquem dentro de uma mesma escala (geralmente entre 0 e 1). Isso é importante para algoritmos como o KNN, pois ele se baseia em cálculos de distância. Se os atributos tiverem escalas muito diferentes, um atributo com valores maiores pode dominar o cálculo da distância e, consequentemente, influenciar a decisão final de forma desproporcional.
 
- #### Algoritmo KNN
+ ### Algoritmo KNN
 
- - **Defina o algoritmo KNN. Forneça um exemplo lúdico
+ - **Defina o algoritmo KNN. Forneça um exemplo lúdico**
+   
   O K-Nearest Neighbors (KNN) é um algoritmo de aprendizado supervisionado que classifica uma nova instância com base na classe mais comum entre seus "K" vizinhos mais próximos, usando uma métrica de distância, como a distância Euclidiana. Em outras palavras, a classe da nova amostra será a classe predominante entre os K vizinhos mais próximos.
 
   Imagine que você está em uma festa e não conhece ninguém. Você quer descobrir se deve ficar no grupo de pessoas que estão discutindo tecnologia ou se deve se juntar ao grupo que está conversando sobre esportes. Você decide usar o "algoritmo KNN" para tomar essa decisão.
