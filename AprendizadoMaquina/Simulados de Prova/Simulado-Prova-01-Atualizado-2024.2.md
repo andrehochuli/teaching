@@ -61,17 +61,28 @@
   7. **Ajuste de Hiperparâmetros**: Ajustar os parâmetros do modelo (como número de vizinhos no KNN, profundidade da árvore, etc.) para otimizar a performance.
   8. **Predição e Implantação**: Aplicar o modelo final para realizar previsões em novos dados e colocar o modelo em produção.
 
+  ou conforme na figura abaixo:
+  ![image](https://github.com/user-attachments/assets/9ca14f59-9bb1-4948-9035-043504aa452b)
+
+
 - **O que é classificação binária e multi-classes?**
   - **Classificação binária**: É o problema onde existem apenas duas classes possíveis para a predição. Exemplo: classificar se um e-mail é "spam" ou "não spam".
   - **Classificação multi-classes**: É o problema em que existem mais de duas classes possíveis. Exemplo: classificar um tipo de fruta como "maçã", "banana" ou "laranja".
+  ![image](https://github.com/user-attachments/assets/e8a58ccb-8a1f-4371-97a7-d38aded89234)
+
 
 - **Como abordar classificação multi-classes a partir de modelos binários?**
   Uma maneira comum de lidar com classificação multi-classes em modelos que originalmente lidam apenas com classificação binária é dividir o problema multi-classes em vários problemas binários. Isso pode ser feito com as técnicas **One vs One** ou **One vs All**.
 
 - **Diferencie a técnica One vs One e One vs All**
   - **One vs One (OvO)**: Para cada par de classes, um classificador binário é treinado. Se existem 3 classes, serão treinados 3 classificadores binários (A vs B, B vs C, e A vs C). Durante a predição, o modelo que obtiver mais "vitórias" será escolhido.
-  
+
+![image](https://github.com/user-attachments/assets/f4cd85b8-09f4-4342-b63c-2fef1b9f5581)
+
+
   - **One vs All (OvA)**: Para cada classe, um classificador binário é treinado para diferenciá-la de todas as outras classes. Se existem 3 classes, serão treinados 3 classificadores: um para distinguir A de {B, C}, outro para B de {A, C}, e assim por diante. A classe com a maior pontuação é escolhida como a predição final.
+
+![image](https://github.com/user-attachments/assets/50bc58c9-40ea-486e-8f60-25fda22ce86c)
 
 
 #### Análise Exploratória
