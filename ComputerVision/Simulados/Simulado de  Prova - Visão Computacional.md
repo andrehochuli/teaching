@@ -111,12 +111,17 @@ plt.show()
 2. Que técnicas utilizam convolução? Cite ao menos três
 3. Qual a diferença entre um filtro da média e mediana? Em termos matématicos e em termos de resultados finais. (Redução ou espalhamento do ruído?)
 4. Acerca de Operações Morfológicas em Imagens:
+   
     a. O que é uma operação de Erosão (erode)?
+   
     b. O que é uma operação de Dilatação (dilate)?
+   
     c. O que é uma operação de Abertura (open)?
+   
     d. O que é uma operação de Fechamento (Close)?
+   
     
-5. Que operações estão sendo realizadas abaixo ? 
+6. Que operações estão sendo realizadas abaixo ? 
     1. Exemplo 1
     
     ![image.png](images//image8.png)
@@ -126,7 +131,7 @@ plt.show()
 
     ![image.png](images//image9.png)
 
-6. A Figura abaixo representa o que ? 
+7. A Figura abaixo representa o que ? 
     
     ![image.png](images//image10.png)
     
@@ -134,7 +139,7 @@ plt.show()
     2. Convolução
     3. Binarização
 
-7. Qual a provável técnica abaixo: 
+8. Qual a provável técnica abaixo: 
     
     ![image.png](images//image11.png)
     
@@ -142,7 +147,7 @@ plt.show()
     2. Filtre da Média ou Mediana
     3. Conversão de Espaço de Cor
 
-8. O processo abaixo utiliza morfologia matemática. Defina a ordem das operações
+9. O processo abaixo utiliza morfologia matemática. Defina a ordem das operações
 
     ![image.png](images//image12.png)
 
