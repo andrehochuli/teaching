@@ -22,15 +22,15 @@ Este simulado direciona os estudos sobre os temas que podem ser cobrados. As que
     
 4. A imagem abaixo é resultante de um processo de binarização? 
 
-![image.png](images//image%201.png)
+    ![image.png](images//image%201.png)
 
 1. Porque o sistema de cor RGB não é tão eficiente para segmentação? 
 
 1. Imagine que você tenha que segmentar um objeto de cor vermelha (tomate). Discuta os limites da solução usando RGB. Tome como base o split dos canais e o histograma da cor vermelha, abaixo representados:
 
-![image.png](images//image%202.png)
+    ![image.png](images//image%202.png)
 
-![image.png](images//image%203.png)
+    ![image.png](images//image%203.png)
 
 1. Abaixo é proposto um algoritmo de segmentação para bolas de tennis. Responda:
     1. O algoritmo usa qual espaço de cor?
@@ -65,9 +65,9 @@ plt.title('Canal V')
 plt.show()
 ```
 
-![image.png](images//image%204.png)
+    ![image.png](images//image%204.png)
 
-![image.png](images//image%205.png)
+    ![image.png](images//image%205.png)
 
 ```python
 import matplotlib.pyplot as plt
@@ -111,10 +111,10 @@ plt.show()
 2. Que técnicas utilizam convolução? Cite ao menos três
 3. Qual a diferença entre um filtro da média e mediana? Em termos matématicos e em termos de resultados finais. (Redução ou espalhamento do ruído?)
 4. Acerca de Operações Morfológicas em Imagens:
-    1. O que é uma operação de Erosão (erode)?
-    2. O que é uma operação de Dilatação (dilate)?
-    3. O que é uma operação de Abertura (open)?
-    4. O que é uma operação de Fechamento (Close)?
+    a. O que é uma operação de Erosão (erode)?
+    b. O que é uma operação de Dilatação (dilate)?
+    c. O que é uma operação de Abertura (open)?
+    d. O que é uma operação de Fechamento (Close)?
     
 5. Que operações estão sendo realizadas abaixo ? 
     1. Exemplo 1
@@ -124,9 +124,9 @@ plt.show()
     b. Exemplo 2
     
 
-![image.png](images//image%209.png)
+    ![image.png](images//image%209.png)
 
-1. A Figura abaixo representa o que ? 
+6. A Figura abaixo representa o que ? 
     
     ![image.png](images//image%2010.png)
     
@@ -134,7 +134,7 @@ plt.show()
     2. Convolução
     3. Binarização
 
-1. Qual a provável técnica abaixo: 
+7. Qual a provável técnica abaixo: 
     
     ![image.png](images//image%2011.png)
     
@@ -142,9 +142,9 @@ plt.show()
     2. Filtre da Média ou Mediana
     3. Conversão de Espaço de Cor
 
-1. O processo abaixo utiliza morfologia matemática. Defina a ordem das operações
+8. O processo abaixo utiliza morfologia matemática. Defina a ordem das operações
 
-![image.png](images//image%2012.png)
+    ![image.png](images//image%2012.png)
 
 # Pipeline de Segmentação
 
@@ -154,29 +154,29 @@ plt.show()
     ![image.png](images//image%2013.png)
     
 
-b. Segmentar componentes de texto:
+    2. Segmente os componentes de texto:
 
-![image.png](images//image%2014.png)
+    ![image.png](images//image%2014.png)
 
 # Descritores de características
 
 1. Dado a imagem abaixo, que tipo de descritor de características voce decidiria usar:
 
-![image.png](images//image%2015.png)
+    ![image.png](images//image%2015.png)
 
-1. Forma / Borda
-2. Textura
-3. Projeção de Histograma
+    a. Forma / Borda
+    b. Textura
+    c. Projeção de Histograma
 
-1. Dado a imagem abaixo, apos realizar a segmentação, que tipo de descritor de características voce decidiria usar para diferenciar as moedas:
+2. Dado a imagem abaixo, apos realizar a segmentação, que tipo de descritor de características voce decidiria usar para diferenciar as moedas:
     
     ![image.png](images//image%2016.png)
     
 
-1. Forma / Borda
-2. Textura
-3. Projeção de Histograma
+    a. Forma / Borda
+    b. Textura
+    c. Projeção de Histograma
 
-1. Imagine um problema em que voce tenha que classificar os dois tipos de objetos abaixo. Que tipo de descritor seria mais adequado? Considere os objetos já segmentados
+3. Imagine um problema em que voce tenha que classificar os dois tipos de objetos abaixo. Que tipo de descritor seria mais adequado? Considere os objetos já segmentados
 
-![image.png](images//image%2017.png)
+    ![image.png](images//image%2017.png)
