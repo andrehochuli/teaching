@@ -169,19 +169,67 @@ Exemplo: Cálculo da Distância Euclidiana entre a Amostra de Teste e a Primeira
 
 ![image](https://github.com/user-attachments/assets/b751dbea-2756-4d2c-bc38-67e5dca568e6)
 
+Vamos sumarizar para todas as amostras: 
+
+![image](https://github.com/user-attachments/assets/e8da5906-6daa-467e-a83f-8e0198edd9c7)
+
+Por fim, vamos fazer a votação dos K Vizinhos:
+
+### Tabela de Distâncias Ordenada
+
+| Amostra    | Distância | Classe |
+|------------|-----------|--------|
+| Amostra 2  | 1.41      | B      |
+| Amostra 4  | 1.41      | B      |
+| Amostra 6  | 1.41      | A      |
+| Amostra 3  | 1.73      | A      |
+| Amostra 1  | 3.00      | B      |
+| Amostra 5  | 3.00      | B      |
+
+#### Votação para K = 3
+- **Classe B**: 2 votos
+- **Classe A**: 1 voto
+
+Resultado: A amostra de teste seria classificada como pertencente à **Classe B**.
+
+#### Votação para K = 5
+- **Classe B**: 3 votos
+- **Classe A**: 2 votos
+
+Resultado: A amostra de teste seria classificada como pertencente à **Classe B**.
 
 
 #### Algoritmo Naive Bayes
 
-- Explique de maneira sucinta como funciona o Naive Bayes.
-- O que é uma probabilidade a posteriori e a priori? Como isso é aplicado no Naive Bayes?
-- Como aplicar o modelo Naive Bayes a datasets com atributos numéricos, tais como peso, altura, salário, etc.? Dê exemplos.
+- **Explique de maneira sucinta como funciona o Naive Bayes:**  
+  O Naive Bayes é um algoritmo de classificação baseado no Teorema de Bayes, que assume que todas as características (atributos) são independentes umas das outras. Ele calcula a probabilidade de uma amostra pertencer a cada classe e escolhe a classe com a maior probabilidade. A "ingenuidade" (naive) vem da suposição de independência entre as características, o que nem sempre é realista, mas o modelo ainda pode fornecer boas classificações.
+
+- **O que é uma probabilidade a posteriori e a priori? Como isso é aplicado no Naive Bayes?**  
+  - **Probabilidade a priori**: é a probabilidade inicial de um evento ocorrer antes de observar qualquer dado, como a probabilidade de uma pessoa pertencer à classe "A" ou "B" sem considerar as características.  
+  - **Probabilidade a posteriori**: é a probabilidade revisada de um evento ocorrer após a observação de novos dados (as características).  
+  No Naive Bayes, a probabilidade a priori é ajustada pela probabilidade dos atributos observados para calcular a probabilidade a posteriori, que é usada para classificar a amostra.
 
 #### Algoritmo Decision Tree
 
-- Explique com suas palavras o algoritmo de árvore de decisão. Ilustre um exemplo.
-- O que é a entropia, probabilidade e ganho de informação? Como isso influência na construção da árvore?
-- O que o ganho de informação impacta para este algoritmo?
+- **Explique com suas palavras o algoritmo de árvore de decisão. Ilustre um exemplo.**
+
+  O algoritmo de árvore de decisão é um modelo de aprendizado supervisionado que faz divisões repetidas no espaço de atributos dos dados até atingir uma decisão final. A árvore é composta por "nós", onde cada nó faz uma pergunta sobre um atributo, e "ramos", que são os caminhos que seguem dependendo das respostas. No final, as folhas da árvore representam as classes ou valores preditos. Por exemplo, em um problema de classificação de pessoas em "Atletas" ou "Não Atletas", a árvore poderia fazer perguntas como "A altura é maior que 1.80m?" e "O peso é maior que 80kg?" para classificar corretamente.
+
+Aqui está a imagem visual ilustrando o exemplo (jogar tennis?) de uma árvore de decisão, onde cada nó representa uma pergunta sobre um atributo até chegar à decisão final nas folhas. A árvore mostra como a informação é filtrada em etapas para tomar uma decisão ou classificação.
+
+![image](https://github.com/user-attachments/assets/70f58117-0415-4da7-9cdb-4c67a6e8cf52)
+
+![image](https://github.com/user-attachments/assets/2ad255df-dd27-43e9-9a8a-01190b8ea84b)
+
+- **O que é a entropia, probabilidade e ganho de informação? Como isso influência na construção da árvore?**  
+  - **Entropia**: Mede a desordem ou incerteza dos dados em relação às classes. Se todas as instâncias de um conjunto de dados pertencerem à mesma classe, a entropia será 0 (máxima ordem). Se houver uma distribuição equilibrada entre as classes, a entropia será alta (máxima desordem).
+  - **Probabilidade**: É a chance de um evento ocorrer, sendo usada para calcular a entropia. Ela indica a frequência relativa de cada classe no conjunto de dados.
+  - **Ganho de informação**: É a redução da entropia após dividir os dados com base em um atributo. Quanto maior o ganho de informação, mais eficaz é a divisão em reduzir a incerteza nas classes.
+
+  Esses conceitos influenciam a construção da árvore, pois o algoritmo escolhe, em cada nó, o atributo que maximiza o ganho de informação, ou seja, que melhor separa as classes.
+
+- **O que o ganho de informação impacta para este algoritmo?**  
+  O ganho de informação é fundamental na construção de uma árvore de decisão, pois define quais atributos serão usados para dividir os dados em cada nó. O algoritmo seleciona o atributo com o maior ganho de informação, garantindo que a árvore se torne mais eficaz em separar as classes à medida que cresce. Isso ajuda a minimizar a complexidade da árvore e evitar overfitting, garantindo decisões mais precisas.
 
 #### Análise Crítica
 
