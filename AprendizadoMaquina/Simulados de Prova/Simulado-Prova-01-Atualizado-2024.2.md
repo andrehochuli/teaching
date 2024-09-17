@@ -275,16 +275,18 @@ Dado que há mínima sobreposição entre as classes azul e vermelha, a fronteir
 - **O que determinam as métricas de acurácia e recall?**
 
   - **Acurácia**: A acurácia é a métrica que mede a proporção de previsões corretas feitas pelo modelo em relação ao total de previsões. Ela é determinada pela fórmula:
-    \[
-    \text{Acurácia} = \frac{\text{Previsões Corretas}}{\text{Total de Previsões}}
-    \]
+
+    ![image](https://github.com/user-attachments/assets/f281360b-e682-4b7e-ade3-69358c45178c)
+
+  
     Embora seja uma métrica geral para medir a performance do modelo, ela não considera como as classes estão distribuídas no dataset, o que pode ser problemático em cenários de classes desbalanceadas.
   
   - **Recall**: O recall mede a capacidade do modelo de identificar corretamente as instâncias positivas de uma determinada classe. A fórmula é:
-    \[
-    \text{Recall} = \frac{\text{Verdadeiros Positivos}}{\text{Verdadeiros Positivos} + \text{Falsos Negativos}}
-    \]
-    Ele foca na capacidade do modelo de capturar todos os exemplos reais de uma classe, sendo especialmente útil em problemas onde é mais importante evitar falsos negativos (como detecção de fraudes ou diagnósticos médicos).
+ 
+  ![image](https://github.com/user-attachments/assets/0ef2d8d5-f76b-44d9-8298-8cb09bf8b515)
+
+
+    O recall avalia capacidade do modelo de capturar todos os exemplos reais de uma classe, sendo especialmente útil em problemas onde é mais importante evitar falsos negativos (como detecção de fraudes ou diagnósticos médicos).
 
 ---
 
@@ -294,6 +296,7 @@ Dado que há mínima sobreposição entre as classes azul e vermelha, a fronteir
 
   **Exemplo**:
   Suponha que em um problema de detecção de fraudes, 95% das transações sejam legítimas e apenas 5% sejam fraudulentas. Se o modelo sempre prever que todas as transações são legítimas, ele terá uma **acurácia de 95%**, o que parece bom. No entanto, o modelo nunca está identificando as fraudes (classe de interesse), o que torna essa acurácia inútil. Nesses casos, métricas como **recall** ou **F1-score** são mais apropriadas, pois focam no desempenho do modelo em classes específicas e minoritárias.
+
 - Calcule a acurácia a partir da matriz de confusão abaixo:
 
 <img title="" src="./images/cf_matrix_a.png" alt="asd" width="207" data-align="center">
@@ -306,16 +309,38 @@ Dado que há mínima sobreposição entre as classes azul e vermelha, a fronteir
     
     **Caso A:** 
     
-    <img title="" src="https://user-images.githubusercontent.com/19996897/39518681-875e0048-4e21-11e8-938e-45a8661ad92e.PNG" alt="GitHub - SrikanthVelpuri/dogsvscats: Classification of Cats and Dogs" data-align="center" width="376">
+    |               | Predito Cão | Predito Gato |
+    |---------------|-------------|--------------|
+    | **Real Cão**  | 40          | 10           |
+    | **Real Gato** | 0           | 50           |
     
-    **Caso B:**
+    **Respostas:**
+    
+    - **Qual é a acurácia global?**  
+      A acurácia global é **90%** (0.9), ou seja, o modelo fez 90% de previsões corretas.
+    
+    - **O modelo está bem ajustado ou existe overfitting?**  
+      O modelo parece estar **bem ajustado**, pois há uma boa taxa de acertos, e não há sinais evidentes de overfitting. Porém, 10 falsos negativos (10 gatos classificados como cães) indicam que o modelo pode estar confundindo algumas instâncias.
+    
+    - **O dataset pode ser considerado balanceado?**  
+      Sim, o dataset é **balanceado**, pois há um número igual de instâncias de Cães e Gatos (50 de cada), o que garante uma distribuição equilibrada entre as classes.
+    
+    
+**Caso B**
 
-    <img title="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqsf9EpkqDpXyEG96oaWn8A96wP7ekB96SxA&usqp=CAU" alt="Evaluating a Classification Model Machine Learning, Deep Learning, and Computer Vision" data-align="center" width="311">
+|               | Predito Carro | Predito Moto |
+|---------------|---------------|--------------|
+| **Real Carro** | 90            | 0            |
+| **Real Moto**  | 8             | 2            |
 
-    **Caso C:**
+Respostas:
 
-   <img title="" src="https://cdn-images-1.medium.com/max/1600/0*9dlgBM9YK_UQnUtN." alt="Avaliação do Modelo de Classificação BLOG DO ZOUZA" data-align="center" width="370">
+- **Qual é a acurácia global?**  
+  A acurácia global é **92%** (0.92), ou seja, o modelo fez 92% de previsões corretas.
 
-    **Caso D:**
+- **O modelo está bem ajustado ou existe overfitting?**  
+  O modelo apresenta sinais de **overfitting**. Apesar da alta acurácia geral, ele falha em classificar corretamente as motos, errando 80% das previsões (8 falsos positivos). O modelo se ajustou excessivamente à classe majoritária (carros), acertando todos os carros, mas não consegue generalizar bem para a classe minoritária (motos).
 
-<img src="./images/imbalanced.png" title="" alt="sss" data-align="center">
+- **O dataset pode ser considerado balanceado?**  
+  Não, o dataset é **desbalanceado**, com 90 instâncias de carros e apenas 10 de motos. Esse desbalanceamento contribuiu para o overfitting, pois o modelo favorece a classe majoritária (carros) e tem dificuldades em prever corretamente as motos.
+```
