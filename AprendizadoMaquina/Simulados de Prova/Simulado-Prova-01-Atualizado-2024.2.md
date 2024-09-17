@@ -136,6 +136,15 @@ A Distribuição A tende a ser mais fácil para um modelo de classificação, en
 
 <img title="" src="./images/2023-04-18-17-34-51-image.png" alt="" data-align="center">
 
+Classes bem definidas (esqueda):
+Em um dataset onde as classes estão bem separadas, um valor de K pequeno, como K = 1, tende a funcionar bem, pois a distância até o vizinho mais próximo já será suficiente para classificar corretamente a nova instância.
+Se K for aumentado, o algoritmo ainda tende a classificar corretamente, pois a maioria dos vizinhos próximos pertencerá à mesma classe, e as classes são claramente distintas.
+Dataset com overlap (sobreposição entre as classes):
+
+Classes com sobreposição (direita):
+Em um dataset com sobreposição entre as distribuições, um valor pequeno de K (como K = 1) pode tornar o modelo mais suscetível a ruídos. Isso porque um único vizinho pode pertencer à classe errada devido à sobreposição das classes, resultando em classificações incorretas.
+Aumentar o valor de K pode ajudar a suavizar esse efeito, pois o algoritmo considerará um número maior de vizinhos, o que pode permitir que a classe majoritária dos vizinhos mais próximos "corrija" o impacto do ruído ou da sobreposição. No entanto, se K for muito grande, o modelo pode incluir muitos vizinhos distantes de outras classes, prejudicando a precisão.
+
 - Qual a classe da amostra de teste para K=3 e K=5, abaixo?
 
 <img title="" src="./images/2023-04-18-17-59-41-image.png" alt="" width="339" data-align="center">
