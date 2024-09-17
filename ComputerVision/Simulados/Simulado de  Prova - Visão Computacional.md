@@ -1,14 +1,14 @@
-![image](https://github.com/user-attachments/assets/5516f9ab-1439-4a7e-b926-cf3577daf0ac)# Simulado-de-Prova-Vis.Comput
+# Simulado de Prova de Visão Computacional
 
-Este simulado direciona os estudos sobre os temas que podem ser cobrados. As questões podem aparecer em formatos como: discursiva, múltipla escolha, verdadeiro ou falso, validação de algoritmos, entre outros. 
+Este simulado orienta os estudos sobre os temas que podem ser cobrados na prova. As questões podem ser apresentadas em formatos como: discursiva, múltipla escolha, verdadeiro ou falso, validação de algoritmos, entre outros.
 
 ## Fundamentos de Imagens Digitais
 
 1. O que é um pixel e o que ele representa?
 2. Qual a relação entre resolução e tamanho da imagem?
-3. Uma imagem maior é necessariamente uma imagem com mais resolução? Discuta sobre isso
+3. Uma imagem maior é necessariamente uma imagem com mais resolução? Discuta essa questão.
 4. Como a cor é representada na imagem digital?
-5. Por que ao isolar cada canal de cor, as imagens resultantes são em níveis de cinza?
+5. Por que, ao isolar cada canal de cor, as imagens resultantes ficam em tons de cinza?
 6. Qual a diferença básica entre os sistemas de cor RGB e HSV?
 7. Cite uma aplicação do sistema de cor HSV no processamento de imagens.
 
@@ -16,26 +16,24 @@ Este simulado direciona os estudos sobre os temas que podem ser cobrados. As que
 
 1. O que é um histograma de imagem? Cite algumas situações em que ele pode ser aplicado.
 2. O que é o processo de binarização (threshold)?
-3. Dado o histograma abaixo, qual o valor de threshold indicado? 
+3. Dado o histograma abaixo, qual seria o valor de threshold indicado?
+
+   ![image.png](images//image.png)
     
-    ![image.png](images//image.png)
-    
-4. A imagem abaixo é resultante de um processo de binarização? 
+4. A imagem abaixo é resultado de um processo de binarização?
 
-    ![image.png](images//image1.png)
+   ![image.png](images//image1.png)
 
-1. Porque o sistema de cor RGB não é tão eficiente para segmentação? 
+5. Por que o sistema de cor RGB não é tão eficiente para segmentação?
+6. Imagine que você precise segmentar um objeto de cor vermelha (como um tomate). Discuta as limitações da solução utilizando RGB, considerando a separação dos canais e o histograma da cor vermelha, representados abaixo:
 
-1. Imagine que você tenha que segmentar um objeto de cor vermelha (tomate). Discuta os limites da solução usando RGB. Leve em conta o split dos canais e o histograma da cor vermelha, abaixo representados:
+   ![image.png](images//image2.png)
+   ![image.png](images//image3.png)
 
-    ![image.png](images//image2.png)
-
-    ![image.png](images//image3.png)
-
-1. Abaixo é proposto um algoritmo de segmentação para bolas de tennis. Responda:
-    1. O algoritmo usa qual espaço de cor?
-    2. Qual canal foi usado para segmentação ? Qual o motivo?
-    3. Qual a análise realizada para a definição do threshold em 160?
+7. Abaixo é proposto um algoritmo de segmentação para bolas de tênis. Responda:
+    1. Qual espaço de cor o algoritmo utiliza?
+    2. Qual canal foi utilizado para a segmentação? Qual o motivo?
+    3. Qual foi a análise realizada para definir o threshold em 160?
 
 ```python
 import cv2
@@ -88,7 +86,6 @@ ret, thresh_h = cv2.threshold(h, 160, 255, cv2.THRESH_BINARY_INV)
 plt.imshow(cv2.cvtColor(thresh_h, cv2.COLOR_GRAY2BGR))
 plt.title('Canal H Binarizado')
 plt.show()
-
 ```
 
 ![image.png](images//image6.png)
@@ -100,99 +97,88 @@ result = cv2.bitwise_and(img, img, mask=thresh_h)
 plt.imshow(cv2.cvtColor(result, cv2.COLOR_BGR2RGB))
 plt.title('Imagem com Máscara Aplicada')
 plt.show()
-
 ```
 
 ![image.png](images//image7.png)
 
-# Convoluções
+## Convoluções
 
-1. O que é uma Convolução ? 
-2. Que técnicas utilizam convolução? Cite ao menos três
-3. Qual a diferença entre um filtro da média e mediana? Em termos matématicos e em termos de resultados finais. (Redução ou espalhamento do ruído?)
-4. Acerca de Operações Morfológicas em Imagens:
+1. O que é uma convolução?
+2. Quais técnicas utilizam convolução? Cite ao menos três.
+3. Qual a diferença entre um filtro de média e um de mediana, tanto em termos matemáticos quanto em termos de resultados finais (redução ou dispersão de ruído)?
+4. Acerca das operações morfológicas em imagens:
    
-    a. O que é uma operação de Erosão (erode)?
+    a. O que é uma operação de erosão (erode)?
    
-    b. O que é uma operação de Dilatação (dilate)?
+    b. O que é uma operação de dilatação (dilate)?
    
-    c. O que é uma operação de Abertura (open)?
+    c. O que é uma operação de abertura (open)?
    
-    d. O que é uma operação de Fechamento (Close)?
-   
+    d. O que é uma operação de fechamento (close)?
     
-6. Que operações estão sendo realizadas abaixo ? 
-    1. Exemplo 1
+5. Que operações estão sendo realizadas nas imagens abaixo? 
+    a. Exemplo 1
     
     ![image.png](images//image8.png)
     
     b. Exemplo 2
     
-
     ![image.png](images//image9.png)
 
-7. A Figura abaixo representa o que ? 
+6. A figura abaixo representa o quê? 
     
     ![image.png](images//image10.png)
     
-    1. Histograma
-    2. Convolução
-    3. Binarização
+    a. Histograma  
+    b. Convolução  
+    c. Binarização  
 
-8. Qual a provável técnica abaixo: 
+7. Qual é a técnica representada abaixo? 
     
     ![image.png](images//image11.png)
     
-    1. Binarização
-    2. Filtre da Média ou Mediana
-    3. Conversão de Espaço de Cor
+    a. Binarização  
+    b. Filtro de Média ou Mediana  
+    c. Conversão de Espaço de Cor  
 
-9. O processo abaixo utiliza morfologia matemática. Defina a ordem das operações
+8. O processo abaixo utiliza morfologia matemática. Defina a ordem das operações:
 
     ![image.png](images//image12.png)
 
-# Pipeline de Segmentação
+## Pipeline de Segmentação
 
-1. Crie um pseudo-código para o seguinte pipeline: 
-    1. Encontrar bolas de Tennis
-    
+1. Crie um pseudocódigo para o seguinte pipeline: 
+    a. Encontrar bolas de tênis:
+
     ![image.png](images//image13.png)
     
-
-    2. Segmente os componentes de texto:
+    b. Segmentar os componentes de texto:
 
     ![image.png](images//image14.png)
 
-# Descritores de características
+## Descritores de Características
 
-1. Dado as imagens abaixo, que tipo de descritor de características voce decidiria usar? assinale uma opção:
+1. Dadas as imagens abaixo, que tipo de descritor de características você utilizaria? Assinale uma opção:
 
     ![image](https://github.com/user-attachments/assets/c27eb9f6-2ef6-42ed-918b-06eb59b5c3a4)
 
+    a. Forma / Borda  
+    b. Textura  
+    c. Projeção de Histograma  
 
-    a. Forma / Borda
-   
-    b. Textura
-   
-    c. Projeção de Histograma
+2. Dada a imagem abaixo, após realizar a segmentação, que tipo de descritor de características você utilizaria para diferenciar as moedas? Assinale uma opção:
 
-3. Dado a imagem abaixo, apos realizar a segmentação, que tipo de descritor de características voce decidiria usar para diferenciar as moedas?, assinale uma opção:
-    
     ![image.png](images//image16.png)
-    
 
-    a. Forma / Borda
-   
-    b. Textura
-   
-    c. Projeção de Histograma
+    a. Forma / Borda  
+    b. Textura  
+    c. Projeção de Histograma  
 
-4. Imagine um problema em que voce tenha que classificar os dois tipos de objetos abaixo. Que tipo de descritor seria mais adequado? Considere os objetos já segmentados
+3. Imagine um problema em que você precise classificar os dois tipos de objetos abaixo. Que tipo de descritor seria mais adequado? Considere os objetos já segmentados:
 
     ![image.png](images//image17.png)
 
-    a. Forma / Borda
+    a. Forma / Borda  
+    b. Textura  
+    c. Projeção de Histograma  
 
-    b. Textura
-
-    c. Projeção de Histograma
