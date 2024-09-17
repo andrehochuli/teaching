@@ -65,9 +65,9 @@ plt.title('Canal V')
 plt.show()
 ```
 
-    ![image.png](images//image%204.png)
+![image.png](images//image4.png)
 
-    ![image.png](images//image%205.png)
+![image.png](images//image5.png)
 
 ```python
 import matplotlib.pyplot as plt
