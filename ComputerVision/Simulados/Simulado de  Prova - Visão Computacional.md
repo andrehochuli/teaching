@@ -165,18 +165,22 @@ plt.show()
     ![image.png](images//image%2015.png)
 
     a. Forma / Borda
+   
     b. Textura
+   
     c. Projeção de Histograma
 
-2. Dado a imagem abaixo, apos realizar a segmentação, que tipo de descritor de características voce decidiria usar para diferenciar as moedas:
+3. Dado a imagem abaixo, apos realizar a segmentação, que tipo de descritor de características voce decidiria usar para diferenciar as moedas:
     
     ![image.png](images//image%2016.png)
     
 
     a. Forma / Borda
+   
     b. Textura
+   
     c. Projeção de Histograma
 
-3. Imagine um problema em que voce tenha que classificar os dois tipos de objetos abaixo. Que tipo de descritor seria mais adequado? Considere os objetos já segmentados
+4. Imagine um problema em que voce tenha que classificar os dois tipos de objetos abaixo. Que tipo de descritor seria mais adequado? Considere os objetos já segmentados
 
     ![image.png](images//image%2017.png)
