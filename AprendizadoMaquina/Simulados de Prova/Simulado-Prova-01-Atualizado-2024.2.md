@@ -160,6 +160,8 @@ Aumentar o valor de K pode ajudar a suavizar esse efeito, pois o algoritmo consi
 
 
 **Amostra de Teste**
+
+
 | Característica 1 | Característica 2 | Característica 3 | Classificação |
 | **2**            | **1**            | **1**            |  ?????        |
 
