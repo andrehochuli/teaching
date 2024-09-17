@@ -1,6 +1,8 @@
 
 # SIMULADO DE PROVA
 
+Este simulado de prova tem como objetivo orientar o aluno em seus estudos, além de desmistificar a forma como o conteúdo será cobrado durante a avaliação. As questões podem aparecer em diversos formatos, como discursivas, de múltipla escolha, verdadeiro ou falso, associações, resolução de problemas, ou até mesmo em forma de estudos de caso. É importante ressaltar que o simulado oferece uma base de validação do nível de conhecimento do aluno, ajudando a identificar pontos fortes e áreas que necessitam de maior atenção. No entanto, ele não deve ser utilizado como única fonte de estudo. 
+
 ## APRENDIZADO DE MÁQUINA SUPERVISIONADO
 
 ### Conceitos Gerais
