@@ -62,12 +62,15 @@
   8. **Predição e Implantação**: Aplicar o modelo final para realizar previsões em novos dados e colocar o modelo em produção.
 
   ou conforme na figura abaixo:
+
+  
   ![image](https://github.com/user-attachments/assets/9ca14f59-9bb1-4948-9035-043504aa452b)
 
 
 - **O que é classificação binária e multi-classes?**
   - **Classificação binária**: É o problema onde existem apenas duas classes possíveis para a predição. Exemplo: classificar se um e-mail é "spam" ou "não spam".
   - **Classificação multi-classes**: É o problema em que existem mais de duas classes possíveis. Exemplo: classificar um tipo de fruta como "maçã", "banana" ou "laranja".
+     
   ![image](https://github.com/user-attachments/assets/e8a58ccb-8a1f-4371-97a7-d38aded89234)
 
 
@@ -85,12 +88,18 @@
 ![image](https://github.com/user-attachments/assets/50bc58c9-40ea-486e-8f60-25fda22ce86c)
 
 
-#### Análise Exploratória
+#### Análise Inicial
 
-- O que significa a análise exploratória dos dados? O que desejamos verificar com isso?
+- Porque é interessante visualizar a distribuição dos dados? O que desejamos verificar com isso?
+  Ao plotar distribuições, podemos verificar como os dados estão espalhados, se estão balanceados entre as classes e como as variáveis se comportam, permitindo ajustes ou tratamentos antes da modelagem.
+  
 - Analisando as distribuições abaixo (A e B), qual apresenta as fronteiras de decisão mais definidas? Justifique sua resposta.
 
 <img title="" src="./images/2023-04-18-15-50-29-image.png" alt="" data-align="center">
+
+A Distribuição A mostra fronteiras de decisão mais definidas, pois as amostras de cada classe estão mais separadas. Já a Distribuição B tem uma maior sobreposição entre as classes, o que resulta em fronteiras de decisão menos definidas.
+
+A Distribuição A tende a ser mais fácil para um modelo de classificação, enquanto a Distribuição B representa um cenário mais complexo, onde as classes são mais difíceis de separar.
 
 - O que é a normalização de atributos? Por que isso é importante?
 
