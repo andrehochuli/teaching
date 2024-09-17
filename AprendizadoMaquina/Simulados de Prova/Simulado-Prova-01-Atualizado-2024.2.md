@@ -204,6 +204,27 @@ Resultado: A amostra de teste seria classificada como pertencente à **Classe B*
 - **Explique de maneira sucinta como funciona o Naive Bayes:**  
   O Naive Bayes é um algoritmo de classificação baseado no Teorema de Bayes, que assume que todas as características (atributos) são independentes umas das outras. Ele calcula a probabilidade de uma amostra pertencer a cada classe e escolhe a classe com a maior probabilidade. A "ingenuidade" (naive) vem da suposição de independência entre as características, o que nem sempre é realista, mas o modelo ainda pode fornecer boas classificações.
 
+- **O que seria atributos dependentes e indepentes ?
+  ### Exemplos de Atributos **Independentes** e **Dependentes**:
+
+- **Exemplo de Atributos Independentes**:  
+  Imagine que estamos tentando prever se uma pessoa gosta de um tipo de comida com base em dois atributos:  
+  1. **Altura** (em metros)  
+  2. **Cor dos olhos** (azul, castanho, verde, etc.)
+
+  Esses dois atributos são **independentes** porque o valor de um não afeta o outro. A altura de uma pessoa não tem qualquer influência na cor dos seus olhos.
+
+- **Exemplo de Atributos Dependentes**:  
+  Agora, considere um cenário de previsão de saúde cardiovascular com base em dois atributos:  
+  1. **Peso** (em kg)  
+  2. **Índice de Massa Corporal (IMC)**
+
+  Esses atributos são **dependentes** porque o IMC é calculado diretamente com base no peso e na altura da pessoa. Se o peso de uma pessoa aumentar, seu IMC provavelmente aumentará também, indicando uma relação direta entre os dois atributos.
+
+### Conclusão:
+No Naive Bayes, assume-se que todos os atributos são independentes (mesmo quando não são), o que facilita os cálculos, mas pode perder nuances importantes quando há dependências entre os atributos.
+  
+
 - **O que é uma probabilidade a posteriori e a priori? Como isso é aplicado no Naive Bayes?**  
   - **Probabilidade a priori**: é a probabilidade inicial de um evento ocorrer antes de observar qualquer dado, como a probabilidade de uma pessoa pertencer à classe "A" ou "B" sem considerar as características.  
   - **Probabilidade a posteriori**: é a probabilidade revisada de um evento ocorrer após a observação de novos dados (as características).  
