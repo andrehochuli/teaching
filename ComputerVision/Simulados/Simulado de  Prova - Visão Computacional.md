@@ -1,4 +1,4 @@
-# Simulado-de-Prova-Vis.Comput
+![image](https://github.com/user-attachments/assets/5516f9ab-1439-4a7e-b926-cf3577daf0ac)# Simulado-de-Prova-Vis.Comput
 
 Este simulado direciona os estudos sobre os temas que podem ser cobrados. As questões podem aparecer em formatos como: discursiva, múltipla escolha, verdadeiro ou falso, validação de algoritmos, entre outros. 
 
@@ -165,9 +165,10 @@ plt.show()
 
 # Descritores de características
 
-1. Dado a imagem abaixo, que tipo de descritor de características voce decidiria usar, assinale uma opção:
+1. Dado as imagens abaixo, que tipo de descritor de características voce decidiria usar? assinale uma opção:
 
-    ![image.png](images//image15.png)
+    ![image](https://github.com/user-attachments/assets/c27eb9f6-2ef6-42ed-918b-06eb59b5c3a4)
+
 
     a. Forma / Borda
    
@@ -175,7 +176,7 @@ plt.show()
    
     c. Projeção de Histograma
 
-3. Dado a imagem abaixo, apos realizar a segmentação, que tipo de descritor de características voce decidiria usar para diferenciar as moedas, assinale uma opção:
+3. Dado a imagem abaixo, apos realizar a segmentação, que tipo de descritor de características voce decidiria usar para diferenciar as moedas?, assinale uma opção:
     
     ![image.png](images//image16.png)
     
