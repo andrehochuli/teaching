@@ -247,7 +247,7 @@ Aqui está a imagem visual ilustrando o exemplo (jogar tennis?) de uma árvore d
 - **O que é a entropia, probabilidade e ganho de informação? Como isso influência na construção da árvore?**  
   - **Entropia**: Mede a desordem ou incerteza dos dados em relação às classes. Se todas as instâncias de um conjunto de dados pertencerem à mesma classe, a entropia será 0 (máxima ordem). Se houver uma distribuição equilibrada entre as classes, a entropia será alta (máxima desordem).
   - **Probabilidade**: É a chance de um evento ocorrer, sendo usada para calcular a entropia. Ela indica a frequência relativa de cada classe no conjunto de dados.
-  - **Ganho de informação**: É a redução da entropia após dividir os dados com base em um atributo. Quanto maior o ganho de informação, mais eficaz é a divisão em reduzir a incerteza nas classes.
+  - **Ganho de informação**: É a redução da entropia após a divisão dos dados com base em um atributo. Quanto maior o ganho de informação, mais eficiente é a divisão em diminuir a incerteza entre as classes. Em árvores de decisão, o atributo com o maior ganho de informação é aquele que melhor separa as classes e, por isso, é escolhido como a raiz da árvore. Para decidir os nós subsequentes nas subárvores, o ganho de informação é recalculado entre os atributos restantes, selecionando sempre o que proporciona a melhor separação das classes.
 
   Esses conceitos influenciam a construção da árvore, pois o algoritmo escolhe, em cada nó, o atributo que maximiza o ganho de informação, ou seja, que melhor separa as classes.
 
