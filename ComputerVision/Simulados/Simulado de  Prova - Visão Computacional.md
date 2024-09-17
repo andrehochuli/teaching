@@ -148,6 +148,7 @@ plt.show()
 ## Pipeline de Segmentação
 
 1. Crie um pseudocódigo para o seguinte pipeline: 
+
     a. Encontrar bolas de tênis:
 
     ![image.png](images//image13.png)
