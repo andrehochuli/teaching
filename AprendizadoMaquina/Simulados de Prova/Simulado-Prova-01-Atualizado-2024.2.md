@@ -297,10 +297,6 @@ Dado que há mínima sobreposição entre as classes azul e vermelha, a fronteir
   **Exemplo**:
   Suponha que em um problema de detecção de fraudes, 95% das transações sejam legítimas e apenas 5% sejam fraudulentas. Se o modelo sempre prever que todas as transações são legítimas, ele terá uma **acurácia de 95%**, o que parece bom. No entanto, o modelo nunca está identificando as fraudes (classe de interesse), o que torna essa acurácia inútil. Nesses casos, métricas como **recall** ou **F1-score** são mais apropriadas, pois focam no desempenho do modelo em classes específicas e minoritárias.
 
-- Calcule a acurácia a partir da matriz de confusão abaixo:
-
-<img title="" src="./images/cf_matrix_a.png" alt="asd" width="207" data-align="center">
-
 - Dadas as matrizes de confusão abaixo, analise os casos individualmente quanto a:
 
   - Qual é a acurácia global?
@@ -326,21 +322,21 @@ Dado que há mínima sobreposição entre as classes azul e vermelha, a fronteir
       Sim, o dataset é **balanceado**, pois há um número igual de instâncias de Cães e Gatos (50 de cada), o que garante uma distribuição equilibrada entre as classes.
     
     
-**Caso B**
+    **Caso B**
+    
+    |               | Predito Carro | Predito Moto |
+    |---------------|---------------|--------------|
+    | **Real Carro** | 90            | 0            |
+    | **Real Moto**  | 8             | 2            |
+    
+    Respostas:
+    
+    - **Qual é a acurácia global?**  
+      A acurácia global é **92%** (0.92), ou seja, o modelo fez 92% de previsões corretas.
+    
+    - **O modelo está bem ajustado ou existe overfitting?**  
+      O modelo apresenta sinais de **overfitting**. Apesar da alta acurácia geral, ele falha em classificar corretamente as motos, errando 80% das previsões (8 falsos positivos). O modelo se ajustou excessivamente à classe majoritária (carros), acertando todos os carros, mas não consegue generalizar bem para a classe minoritária (motos).
+    
+    - **O dataset pode ser considerado balanceado?**  
+      Não, o dataset é **desbalanceado**, com 90 instâncias de carros e apenas 10 de motos. Esse desbalanceamento contribuiu para o overfitting, pois o modelo favorece a classe majoritária (carros) e tem dificuldades em prever corretamente as motos.
 
-|               | Predito Carro | Predito Moto |
-|---------------|---------------|--------------|
-| **Real Carro** | 90            | 0            |
-| **Real Moto**  | 8             | 2            |
-
-Respostas:
-
-- **Qual é a acurácia global?**  
-  A acurácia global é **92%** (0.92), ou seja, o modelo fez 92% de previsões corretas.
-
-- **O modelo está bem ajustado ou existe overfitting?**  
-  O modelo apresenta sinais de **overfitting**. Apesar da alta acurácia geral, ele falha em classificar corretamente as motos, errando 80% das previsões (8 falsos positivos). O modelo se ajustou excessivamente à classe majoritária (carros), acertando todos os carros, mas não consegue generalizar bem para a classe minoritária (motos).
-
-- **O dataset pode ser considerado balanceado?**  
-  Não, o dataset é **desbalanceado**, com 90 instâncias de carros e apenas 10 de motos. Esse desbalanceamento contribuiu para o overfitting, pois o modelo favorece a classe majoritária (carros) e tem dificuldades em prever corretamente as motos.
-```
