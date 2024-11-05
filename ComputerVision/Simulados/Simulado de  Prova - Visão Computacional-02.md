@@ -120,36 +120,32 @@ Este simulado orienta os estudos sobre os temas que podem ser cobrados na prova.
 
 3. Reescreva o seguinte código para que reflita a implementação de uma rede neural convolucional
    ```python
-
-
-model = Sequential([
+      model = Sequential([
     
-    RandomRotation(0.2),
-    Conv2D(32, (3, 3), activation='relu'),
-    Dense(num_classes, activation='softmax'),      
-    MaxPooling2D((2, 2)),
-    RandomFlip("horizontal", input_shape=input_shape),
-    Conv2D(64, (3, 3), activation='relu'),
-    MaxPooling2D((2, 2)),
-    Rescaling(1./255),
-    Conv2D(128, (3, 3), activation='relu'),    
-    Dropout(0.25),
-    Flatten(),
-    MaxPooling2D((2, 2)),
-    RandomZoom(0.2),
-    Dense(128, activation='relu')
-])
-```
+      RandomRotation(0.2),
+      Conv2D(32, (3, 3), activation='relu'),
+      Dense(num_classes, activation='softmax'),      
+      MaxPooling2D((2, 2)),
+      RandomFlip("horizontal", input_shape=input_shape),
+      Conv2D(64, (3, 3), activation='relu'),
+      MaxPooling2D((2, 2)),
+      Rescaling(1./255),
+      Conv2D(128, (3, 3), activation='relu'),    
+      Dropout(0.25),
+      Flatten(),
+      MaxPooling2D((2, 2)),
+      RandomZoom(0.2),
+      Dense(128, activation='relu')
+   ])
+   ```
 
 4. Ao treinar uma ResNet-50, em uma base própria e relativemente pequena, o ciêntista verificou o seguinte gráfico de loss:
 
-![image18.png](images/image18.png)
+   ![image18.png](images/image18.png)
 
-Você pode sugerir alguma melhoria ou está adequada? Implemente um pseudo-código que reflita o que foi implementado se suas sugestões de melhoria (se houverem).
+   Você pode sugerir alguma melhoria ou está adequada? Implemente um pseudo-código que reflita o que foi implementado se suas sugestões de melhoria (se houverem).
 
 ## Aplicações em Visão Computacional
-
-Aqui está uma versão aprimorada da descrição para cada problema no simulado:
 
 1. **Transformação de Desenhos Infantis em Imagens Realistas**  
    Uma escola deseja implementar uma solução que converta os desenhos de crianças em versões realistas, preservando o estilo e a criatividade do desenho original. O sistema deve transformar, por exemplo, um esboço de um animal em uma imagem visualmente próxima à realidade. O projeto requer orientação sobre o uso de modelos de aprendizado profundo adequados para mapear estilos de esboços em imagens realistas.
@@ -164,6 +160,7 @@ Aqui está uma versão aprimorada da descrição para cada problema no simulado:
    Uma empresa precisa de um sistema que identifique regiões em imagens que possivelmente contenham caminhões. O resultado deve ser uma imagem de saída que destaque as áreas onde os caminhões estão presentes, permitindo uma análise mais focada e decisões de tráfego e logística urbanas. Um exemplo da saída é dado abaixo:   
 
 ![yolo](images/image19.png)
+
 
 
 
