@@ -171,7 +171,7 @@ No caso de algumas figuras não aparecerem, opte pela opção em *pdf*
    - **Ajuste dos Dados**: As redes precisam de dados bem ajustados e normalizados, além de técnicas para prevenir overfitting, como regularização e validação cruzada.
 
 3. **O que é uma rede neural convolucional (CNN) e em que tipo de problema ela é comumente aplicada?**  
-   CNNs são redes neurais projetadas para processar dados com estrutura de grade, como imagens, aplicando operações de convolução para detectar padrões locais. São amplamente utilizadas em problemas de visão computacional, como reconhecimento de imagem, detecção de objetos e segmentação de imagem.
+   CNNs são redes neurais projetadas para processar dados de alta dimensionalidade, como imagens, aplicando operações de convolução para detectar padrões locais. São amplamente utilizadas em problemas de visão computacional, como reconhecimento de imagem, detecção de objetos e segmentação de imagem.
 
 4. **Cite as duas principais etapas de uma CNN.**  
    - **Convolução**: Extrai características locais por meio de filtros aplicados nas regiões da entrada.
@@ -198,25 +198,226 @@ No caso de algumas figuras não aparecerem, opte pela opção em *pdf*
 10. **Podemos usar uma CNN para extrair características? Por que as características são chamadas de profundas?**  
     Sim, as CNNs podem ser usadas para extrair características. Elas são chamadas de "profundas" porque são extraídas em várias camadas, onde as camadas iniciais capturam características básicas (como bordas) e camadas mais profundas capturam características de nível mais alto e abstratas (como formas e texturas complexas).
 
-
-
 11. **Descreva técnicas para minimizar o overffiting em redes neurais convolucionais**  
    Explique as técnicas de transfer-learning, data augmentation e dropout, e como elas ajudam a melhorar a generalização de modelos de deep learning em conjuntos de dados de imagens. Também discuta se elas devem ser utilizadas separadamente ou em conjunto.
 
-12. Cite algumas restrições do uso de data augmentation. 
+    **Transfer Learning**: Utiliza modelos pré-treinados em grandes conjuntos de dados para transferir o conhecimento para uma nova tarefa com menos dados. Isso ajuda a reduzir o overfitting, pois o modelo aproveita características já aprendidas em domínios semelhantes, melhorando a generalização.
+    
+    **Data Augmentation**: Aumenta artificialmente o tamanho do conjunto de treinamento aplicando transformações aleatórias às imagens, como rotações, cortes, espelhamentos e alterações de brilho. Essas variações ajudam o modelo a aprender a generalizar para novas instâncias, em vez de memorizar o conjunto de treinamento.
+    
+    **Dropout**: Durante o treinamento, "desativa" aleatoriamente uma fração de neurônios em uma camada, forçando a rede a aprender representações redundantes e mais robustas. Isso reduz a dependência excessiva de qualquer neurônio específico e, portanto, minimiza o overfitting.
+    
+    Essas técnicas podem ser usadas em conjunto para maximizar a robustez do modelo. Transfer learning fornece uma base sólida, data augmentation enriquece o treinamento e dropout regula o ajuste fino da rede.
+
+12. **Cite algumas restrições do uso de data augmentation.**
     Discuta se é possível usar irrestritamente em qualquer cenário. Cite cenários e técnicas nos quais você sugere o uso de aumento de dados e cenários nos quais pode ser prejudicial.
+
+    Data augmentation não deve ser usada de forma irrestrita em todos os cenários. 
+    
+    Em tarefas de classificação de objetos naturais, como reconhecimento de animais, veículos e cenários urbanos, onde pequenas variações de perspectiva ou iluminação não afetam a semântica da imagem.
+    
+    Em imagens onde a precisão dos detalhes é crítica (como em imagens médicas ou documentos), data augmentation pode distorcer informações importantes e levar a erros, pois transformações como rotações e distorções podem comprometer a integridade da imagem. Em suma, em situações na qual o padrão não pode sofre alteração (cor, forma, etc), o uso de data augmentation deve ser avaliado para evitar distorção do padrão.
 
 13. **Implemente uma rede para classificar carros: HATCH, SEDAN e SUV**  
    Elabore um pseudo-código utilizando funções da tensorflow para definir uma arquitetura, data augmentation, treino e teste. Ilustre também o uso de dropout. 
 
+    ```python
+        import tensorflow as tf
+        from tensorflow.keras import layers, models
+
+        # Definir a arquitetura do modelo
+        def create_model():
+            model = models.Sequential()
+            
+            # Camada de Data Augmentation
+            data_augmentation = tf.keras.Sequential([
+                layers.RandomFlip('horizontal'),
+                layers.RandomRotation(0.1),
+                layers.RandomZoom(0.1),
+            ])
+            model.add(data_augmentation)
+            
+            # Camadas convolucionais
+            model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(128, 128, 3)))
+            model.add(layers.MaxPooling2D((2, 2)))
+            model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+            model.add(layers.MaxPooling2D((2, 2)))
+            model.add(layers.Conv2D(128, (3, 3), activation='relu'))
+            model.add(layers.MaxPooling2D((2, 2)))
+            
+            # Camada de Dropout para regularização
+            model.add(layers.Dropout(0.5))
+            
+            # Camada densa
+            model.add(layers.Flatten())
+            model.add(layers.Dense(64, activation='relu'))
+            model.add(layers.Dense(3, activation='softmax'))  # 3 classes: HATCH, SEDAN, SUV
+            
+            return model
+
+        # Compilar o modelo
+        model = create_model()
+        model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
+        # Treinamento e teste
+        history = model.fit(train_data, epochs=10, validation_data=val_data)
+        test_loss, test_acc = model.evaluate(test_data)
+    ```
+
 14. **Aplique a técnica de transfer-learning ilustrando um pseudo-código**  
    Elabore uma abordagem de transfer-learning a partir da rede MobileNet. Insira uma camada de data augmentation e dropout. Discuta quando e porque deve-se utilizar essas técnicas.
+
+   ```python
+    import tensorflow as tf
+    from tensorflow.keras import layers, models
+    from tensorflow.keras.applications import MobileNetV2
+
+    # Carregar o modelo MobileNetV2 pré-treinado
+    base_model = MobileNetV2(input_shape=(128, 128, 3), include_top=False, weights='imagenet')
+    base_model.trainable = False  # Congela os pesos da base
+
+    # Construir o modelo de Transfer Learning
+    def create_transfer_learning_model():
+        model = models.Sequential()
+
+        # Data Augmentation
+        model.add(tf.keras.Sequential([
+            layers.RandomFlip('horizontal'),
+            layers.RandomRotation(0.1),
+            layers.RandomZoom(0.1),
+        ]))
+
+        # Adicionar o modelo pré-treinado
+        model.add(base_model)
+
+        # Camadas adicionais
+        model.add(layers.GlobalAveragePooling2D())
+        model.add(layers.Dense(64, activation='relu'))
+        model.add(layers.Dropout(0.5))  # Dropout para regularização
+        model.add(layers.Dense(3, activation='softmax'))  # 3 classes: HATCH, SEDAN, SUV
+        
+        return model
+
+    # Compilar o modelo
+    model = create_transfer_learning_model()
+    model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
+    # Treinamento e teste
+    history = model.fit(train_data, epochs=10, validation_data=val_data)
+    test_loss, test_acc = model.evaluate(test_data)
+```
+
+## Questões de implementação: Pseudo-Código
+
+1. O que está sendo realizado no código abaixo:
+   ```python
+   base_model = tf.keras.applications.ResNet50(weights='imagenet', include_top=False, input_shape=input_shape)
+
+   # Congela as camadas do modelo base para preservar os pesos pré-treinados
+   for layer in base_model.layers:
+      layer.trainable = False
+
+   # Adiciona novas camadas de classificação ao modelo
+   x = base_model.output
+   x = GlobalAveragePooling2D()(x)               # Camada de pooling global para reduzir a dimensão
+   x = Dense(1024, activation='relu')(x)         # Camada totalmente conectada
+   predictions = Dense(num_classes, activation='softmax')(x)  # Camada de saída para classificação
+
+   # Define o modelo completo
+   model = Model(inputs=base_model.input, outputs=predictions)
+   ```
+
+    O código acima representa uma implementação de uma CNN utilizando a técnica transfer-learning. As camadas convolucionais, responsáveis por extrair caracteristicas, são inicializadas com os pesos da imagenet e então congeladas no treino. Uma camada de classificação densa, composta por 1024 neurônios e uma ativação 'softmax', determinar uma classe para o problema.
+
+2. Implemente uma rede convolucional de 4 camadas convolucionais de filtros (16,32,64,128), e duas camada densa (fully-connected) de 512 e 128 neurônios respectivamente. Essa rede deve classificar maças, laranjas e peras. Assim, determine qual seu output (classes).
+
+    ```python
+
+        model = models.Sequential()
+        
+        # Camadas convolucionais
+        model.add(layers.Conv2D(16, (3, 3), activation='relu', input_shape=(128, 128, 3)))
+        model.add(layers.MaxPooling2D((2, 2)))
+        model.add(layers.Conv2D(32, (3, 3), activation='relu'))
+        model.add(layers.MaxPooling2D((2, 2)))
+        model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+        model.add(layers.MaxPooling2D((2, 2)))
+        model.add(layers.Conv2D(128, (3, 3), activation='relu'))
+        model.add(layers.MaxPooling2D((2, 2)))
+        
+        # Camada de Flatten para converter a saída em uma forma 1D
+        model.add(layers.Flatten())
+        
+        # Camadas densas (fully connected)
+        model.add(layers.Dense(512, activation='relu'))
+        model.add(layers.Dense(128, activation='relu'))
+        
+        # Camada de saída com 3 neurônios para as classes: Maçãs, Laranjas e Peras
+        model.add(layers.Dense(3, activation='softmax'))        
+    ```
+
+3. Reescreva o seguinte código para que reflita a implementação de uma rede neural convolucional
+   ```python
+      model = Sequential([
+    
+      RandomRotation(0.2),
+      Conv2D(32, (3, 3), activation='relu'),
+      Dense(num_classes, activation='softmax'),      
+      MaxPooling2D((2, 2)),
+      RandomFlip("horizontal", input_shape=input_shape),
+      Conv2D(64, (3, 3), activation='relu'),
+      MaxPooling2D((2, 2)),
+      Rescaling(1./255),
+      Conv2D(128, (3, 3), activation='relu'),    
+      Dropout(0.25),
+      Flatten(),
+      MaxPooling2D((2, 2)),
+      RandomZoom(0.2),
+      Dense(128, activation='relu')
+   ])
+   ```
+
+    Resposta: Uma CNN deve conter nas primeiras camadas funções de pré-processamento, como re-escaling e data augmentation (quando houverem), seguidas de camadas convolucionais. As funções de pooling (quando houverem), estão conectadas com camadas convolucionais. Técnicas de dropout podem ser inseridas a qualquer momento, mas via de regra, são inseridas antes da camada densa (classificação). Ao fim, uma ou mais camadas densas realização a classificação, finalizando com a última camada igual ao número de classes e ativação softmax para determinar probabilidades a posteriori. 
+   ```python
+    model = Sequential([
+        # Camada de pré-processamento (data augmentation)
+        RandomFlip("horizontal", input_shape=(128, 128, 3)),  # Ajuste input_shape conforme necessário
+        RandomRotation(0.2),
+        RandomZoom(0.2),
+        Rescaling(1./255),  # Normalização dos valores de pixel
+
+        # Primeira camada convolucional
+        Conv2D(32, (3, 3), activation='relu'),
+        MaxPooling2D((2, 2)),
+
+        # Segunda camada convolucional
+        Conv2D(64, (3, 3), activation='relu'),
+        MaxPooling2D((2, 2)),
+
+        # Terceira camada convolucional
+        Conv2D(128, (3, 3), activation='relu'),
+        MaxPooling2D((2, 2)),
+
+        # Dropout para regularização
+        Dropout(0.25),
+
+        # Flatten para converter a saída das camadas convolucionais em um vetor 1D
+        Flatten(),
+
+        # Camada densa totalmente conectada
+        Dense(128, activation='relu'),
+
+        # Camada de saída com softmax para classificação
+        Dense(num_classes, activation='softmax')  # num_classes deve ser definido de acordo com o número de classes
+        ])
+
+   ```
 
 ## Redes Neurais Recorrentes
 
 ![redes_recorrentes.png](images/redes_recorrentes.png)
 
-<img title="" src="./images/rnn_lstm.png" alt="" data-align="center" width="347">
+
 
 1. O que significa o termo recorrente nesse tipo de rede? 
 2. O que é recorrente, o dado ou o modelo?
@@ -226,24 +427,109 @@ No caso de algumas figuras não aparecerem, opte pela opção em *pdf*
 6. Explique o conceito de memória de curto prazo (short-term memory) em uma Rede Neural Recorrente (RNN) e por que isso é importante para o processamento de sequências.
 7. Quais são os principais desafios enfrentados pelas RNNs em relação ao desvanecimento do gradiente (vanishing gradient) e como eles podem ser mitigados?
 8. Descreva o funcionamento básico de uma célula de memória Long Short-Term Memory (LSTM) 
-9. O que é o problema da dependência de longo prazo (long-term dependency problem) e como as RNNs podem ajudar a lidar com ele?
-10. Como as RNNs podem ser aplicadas em tarefas de previsão de séries temporais?
-11. As RNNs podem ser aplicadas na geração de texto ou sequências, como em modelos de linguagem.
+
+
+
+
+
+1. **O que significa o termo recorrente nesse tipo de rede?**  
+   O termo "recorrente" em Redes Neurais Recorrentes (RNNs) se refere à capacidade da rede de manter e utilizar informações de entradas anteriores ao longo do tempo. Isso permite que as RNNs processem sequências de dados, onde o estado atual da rede depende não apenas da entrada atual, mas também do estado anterior.
+
+2. **O que é recorrente, o dado ou o modelo?**  
+   O modelo é recorrente. A estrutura das RNNs é projetada para que o estado da rede seja atualizado de forma recorrente, permitindo que as saídas dependam de uma sequência de entradas passadas.
+
+3. **Como e que tipo de dado essas redes comumente trabalham, e como ele é representado?**  
+   As RNNs comumente trabalham com dados sequenciais, como séries temporais, texto, áudio e vídeo. Esses dados são representados como sequências de vetores ou matrizes, onde cada elemento da sequência é processado iterativamente para capturar dependências temporais.
+
+4. **A classificação é estática ou dependente dos estados anteriores?**  
+   A classificação em RNNs é **dependente dos estados anteriores**, pois a rede armazena informações de entradas passadas em seu estado interno, o que influencia as saídas futuras.
+
+5. **Qual a diferença básica dos modelos recorrentes para os modelos 'estáticos'?**  
+   A principal diferença é que os modelos recorrentes têm um estado interno que evolui conforme novas entradas são processadas, permitindo que eles capturem dependências temporais. Modelos 'estáticos', como redes neurais feedforward, tratam cada entrada de forma independente e não têm memória de estados passados.
+
+6. **Explique o conceito de memória de curto prazo (short-term memory) em uma Rede Neural Recorrente (RNN) e por que isso é importante para o processamento de sequências.**  
+   A memória de curto prazo em uma RNN se refere à capacidade da rede de reter informações de eventos recentes. Isso é importante para capturar dependências em uma sequência, como prever a próxima palavra em uma frase com base nas palavras anteriores. No entanto, RNNs comuns têm limitações em armazenar informações de longo prazo devido ao problema do desvanecimento do gradiente.
+
+7. **Quais são os principais desafios enfrentados pelas RNNs em relação ao desvanecimento do gradiente (vanishing gradient) e como eles podem ser mitigados?**  
+   O desvanecimento do gradiente é um problema onde os gradientes se tornam extremamente pequenos durante o treinamento de RNNs, dificultando a atualização de pesos em camadas anteriores. Isso afeta a capacidade da rede de aprender dependências de longo prazo. Esse problema pode ser mitigado com arquiteturas como **Long Short-Term Memory (LSTM)** e **Gated Recurrent Unit (GRU)**, que possuem mecanismos específicos para manter e controlar o fluxo de informações através do tempo.
+
+8. **Descreva o funcionamento básico de uma célula de memória Long Short-Term Memory (LSTM)**  
+   Uma célula LSTM é projetada para capturar dependências de longo prazo em dados sequenciais. Ela possui três principais portas:
+   - **Porta de entrada**: controla o fluxo de novas informações na célula.
+   - **Porta de esquecimento**: decide o que manter ou descartar da memória anterior.
+   - **Porta de saída**: decide o que será passado para a próxima etapa da rede.
+
+   A combinação dessas portas permite que a LSTM mantenha informações relevantes por longos períodos e ajuste o estado da célula de forma dinâmica.
+
+    ![redes_lstm.png](images/rnn_lstm.png)
+
+9. **O que é o problema da dependência de longo prazo (long-term dependency problem) e como as RNNs podem ajudar a lidar com ele?**  
+   O problema da dependência de longo prazo ocorre quando uma rede tem dificuldades em aprender e lembrar informações que estão distantes na sequência de entrada. RNNs padrão enfrentam desafios com esse tipo de dependência devido ao desvanecimento do gradiente. Arquiteturas como LSTM e GRU foram desenvolvidas para lidar melhor com esse problema, mantendo informações importantes por longos períodos através de mecanismos de memória especializados.
+
+10. **Como as RNNs podem ser aplicadas em tarefas de previsão de séries temporais?**  
+    RNNs podem ser usadas em previsão de séries temporais ao processar sequências de dados históricos para prever valores futuros. A rede é treinada para entender padrões e dependências temporais, o que permite prever pontos subsequentes em uma série temporal, como preços de ações, demanda de energia e outros eventos temporais.
+
+11. **As RNNs podem ser aplicadas na geração de texto ou sequências, como em modelos de linguagem.**  
+    Sim, RNNs podem ser aplicadas na geração de texto, onde são treinadas em grandes volumes de dados textuais e aprendem a prever a próxima palavra ou caractere em uma sequência. Esse processo pode ser repetido iterativamente para gerar frases e parágrafos inteiros, o que é a base para modelos de geração de texto, tradução automática e chatbots.
+
+
 
 ## Casos de Uso
 
 Nos casos a seguir, apresente uma solução para o problema, detalhando brevemente quais dados devem ser coletados, como eles podem ser representados e qual modelo de machine learning é mais adequado.
 
-- Um engenheiro agrônomo precisa prever a quantidade de chuvas nas próximas semanas para garantir que sua plantação recém-estabelecida não fique sem água por mais de 20 dias. Considerando que ele não tem conhecimentos em Machine Learning, que tipo de dado ele pode coletar e qual modelo/abordagem é mais indicado?
+1. **Um engenheiro agrônomo precisa prever a quantidade de chuvas nas próximas semanas para garantir que sua plantação recém-estabelecida não fique sem água por mais de 20 dias. Considerando que ele não tem conhecimentos em Machine Learning, que tipo de dado ele pode coletar e qual modelo/abordagem é mais indicado?**
 
-- Um engenheiro civil precisa realizar a classificação de imagens para identificar fissuras estruturais em edificações. Ele já dispõe de uma base contendo alguns tipos de rachaduras. Proponha uma solução de machine learning.
+    **Dados a serem coletados**: Histórico de dados meteorológicos, como precipitação diária, temperatura, umidade, velocidade do vento, pressão atmosférica e dados sazonais de chuvas.
+    
+    **Representação dos dados**: Série temporal multivariada.
+    
+    **Modelo indicado**: RNN/LSTM.
 
-- Uma empresa de ônibus percebeu que algumas rotas aumentaram o número de atrasos devido ao aumento do tráfego. Sabendo que ela deseja alterar alguns horários de partida, proponha uma abordagem de machine learning.
+2. **Um engenheiro civil precisa realizar a classificação de imagens para identificar fissuras estruturais em edificações. Ele já dispõe de uma base contendo alguns tipos de rachaduras. Proponha uma solução de machine learning.**
 
-- Uma empresa do ramo da aviação possui uma base de ordens de serviço de manutenções em aeronaves. No entanto, ela precisa saber quais os problemas mais comuns, uma vez que não tem nenhum detalhamento sobre isso. Como você abordaria esse problema com machine learning?
+    **Dados a serem coletados**: Imagens de diferentes tipos de fissuras e rachaduras em edificações, rotuladas com suas respectivas classificações (por exemplo, fissura de tração, fissura de compressão, etc.).
+    
+    **Representação dos dados**: Imagens
+    
+    **Modelo indicado**: CNN.
 
-- Uma empresa aduaneira precisa controlar a entrada e saída de caminhões no porto. Basicamente, ela precisa registrar quando um caminhão transporta mais de um contêiner. Um funcionário sugeriu usar a câmera de segurança para fazer isso. Como você abordaria esse problema?
+3. **Uma empresa de ônibus percebeu que algumas rotas aumentaram o número de atrasos devido ao aumento do tráfego. Como ela pode prever melhor o tempo de viagem?**
 
-- Uma empresa de telemarketing precisa encontrar potenciais clientes através de uma base de dados com diversas características de gostos e compras. O que você recomenda?
+    **Dados a serem coletados**: Histórico de horários de partida e chegada, volume de tráfego (dados de congestionamento), eventos sazonais, condições meteorológicas e dados de incidentes de trânsito.
+    
+    **Representação dos dados**: Série temporal multivariada.
+    
+    **Modelo indicado**: RNN/LSTM.
 
-- Uma empresa automobilística produz carros com vários sensores que geram diversos dados ao longo do tempo. Ela deseja implementar inteligência artificial no computador de bordo para antecipar possíveis falhas utilizando os dados destes sensores. O que você recomendaria?
+4. **Uma empresa do ramo da aviação possui uma base de ordens de serviço de manutenções em aeronaves. No entanto, ela precisa saber quais os problemas mais comuns, uma vez que não tem nenhum detalhamento sobre isso. Como você abordaria esse problema com machine learning?**
+
+    **Dados a serem coletados**: Registros históricos das ordens de serviço, incluindo descrições de problemas, data, tipo de manutenção e qualquer outro detalhe relevante.
+    
+    **Representação dos dados**: Dados estruturados/Tabulados 
+    
+    **Modelo indicado**: Algoritmos de clustering (K-Means).
+
+5. **Uma empresa aduaneira precisa controlar a entrada e saída de caminhões no porto. Basicamente, ela precisa registrar quando um caminhão transporta mais de um contêiner. Um funcionário sugeriu usar a câmera de segurança para fazer isso. Como você abordaria esse problema?**
+
+    **Dados a serem coletados**: Imagens ou vídeos de câmeras de segurança capturando caminhões transportando contêineres.
+    
+    **Representação dos dados**: Imagens.
+    
+    **Modelo indicado**: CNN.
+
+6. **Uma empresa de telemarketing precisa encontrar potenciais clientes através de uma base de dados com diversas características de gostos e compras. O que você recomenda?**
+
+    **Dados a serem coletados**: Informações sobre histórico de compras, interesses, dados demográficos e comportamentais dos clientes.
+    
+    **Representação dos dados**: Dados estruturados/Tabulados
+    
+    **Modelo indicado**: K-Means.
+
+7. **Uma empresa automobilística produz carros com vários sensores que geram diversos dados ao longo do tempo. Ela deseja implementar inteligência artificial no computador de bordo para antecipar possíveis falhas utilizando os dados destes sensores. O que você recomendaria?**
+
+    **Dados a serem coletados**: Leituras de sensores em tempo real (temperatura do motor, pressão de óleo, consumo de combustível, vibrações, etc.), registros de manutenção anteriores e eventos de falha.
+    
+    **Representação dos dados**: Série temporal multivariada.
+    
+    **Modelo indicado**: RNN ou LSTM.
