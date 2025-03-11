@@ -1,6 +1,6 @@
 # Tópico 01 - Exercícios de Fixação
 
-### 1 - Calcule a soma de dois números
+### 1 - Calcule a soma de dois números 
 
 ### 2 - Calcule o antecessor e o sucessor de um número
 
