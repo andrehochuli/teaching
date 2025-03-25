@@ -36,19 +36,26 @@ dia = int(input("Digite um número entre 1 e 7: "))
 
 if dia == 1:
     print("Domingo")
-elif dia == 2:
+
+if dia == 2:
     print("Segunda")
-elif dia == 3:
+
+if dia == 3:
     print("Terça")
-elif dia == 4:
+
+if dia == 4:
     print("Quarta")
-elif dia == 5:
+
+if dia == 5:
     print("Quinta")
-elif dia == 6:
+
+if dia == 6:
     print("Sexta")
-elif dia == 7:
+
+if dia == 7:
     print("Sábado")
-else:
+
+if dia < 1 and dia > 7:
     print("Valor inválido")
 ```
 
@@ -136,16 +143,20 @@ idade2 = int(input("Digite a idade da segunda pessoa: "))
 
 if len(nome1) > len(nome2):
     print("A pessoa com o nome mais longo é", nome1)
-elif len(nome2) > len(nome1):
+
+if len(nome2) > len(nome1):
     print("A pessoa com o nome mais longo é", nome2)
-else:
+
+if len(nome1) > len(nome2):
     print("As pessoas têm nomes de comprimento igual.")
 
 if idade1 > idade2:
     print("A pessoa mais velha é", nome1)
-elif idade2 > idade1:
+
+lif idade2 > idade1:
     print("A pessoa mais velha é", nome2)
-else:
+
+if idade1 == idade2:
     print("As pessoas têm a mesma idade.")
 ```
 
