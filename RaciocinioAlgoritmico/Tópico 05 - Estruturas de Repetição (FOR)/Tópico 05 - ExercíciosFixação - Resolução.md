@@ -51,7 +51,7 @@ razao = float(input("Digite a razão da P.A: "))
 n = int(input("Digite o número do termo desejado: "))
 
 atual = a1
-for iin range(1, n):
+for i in range(1, n):
     atual += razao
     print(i,atual)
 print(f"O {n}º termo da P.A é: {atual}")
