@@ -8,10 +8,19 @@ for i in range(-100, 101):
 ```
 
 ## 2. Imprima os números pares de 0 a 1000
+
+Solução A
 ```python
 for i in range(0, 1001, 2):
     print(i)
 ```
+Solução B:
+```python
+for i in range(0, 1001, 1):
+    if i % 2 == 0:
+    	print(i)
+```
+
 
 ## 3. Calcule o fatorial de um número N
 ```python
@@ -29,7 +38,7 @@ taxa_juros = float(input("Digite a taxa de juros anual (em %): ")) / 100
 anos = int(input("Digite o número de anos: "))
 
 valor_final = valor_inicial
-for _ in range(anos):
+for i in range(0,anos):
     valor_final *= (1 + taxa_juros)
 
 print(f"O valor final após {anos} anos será de R$ {valor_final:.2f}")
@@ -41,8 +50,11 @@ a1 = float(input("Digite o primeiro termo da P.A: "))
 razao = float(input("Digite a razão da P.A: "))
 n = int(input("Digite o número do termo desejado: "))
 
-an = a1 + (n - 1) * razao
-print(f"O {n}º termo da P.A é: {an}")
+atual = a1
+for iin range(1, n):
+    atual += razao
+    print(i,atual)
+print(f"O {n}º termo da P.A é: {atual}")
 ```
 
 ## 6. Informe o N-ésimo elemento de uma P.G de razão X
@@ -51,6 +63,10 @@ a1 = float(input("Digite o primeiro termo da P.G: "))
 razao = float(input("Digite a razão da P.G: "))
 n = int(input("Digite o número do termo desejado: "))
 
-an = a1 * (razao ** (n - 1))
-print(f"O {n}º termo da P.G é: {an}")
+atual = a1
+for i in range(1, n):
+    atual *= razao
+    print(i,atual)
+
+print(f"O {n}º termo da P.G é: {atual}")
 ```
