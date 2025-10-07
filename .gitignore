@@ -2,6 +2,9 @@
 *.tmp
 *.swp
 *.bak
+*.pt
+*.pth
+*.weights
 .DS_Store
 Thumbs.db
 ~$*
