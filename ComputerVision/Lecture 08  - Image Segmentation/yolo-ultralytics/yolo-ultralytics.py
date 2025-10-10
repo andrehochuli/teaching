@@ -19,13 +19,13 @@ class_colors = {}
 
 # Loop through all images in the folder
 for image_name in os.listdir(image_folder):
-    image_path = os.path.join(image_folder, image_name)
+    image_path = os.path.join(image_folder, "office.jpg")
     if not os.path.isfile(image_path):
         continue
 
     # Read and resize the image
     image = cv2.imread(image_path)
-    image = cv2.resize(image, (1024, 768))
+    image = cv2.resize(image, (640, 480))
 
     # Run prediction on the resized image
     results = yolo_model(image)

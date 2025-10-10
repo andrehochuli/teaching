@@ -4,7 +4,7 @@ import random
 import numpy as np
 
 # Load the YOLO detection model
-yolo_model = YOLO('yolov8n.pt')  # YOLOv8 Medium Detection Model
+yolo_model = YOLO('yolov8m.pt')  # YOLOv8 Medium Detection Model
 
 # Assign random colors to each class
 class_colors = {}
