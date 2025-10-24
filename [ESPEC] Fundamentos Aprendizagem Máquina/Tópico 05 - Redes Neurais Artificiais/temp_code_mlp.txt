@@ -1,0 +1,109 @@
+#################Vamos ver uma implementação dessa rede, utilizando scikit learn!###############
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.neural_network import MLPClassifier
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, classification_report
+
+X, y = make_classification(n_samples=1000, n_features=2, n_classes=2, n_clusters_per_class=1,
+                           n_informative=2, n_redundant=0, class_sep=0.8, random_state=0)
+
+plt.scatter(X[:, 0], X[:, 1], c=y)
+plt.show()
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
+mlp = MLPClassifier(hidden_layer_sizes=(100,100), learning_rate_init=0.001, max_iter=2000, random_state=42)
+
+mlp.fit(X_train, y_train)
+
+pred = mlp.predict(X_test)
+
+print(classification_report(y_test,pred))
+
+# Cria o meshgrid
+xx, yy = np.meshgrid(np.arange(X[:, 0].min()-1, X[:, 0].max()+1, 0.1),
+                     np.arange(X[:, 1].min()-1, X[:, 1].max()+1, 0.1))
+
+
+# Obtem as previsões da MLP para cada ponto do meshgrid
+Z = mlp.predict(np.c_[xx.ravel(), yy.ravel()])
+Z = Z.reshape(xx.shape)
+
+# Visualiza as fronteiras de decisão
+plt.contourf(xx, yy, Z, alpha=0.3)
+plt.scatter(X[:, 0], X[:, 1], c=y, s=50, edgecolor='k')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.show()
+
+#########################################################################################################
+############AVALIANDO O IMPACTO DE NUMERO DE CAMADAS############################################
+X, y = make_classification(n_samples=500, n_features=3, n_classes=3, n_informative=3, n_redundant=0, class_sep=0.85, random_state=42)
+
+plt.scatter(X[:, 0], X[:, 1], c=y)
+plt.show()
+
+#70-30 (Train-Test)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+#Sobre o treino, selecion 30% para val
+X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.2, random_state=42)
+
+#Variando camadas e neuronios
+clfs = []
+clfs.append(MLPClassifier(hidden_layer_sizes=(10,10), learning_rate_init=0.001, max_iter=2000, random_state=42))
+clfs.append(MLPClassifier(hidden_layer_sizes=(10,10,10), learning_rate_init=0.001, max_iter=2000, random_state=42))
+clfs.append(MLPClassifier(hidden_layer_sizes=(100,100), learning_rate_init=0.001, max_iter=2000, random_state=42))
+clfs.append(MLPClassifier(hidden_layer_sizes=(100,100,100), learning_rate_init=0.001, max_iter=2000, random_state=42))
+clfs.append(MLPClassifier(hidden_layer_sizes=(100,100,100,100), learning_rate_init=0.001, max_iter=2000, random_state=42))
+clfs.append(MLPClassifier(hidden_layer_sizes=(300,300,300,300), learning_rate_init=0.001, max_iter=2000, random_state=42))
+
+#Variando Iterações
+clfs.append(MLPClassifier(hidden_layer_sizes=(100,100), learning_rate_init=0.001, max_iter=100, random_state=42))
+clfs.append(MLPClassifier(hidden_layer_sizes=(100,100), learning_rate_init=0.001, max_iter=200, random_state=42))
+clfs.append(MLPClassifier(hidden_layer_sizes=(100,100), learning_rate_init=0.001, max_iter=500, random_state=42))
+clfs.append(MLPClassifier(hidden_layer_sizes=(100,100), learning_rate_init=0.001, max_iter=2000, random_state=42))
+
+for i,model in enumerate(clfs):
+  
+  model.fit(X_train, y_train)
+  preds = model.predict(X_val)  
+  print(accuracy_score(y_val,preds))
+  print(classification_report(y_val,preds))  
+  print("######################################")
+  
+  
+  ############################## COMPARACAO DE MODELOS ##########################################
+  
+  
+from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier as KNN
+from sklearn.naive_bayes import GaussianNB
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.neural_network import MLPClassifier
+
+
+X, y = make_classification(n_samples=5000, n_features=10, n_classes=3, n_clusters_per_class=1,n_informative=8, n_redundant=0, class_sep=0.6, random_state=42)
+
+plt.scatter(X[:, 0], X[:, 1], c=y)
+plt.show()
+
+###############################
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+knn = KNN()
+nb = GaussianNB()
+dt = DecisionTreeClassifier(random_state=42)
+svm = SVC(C=1.0,kernel='rbf')
+mlp = MLPClassifier(hidden_layer_sizes=(100,100,100), learning_rate_init=0.001, max_iter=6000, random_state=42)
+
+for model,model_name in zip([knn,nb,dt,svm,mlp],['KNN','Naive Bayes','Decision Tree','SVM','MLP']):
+  
+  model.fit(X_train, y_train)
+  preds = model.predict(X_test)  
+  print(model_name, accuracy_score(y_test,preds))
+  print(classification_report(y_test,preds))  
+  print("######################################")
