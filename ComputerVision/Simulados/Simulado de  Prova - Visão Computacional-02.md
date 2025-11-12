@@ -162,9 +162,93 @@ Este simulado orienta os estudos sobre os temas que podem ser cobrados na prova.
 ![yolo](images/image19.png)
 
 
+### Autoencoders
+
+1. **O que é um Autoencoder e qual o seu objetivo?**
+Explique o conceito de autoencoder como uma rede neural não supervisionada que aprende a representar os dados de entrada em um espaço de dimensão reduzida (codificação), buscando reconstruir a entrada original na saída. Discuta o papel dessa representação latente no aprendizado de características relevantes e na redução de ruído.
+
+2. **Descreva a estrutura de um Autoencoder.**
+Apresente as duas partes principais de um autoencoder: *encoder* (codificador) e *decoder* (decodificador). Explique como o encoder transforma os dados de entrada em uma representação comprimida e como o decoder tenta reconstruir os dados originais a partir dessa codificação.
+
+3. **Qual é a função de perda em um Autoencoder e como ela é calculada?**
+Defina a função de perda como a diferença entre a entrada original e a saída reconstruída (por exemplo, *Mean Squared Error*). Explique que o objetivo do treinamento é minimizar essa diferença, aprimorando a capacidade da rede de capturar as características mais representativas dos dados.
+
+4. **Qual a diferença entre um Autoencoder e uma rede de classificação tradicional?**
+Destaque que o autoencoder não requer rótulos (aprendizado não supervisionado) e busca reconstruir os dados, enquanto redes de classificação mapeiam entradas para categorias específicas.
+
+5. **Explique a diferença entre um Autoencoder Clássico e um Convolutional Autoencoder (CAE).**
+Discuta que, em um *Convolutional Autoencoder*, as camadas convolucionais substituem as densas, permitindo preservar a estrutura espacial das imagens e extrair padrões visuais mais robustos.
+
+6. **Como o Autoencoder pode ser utilizado em tarefas de Visão Computacional?**
+Cite aplicações como redução de dimensionalidade, remoção de ruído (denoising), compressão de imagens e pré-treinamento de redes profundas. Discuta também o uso em detecção de anomalias, onde o erro de reconstrução é usado para identificar padrões incomuns.
+
+7. **O que é um Variational Autoencoder (VAE) e como ele difere de um Autoencoder tradicional?**
+Explique que o *VAE* introduz um componente probabilístico ao aprendizado, mapeando as entradas para distribuições latentes (geralmente Gaussianas) em vez de pontos fixos. Discuta como isso permite gerar novas amostras realistas e aproxima o VAE de modelos generativos.
+
+8. **Implemente um pseudo-código para um Autoencoder convolucional.**
+Apresente um pseudocódigo simples para ilustrar a estrutura e o treinamento de um *Convolutional Autoencoder* usando TensorFlow:
+
+```python
+# Definição de um Autoencoder Convolucional
+import tensorflow as tf
+from tensorflow.keras import layers, models
+
+# Encoder
+encoder = models.Sequential([
+    layers.Input(shape=(128, 128, 3)),
+    layers.Conv2D(32, (3, 3), activation='relu', padding='same'),
+    layers.MaxPooling2D((2, 2), padding='same'),
+    layers.Conv2D(16, (3, 3), activation='relu', padding='same'),
+    layers.MaxPooling2D((2, 2), padding='same')
+])
+
+# Decoder
+decoder = models.Sequential([
+    layers.Conv2DTranspose(16, (3, 3), strides=2, activation='relu', padding='same'),
+    layers.Conv2DTranspose(32, (3, 3), strides=2, activation='relu', padding='same'),
+    layers.Conv2D(3, (3, 3), activation='sigmoid', padding='same')
+])
+
+# Autoencoder
+autoencoder = models.Sequential([encoder, decoder])
+autoencoder.compile(optimizer='adam', loss='mse')
+
+# Treinamento
+autoencoder.fit(x_train, x_train, epochs=50, batch_size=64, validation_split=0.2)
+```
+
+**Explique como avaliar o desempenho de um Autoencoder.**
+Descreva métricas como *Mean Squared Error* ou *Structural Similarity Index (SSIM)* entre imagem original e reconstruída, e como o erro de reconstrução pode indicar qualidade do aprendizado ou presença de anomalias.
 
 
+### **Aprendizado Não Supervisionado e Representações Latentes**
 
+1. Explique o conceito de *representation learning*. Como a representação dos dados pode esconder ou revelar fatores explicativos de variação?
+2. Qual é a principal limitação dos métodos supervisionados em visão computacional, e por que o aprendizado não supervisionado surge como alternativa?
+3. O que é um *latent space*? Explique sua importância no contexto de aprendizado de representações.
+4. Cite exemplos de representações aprendidas em visão computacional e processamento de linguagem natural.
+5. Por que a generalização entre diferentes domínios é um desafio em modelos supervisionados?
 
-   
+### **Autoencoders e Aprendizado de Representações**
 
+6. Descreva a arquitetura básica de um *Autoencoder* e explique seu objetivo principal.
+7. O que diferencia um *Convolutional Autoencoder* de um *Autoencoder* tradicional?
+8. Qual é a função de perda mais comum em autoencoders e o que ela mede?
+9. Explique como o *encoder* e o *decoder* atuam na reconstrução dos dados de entrada.
+10. Cite outras possíveis funções de perda que podem ser utilizadas em autoencoders além do MSE.
+
+### **Aprendizado Semi-Supervisionado**
+
+11. Descreva as etapas de um pipeline de *semi-supervised representation learning* envolvendo autoencoders.
+12. Qual é a utilidade de “congelar” o *encoder* após o treinamento não supervisionado?
+13. Após extrair os vetores latentes, quais tipos de classificadores podem ser utilizados na etapa supervisionada?
+14. Explique como o uso de representações aprendidas pode reduzir a necessidade de dados anotados.
+15. Compare as fases de aprendizado não supervisionado e supervisionado em um pipeline semi-supervisionado.
+
+### **Questões de Análise e Aplicação**
+
+16. Dê um exemplo prático de uso de autoencoders para redução de dimensionalidade em imagens.
+17. Como o uso de *representation learning* pode ajudar na generalização de modelos entre diferentes datasets?
+18. Qual seria o impacto de um erro elevado de reconstrução na qualidade da representação aprendida?
+19. Explique como o treinamento de autoencoders pode ser útil como pré-treinamento para outras redes neurais.
+20. Diferencie os conceitos de *feature extraction* e *representation learning* no contexto de redes neurais profundas.
