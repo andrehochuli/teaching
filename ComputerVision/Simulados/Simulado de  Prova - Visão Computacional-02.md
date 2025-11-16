@@ -45,7 +45,7 @@ Este simulado orienta os estudos sobre os temas que podem ser cobrados na prova.
 7. **Aplique a técnica de transfer-learning ilustrando um pseudo-código**  
    Elabore uma abordagem de transfer-learning a partir da rede MobileNet. Insira uma camada de data augmentation e dropout. Discuta quando e porque deve-se utilizar essas técnicas.
 
-**7. Explique o fenômeno de vanishing gradient e apresente um pseudo-código de mitigação
+8. **Explique o fenômeno de vanishing gradient e apresente um pseudo-código de mitigação**
 Descreva o fenômeno de *vanishing gradient* em redes neurais profundas, discuta estratégias de mitigação incluindo escolhas de funções de ativação, regularização e técnicas arquiteturais. Apresente um pseudo-código demonstrando uma abordagem prática que utilize inicialização adequada, Batch Normalization e funções de ativação ReLU. Por fim, explique em quais cenários essas técnicas são recomendadas e por que contribuem para a estabilização do fluxo de gradientes durante o treinamento.
 
 
