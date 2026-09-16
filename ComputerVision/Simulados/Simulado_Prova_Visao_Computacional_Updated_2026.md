@@ -117,7 +117,7 @@ Regarding color-based image segmentation using RGB and HSV color spaces, analyze
 
 Consider the image-processing pipeline illustrated in the figure. The objective is to isolate a predominantly **yellow object** from an image.
 
-![yellow_duck.png](./images/yellow_duck.png)
+![yellow_duck.png](images/yellow_duck.png)
 
 Which code correctly implements the illustrated pipeline using OpenCV?
 
@@ -208,7 +208,7 @@ Analyze the following statements and classify each one as **True (T)** or **Fals
 
 Consider the **original image** and its corresponding **filtered image** shown in the figure.
 
-<img src="file://images/castle.png" title="" alt="castle.png" data-align="center">
+<img src="images/castle.png" title="" alt="castle.png" data-align="center">
 
 Which filter was most likely applied to obtain the filtered image?
 
@@ -226,13 +226,13 @@ Consider the **9 × 9 grayscale image** and the corresponding filtered result sh
 
 The image was processed using a **3 × 3 convolution kernel**. Which of the following kernels is most likely responsible for the resulting image?
 
-<img src="file://images/kernel-choice.png" title="" alt="kernel-choice.png" data-align="center">
+<img src="images/kernel-choice.png" title="" alt="kernel-choice.png" data-align="center">
 
 ## Question 5
 
 Consider the noisy image shown in the figure.
 
-<img src="file://images/lena_noisy.png" title="" alt="lena_noisy.png" data-align="center">
+<img src="images/lena_noisy.png" title="" alt="lena_noisy.png" data-align="center">
 
 The objective is to **reduce image noise while preserving object boundaries and fine structures as much as possible**.
 
@@ -250,7 +250,7 @@ Which filter is the most appropriate for this objective?
 
 Consider the **original image** and its corresponding **filtered image** shown in the figure.
 
-<img src="file://images/coin_sobel.png" title="" alt="coin_sobel.png" data-align="center">
+<img src="images/coin_sobel.png" title="" alt="coin_sobel.png" data-align="center">
 
 The filtered image emphasizes regions containing significant spatial intensity variations while suppressing homogeneous regions.
 
@@ -266,7 +266,7 @@ Which filter was most likely applied?
 
 You want to **reduce rapid intensity variations by replacing each pixel with the average value of its local neighborhood**.
 
-<img src="file://images/noisy_old_house.png" title="" alt="noisy_old_house.png" data-align="center">
+<img src="images/noisy_old_house.png" title="" alt="noisy_old_house.png" data-align="center">
 
 Which pseudocode correctly implements this operation?
 
@@ -314,7 +314,7 @@ for each pixel (x, y):
 
 An image contains **isolated extreme pixel values (outliers)**. You want to reduce their influence while preserving more image details.
 
-<img src="file://images/salt_and_peper.png" title="" alt="salt_and_peper.png" data-align="center">
+<img src="images/salt_and_peper.png" title="" alt="salt_and_peper.png" data-align="center">
 
 Which pseudocode is the most appropriate?
 
@@ -427,7 +427,7 @@ for each pixel (x, y):
 
 You want to **enhance local intensity variations and make edges and fine details more prominent**, while maintaining the general appearance of the original image.
 
-<img src="file://images/lion.png" title="" alt="lion.png" data-align="center">
+<img src="images/lion.png" title="" alt="lion.png" data-align="center">
 
 Which pseudocode best represents this operation?
 
@@ -476,7 +476,7 @@ output = MedianFilter(image)
 
 You want to produce an image that **emphasizes locations containing significant spatial intensity changes**, such as object boundaries.
 
-<img src="file:///home/aghochuli/.config/marktext/images/2026-09-16-08-28-03-image.png" title="" alt="" data-align="center">
+<img src="images/2026-09-16-08-28-03-image.png" title="" alt="" data-align="center">
 
 Which pseudocode is the most appropriate?
 
@@ -528,7 +528,7 @@ output = GaussianFilter(image)
 
 Consider a grayscale image `img`. You want to generate a binary image in which pixels with intensity **greater than 120 become white (255)** and the remaining pixels become **black (0)**.
 
-<img src="file:///home/aghochuli/.config/marktext/images/2026-09-16-08-35-16-image.png" title="" alt="" data-align="center">
+<img src="images/2026-09-16-08-35-16-image.png" title="" alt="" data-align="center">
 
 Which OpenCV code correctly implements this operation?
 
@@ -602,7 +602,7 @@ Regarding image binarization and thresholding methods, analyze the following sta
 
 Consider the grayscale intensity histogram shown below:
 
-<img src="file://images/histogram.png" title="" alt="histogram.png" data-align="center">
+<img src="images/histogram.png" title="" alt="histogram.png" data-align="center">
 
 The objective is to separate the two predominant groups of pixels using a **single global threshold**.
 
@@ -708,7 +708,7 @@ What is the result after applying **one iteration of erosion**?
 
 A binary segmentation contains a **large foreground object** surrounded by several **small isolated foreground pixels**.
 
-<img src="file://images/erosion.png" title="" alt="erosion.png" data-align="center">
+<img src="images/erosion.png" title="" alt="erosion.png" data-align="center">
 
 The objective is to remove these small objects while preserving the shape and size of the main object as much as possible.
 
@@ -726,7 +726,7 @@ Which morphological operation is the most appropriate?
 
 Consider a binary image containing foreground objects with **small holes inside them**.
 
-<img title="" src="file:///home/aghochuli/.config/marktext/images/2026-09-16-08-59-10-image.png" alt="" data-align="center" width="328">
+<img title="" src="images/2026-09-16-08-59-10-image.png" alt="" data-align="center" width="328">
 
 The objective is to fill these small holes while approximately preserving the original size and shape of the objects.
 
@@ -798,7 +798,7 @@ result = cv2.morphologyEx(
 
 Consider an original binary image and its processed result.
 
-<img title="" src="file:///home/aghochuli/.config/marktext/images/2026-09-16-08-59-26-image.png" alt="" data-align="center" width="296">
+<img title="" src="images/2026-09-16-08-59-26-image.png" alt="" data-align="center" width="296">
 
 After processing:
 
@@ -1059,7 +1059,7 @@ num_labels, labels = cv2.findContours(
 
 Consider the following pipeline designed to extract objects from an RGB image:
 
-![ferramentas.png](./images/ferramentas.png)
+![ferramentas.png](images/ferramentas.png)
 
 
 
@@ -1096,7 +1096,7 @@ Consider the following processing sequence:
 
 `RGB → Grayscale → Threshold → Connected Components`
 
-After thresholding, one physical object appears as **several disconnected white regions**. Consequently, `connectedComponents()` returns several labels for what should be a single object.<img src="file://images/ferramenta_bin.png" title="" alt="ferramenta_bin.png" data-align="center">Which modification is the most appropriate **before component labeling**?
+After thresholding, one physical object appears as **several disconnected white regions**. Consequently, `connectedComponents()` returns several labels for what should be a single object.<img src="images/ferramenta_bin.png" title="" alt="ferramenta_bin.png" data-align="center">Which modification is the most appropriate **before component labeling**?
 
 - a) Apply erosion to increase the size of each fragmented region.
 - b) Apply closing to connect small gaps between foreground regions.
@@ -1127,7 +1127,7 @@ The binary image contains the desired objects, but also **many small isolated wh
 
 
 
-<img src="file://images/binary_blobs_noisy.png" title="" alt="binary_blobs_noisy.png" data-align="center">
+<img src="images/binary_blobs_noisy.png" title="" alt="binary_blobs_noisy.png" data-align="center">
 
 Which pipeline is more appropriate?
 
@@ -1201,7 +1201,7 @@ Threshold
 
 Suppose the previous stages produce the following connected components:
 
-<img title="" src="file://images/connected_comp.png" alt="connected_comp.png" data-align="left" width="325">
+<img title="" src="images/connected_comp.png" alt="connected_comp.png" data-align="left" width="325">
 
 | Label | Area (px) | Width | Height |
 | -----:| ---------:|:-----:| ------:|
@@ -1248,7 +1248,7 @@ Filter Components
 
 The final system fails to detect the character **"1"**.
 
-![license_plate.png](./images/license_plate.png)
+![license_plate.png](images/license_plate.png)
 
 Which conclusion is best supported by these observations?
 
@@ -1292,7 +1292,7 @@ Regarding feature extraction, analyze the following statements:
 
 Consider the feature spaces shown in the figure:
 
-![feature_space.png](./images/feature_space.png)
+![feature_space.png](images/feature_space.png)
 
 - In **A**, samples from different classes strongly overlap.
 - In **B**, samples form compact and well-separated groups.
@@ -1431,7 +1431,7 @@ You are designing a feature extraction step for a classification system. Conside
 
 
 
-<img src="file://images/tools.png" title="" alt="tools.png" data-align="center">
+<img src="images/tools.png" title="" alt="tools.png" data-align="center">
 
 
 
@@ -1449,7 +1449,7 @@ Which feature descriptor is most appropriate to distinguish these two classes?
 
 Consider the following binary images of four shapes:
 
-![edges_and_shapes.png](./images/edges_and_shapes.png)
+![edges_and_shapes.png](images/edges_and_shapes.png)
 
 
 
@@ -1469,7 +1469,7 @@ Which descriptor is the most appropriate for this task?
 
 The following images show two types of textures:
 
-![textures.png](./images/textures.png)
+![textures.png](images/textures.png)
 
 
 
@@ -1487,7 +1487,7 @@ Which feature descriptor is most suitable to distinguish these two texture class
 
 The figure below shows the distribution of samples from two classes in different feature spaces obtained using different descriptors.
 
-![feature_space_v2.png](./images/feature_space_v2.png)
+![feature_space_v2.png](images/feature_space_v2.png)
 
 Which feature space is more discriminative for a classification task, and why?
 
@@ -1503,7 +1503,7 @@ Which feature space is more discriminative for a classification task, and why?
 
 You want to design a system to recognize handwritten digits (0–9). The following preprocessing and segmentation steps have already been applied, resulting in isolated and normalized binary images of digits:
 
-![digits.png](./images/digits.png)
+![digits.png](images/digits.png)
 
 Which combination of features is most appropriate to represent these digits for classification using classical machine learning methods (e.g., SVM or k-NN)?
 
@@ -1519,7 +1519,7 @@ Which combination of features is most appropriate to represent these digits for 
 
 
 
-![pipelines.png](./images/pipelines.png)
+![pipelines.png](images/pipelines.png)
 
 ## Question 06 — Pipeline Analysis: Removing Noise
 
