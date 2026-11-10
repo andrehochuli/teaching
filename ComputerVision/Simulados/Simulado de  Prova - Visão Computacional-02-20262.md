@@ -1,6 +1,6 @@
 # Computer Vision Mock Exam - 2BI
 
-## Lecture 06 to Lecture 08
+## Lecture 06 (CNN) to Lecture 08 - Detection and Segmentation
 
 This mock exam is intended to **guide your studies on the topics that may be covered in the exam**. Questions may be presented in different formats, including **open-ended questions, multiple-choice questions, true/false statements, algorithm analysis and validation, and code interpretation**, among others.
 
@@ -1677,9 +1677,7 @@ Additionally, questions may address **image segmentation techniques**, including
 
 Questions may involve **architectural interpretation, bounding-box calculations, IoU and NMS analysis, segmentation metrics such as Dice and IoU, comparisons between detection and segmentation approaches, and practical implementation using TensorFlow/Keras**.
 
-
-
-### Question 24 – Image Classification, Object Detection, and Image Segmentation
+### Question 32 – Image Classification, Object Detection, and Image Segmentation
 
 ![](./images/693c6cc552f45e9c231e1b9c8b1eed6268e5e712.png)
 
@@ -1713,9 +1711,11 @@ Computer Vision encompasses different tasks that extract information from images
 </div>
 </details>
 
-![](./images/48d54ddff87c6129e36c5887e4807e30afa1b349.png)
+
 
 ### Question 33 – Evolution of Region-Based Object Detection Architectures
+
+![](./images/48d54ddff87c6129e36c5887e4807e30afa1b349.png)
 
 R-CNN, Fast R-CNN, and Faster R-CNN represent important milestones in the evolution of region-based object detection. Although these architectures share the objective of identifying and localizing objects, they differ in how candidate regions are generated and processed.
 
@@ -1842,5 +1842,581 @@ The objective is to understand how their internal components influence computati
 <li><strong>V — Incorrect:</strong> Fast R-CNN does not introduce an RPN; this component belongs to Faster R-CNN. Furthermore, independently processing proposals is characteristic of R-CNN, not the computational improvement introduced by Faster R-CNN.</li>
 </ul>
 <p><strong>Key Concept:</strong> The central architectural progression is R-CNN (independent CNN processing of proposals), Fast R-CNN (shared convolutional feature extraction with ROI Pooling), and Faster R-CNN (shared features with trainable region proposal generation).</p>
+</div>
+</details>
+
+
+
+### Question 36 – YOLO Architecture and Object Detection
+
+![](./images/e81bbc38c3918ecd59f7011a57ca8cf6c600b43d.png)
+
+
+
+YOLO (You Only Look Once) introduced a single-stage object detection strategy that differs significantly from region-based approaches such as R-CNN, Fast R-CNN, and Faster R-CNN.
+
+Unlike traditional region-based detectors, YOLO performs object localization and classification through a unified prediction framework.
+
+**Which alternative CORRECTLY describes the fundamental principles of YOLO-based object detection?**
+
+**A)** YOLO uses Selective Search to generate candidate regions and independently processes each region through a CNN, similarly to the original R-CNN architecture.
+
+**B)** YOLO first generates candidate regions using a Region Proposal Network (RPN) and then applies ROI Pooling to classify each proposed object, following the same two-stage strategy as Faster R-CNN.
+
+**C)** YOLO divides the original input image into independent image patches and processes each patch through a separate CNN. Bounding boxes are then reconstructed by combining predictions from these independent networks.
+
+**D)** YOLO uses a convolutional backbone to extract spatial feature maps and predicts bounding-box coordinates, objectness scores, and class-related information within a unified detection framework, without requiring a separate region proposal stage.
+
+**E)** YOLO performs object classification directly from the entire image and subsequently applies a segmentation network to recover object boundaries, which are converted into bounding boxes.
+
+<details>
+<summary><strong>▶ Show answer</strong></summary>
+<div>
+<p><strong>Correct Answer: D</strong></p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><strong>A — Incorrect:</strong> This describes the original R-CNN approach, which uses Selective Search and independently processes region proposals.</li>
+<li><strong>B — Incorrect:</strong> RPN and ROI-based classification are characteristic of Faster R-CNN. YOLO follows a single-stage detection strategy.</li>
+<li><strong>C — Incorrect:</strong> YOLO does not independently process raw image patches using separate CNNs. A convolutional backbone extracts spatial feature maps, and predictions are associated with spatial locations in those representations.</li>
+<li><strong>D — Correct:</strong> YOLO performs object localization and classification in a unified framework. Its backbone extracts features, while the detection head predicts bounding boxes, objectness-related scores, and class information without a separate proposal stage.</li>
+<li><strong>E — Incorrect:</strong> YOLO object detection does not require a segmentation network to recover bounding boxes. Bounding-box coordinates are predicted directly through regression.</li>
+</ul>
+<p><strong>Key Concept:</strong> YOLO is a single-stage object detector that integrates feature extraction, object localization, and classification into a unified prediction pipeline. Spatial predictions are produced from convolutional feature maps rather than independently processing candidate regions.</p>
+</div>
+</details>
+
+### Question 37 – YOLO Bounding-Box Predictions and Confidence Scores
+
+In YOLO-based object detection, bounding boxes are predicted through regression, while confidence scores indicate the likelihood that a predicted region contains an object belonging to a particular class.
+
+Consider a simplified YOLO detection model that predicts the following information for a candidate bounding box:
+
+- Bounding-box coordinates: `(x, y, w, h) = (0.25, 0.40, 0.20, 0.10)`
+- Objectness probability: `P(object) = 0.80`
+- Conditional class probability: `P(car | object) = 0.90`
+
+Assume that the coordinates are normalized relative to the image dimensions and that the class confidence is calculated as:
+
+`Confidence(car) = P(object) × P(car | object)`
+
+**Which alternative CORRECTLY interprets the bounding-box representation and the resulting class confidence?**
+
+**A)** The bounding box is represented by four discrete class labels, and the confidence for the car class is 0.90 because objectness is not considered in class scoring.
+
+**B)** The bounding box coordinates represent continuous regression outputs, and the confidence for the car class is 0.72, obtained by multiplying objectness by the conditional class probability.
+
+**C)** The bounding box coordinates represent pixel-level segmentation masks, and the confidence for the car class is 0.80 because the conditional class probability is used only during training.
+
+**D)** The bounding box coordinates must be converted into integer pixel positions before the network can predict them, and the confidence for the car class is 1.70 because the two probabilities are added.
+
+**E)** The bounding box coordinates represent the number of objects detected in each spatial cell, and the confidence for the car class is 0.10 because the model uses the complement of the conditional class probability.
+
+<details>
+<summary><strong>▶ Show answer</strong></summary>
+<div>
+<p><strong>Correct Answer: B</strong></p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><strong>A — Incorrect:</strong> Bounding-box coordinates are continuous regression values rather than discrete class labels. Under the specified scoring formulation, objectness contributes to the class confidence.</li>
+<li><strong>B — Correct:</strong> The coordinates (x, y, w, h) represent the predicted bounding-box center and dimensions in normalized image coordinates. The confidence for the car class is 0.80 × 0.90 = 0.72.</li>
+<li><strong>C — Incorrect:</strong> Bounding boxes represent rectangular object locations, not pixel-level segmentation masks. The class confidence incorporates both objectness and conditional class probability.</li>
+<li><strong>D — Incorrect:</strong> Bounding-box regression predicts continuous coordinates. Probabilities are multiplied under the given formulation, not added.</li>
+<li><strong>E — Incorrect:</strong> Bounding-box coordinates describe object location and size, not object counts. The complement of the conditional class probability is not used in the specified confidence calculation.</li>
+</ul>
+<p><strong>Key Concept:</strong> Object detection combines localization and classification. Bounding-box coordinates are regression outputs, while class confidence can combine objectness and conditional class probabilities. The exact scoring formulation depends on the YOLO version.</p>
+</div>
+</details>
+
+### Question 38 – YOLO Training, Predictions, and Non-Maximum Suppression
+
+YOLO-based detectors generate multiple candidate bounding boxes, each associated with localization predictions and confidence scores.
+
+During training, predictions must be associated with ground-truth objects, while during inference, overlapping detections may need to be filtered using Non-Maximum Suppression (NMS).
+
+Evaluate the following statements about **YOLO training and inference**.
+
+**I.** YOLO treats bounding-box localization as a regression problem, predicting continuous coordinates that describe object position and dimensions.
+
+**II.** During training, predicted bounding boxes are associated with ground-truth objects according to the model's assignment strategy. Localization and classification losses guide the optimization of the detection network.
+
+**III.** Non-Maximum Suppression is typically applied during inference to remove redundant detections by comparing overlapping bounding boxes and their confidence scores.
+
+**IV.** In conventional greedy NMS, the bounding box with the lowest confidence is selected first, and higher-confidence overlapping boxes are removed to preserve uncertain detections.
+
+**V.** YOLO uses a single-stage detection strategy, but this does not mean that it necessarily produces only one bounding box per image. Multiple candidate boxes can be predicted for different objects.
+
+**Which alternative identifies ALL correct statements?**
+
+**A)** I, II, and III only.
+
+**B)** I, III, and IV only.
+
+**C)** II, III, and V only.
+
+**D)** I, II, IV, and V only.
+
+**E)** I, II, III, and V only.
+
+<details>
+<summary><strong>▶ Show answer</strong></summary>
+<div>
+<p><strong>Correct Answer: E</strong></p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><strong>I — Correct:</strong> YOLO predicts bounding-box coordinates as continuous values, making localization a regression task.</li>
+<li><strong>II — Correct:</strong> During training, predictions are assigned to ground-truth objects according to the detector's matching strategy. The training objective includes localization and classification components, along with other terms depending on the architecture.</li>
+<li><strong>III — Correct:</strong> Conventional NMS removes redundant predictions during inference by comparing confidence scores and spatial overlap, typically measured using Intersection over Union (IoU).</li>
+<li><strong>IV — Incorrect:</strong> Conventional greedy NMS prioritizes high-confidence detections. It retains the highest-scoring box and suppresses sufficiently overlapping lower-scoring boxes.</li>
+<li><strong>V — Correct:</strong> Single-stage detection refers to the unified prediction strategy, not to the number of objects or bounding boxes detected. YOLO can predict multiple objects within the same image.</li>
+</ul>
+<p><strong>Key Concept:</strong> YOLO combines bounding-box regression, objectness-related predictions, and class prediction within a single-stage architecture. During training, predictions are matched to ground-truth objects; during inference, confidence filtering and NMS can reduce redundant detections.</p>
+</div>
+</details>
+
+
+
+### Question 39 – Object Detection Pipeline and Architectural Strategies
+
+Object detection systems must identify the presence, category, and spatial location of objects in an image. Although architectures such as R-CNN, Fast R-CNN, Faster R-CNN, and YOLO adopt different computational strategies, they share fundamental detection objectives.
+
+**Which alternative CORRECTLY describes the general object detection pipeline and the differences among these architectures?**
+
+**A)** All object detectors must first divide the input image into independent regions using Selective Search. R-CNN, Fast R-CNN, and Faster R-CNN process these regions using CNNs, while YOLO applies a fully connected network to each region.
+
+**B)** Object detection involves feature extraction, object localization, and classification. R-CNN processes proposed regions independently, Fast R-CNN shares convolutional features across proposals, Faster R-CNN introduces a trainable Region Proposal Network, and YOLO predicts detections without a separate region proposal stage.
+
+**C)** Object detection is fundamentally a pixel-level classification problem. R-CNN and Faster R-CNN predict segmentation masks, Fast R-CNN converts these masks into bounding boxes, and YOLO directly assigns a class label to every pixel.
+
+**D)** R-CNN, Fast R-CNN, Faster R-CNN, and YOLO all generate bounding boxes using the same regression mechanism. Their only architectural difference is the number of convolutional layers used for feature extraction.
+
+**E)** Object detection requires classification before feature extraction. R-CNN and Fast R-CNN first classify the complete image, Faster R-CNN uses an RPN to generate class probabilities without bounding boxes, and YOLO uses NMS to generate its initial candidate regions.
+
+<details>
+<summary><strong>▶ Show answer</strong></summary>
+<div>
+<p><strong>Correct Answer: B</strong></p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><strong>A — Incorrect:</strong> Selective Search is used by the original R-CNN and commonly by Fast R-CNN. Faster R-CNN introduces an RPN, while YOLO does not require a separate region proposal stage.</li>
+<li><strong>B — Correct:</strong> All four architectures perform feature extraction, localization, and classification, but differ in their computational organization. R-CNN independently extracts features from proposed regions, Fast R-CNN shares convolutional computations, Faster R-CNN integrates an RPN, and YOLO performs detection through a unified single-stage architecture.</li>
+<li><strong>C — Incorrect:</strong> Bounding-box object detection is not equivalent to pixel-level segmentation. The described architectures predict object locations and classes rather than requiring pixel-wise masks.</li>
+<li><strong>D — Incorrect:</strong> The architectures differ substantially in region proposal generation, feature sharing, and detection stages. Their differences are not restricted to network depth.</li>
+<li><strong>E — Incorrect:</strong> Feature extraction precedes the prediction of object categories and locations. An RPN generates candidate regions, while NMS filters redundant predictions rather than generating initial proposals.</li>
+</ul>
+<p><strong>Key Concept:</strong> The general object detection pipeline combines visual feature extraction, object localization, and classification. The main architectural differences concern how candidate objects are identified, how features are shared, and whether detection uses a single-stage or two-stage strategy.</p>
+</div>
+</details>
+
+---
+
+### Question 40 – Object Detection: Pipeline, Region Proposals, and Prediction Strategies
+
+Object detection architectures employ different strategies to transform image features into object predictions. Region-based approaches rely on candidate regions, while single-stage approaches integrate localization and classification into a unified prediction framework.
+
+Evaluate the following statements about the **general object detection pipeline and the architectural differences between R-CNN, Fast R-CNN, Faster R-CNN, and YOLO**.
+
+Calculate the sum of the weights associated with the **CORRECT statements**.
+
+**(01)** In object detection, bounding-box coordinates are generally predicted as continuous values, while class predictions identify the object categories associated with the detected regions.
+
+**(02)** R-CNN and Fast R-CNN both use external region proposals, but Fast R-CNN reduces redundant computations by extracting convolutional features from the image before processing individual regions.
+
+**(04)** Faster R-CNN introduces an RPN that generates candidate regions using shared convolutional feature maps, whereas YOLO predicts object detections without a separate region proposal network.
+
+**(08)** R-CNN, Fast R-CNN, Faster R-CNN, and YOLO all require ROI Pooling to convert candidate regions into fixed-size representations before classification.
+
+**(16)** Non-Maximum Suppression can be used to eliminate redundant bounding-box predictions based on confidence scores and spatial overlap, commonly measured using Intersection over Union (IoU).
+
+**(32)** YOLO is classified as a single-stage detector because it predicts only one bounding box per image, whereas R-CNN architectures are two-stage detectors because they always predict exactly two bounding boxes per object.
+
+**Which alternative represents the CORRECT sum?**
+
+**A)** 07
+
+**B)** 19
+
+**C)** 23
+
+**D)** 31
+
+**E)** 55
+
+<details>
+<summary><strong>▶ Show answer</strong></summary>
+<div>
+<p><strong>Correct Answer: C — 23</strong></p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><strong>(01) — Correct:</strong> Object localization involves predicting bounding-box coordinates, commonly represented by continuous values such as center coordinates, width, and height. Classification predicts the corresponding object categories.</li>
+<li><strong>(02) — Correct:</strong> R-CNN processes proposed regions independently, while Fast R-CNN computes shared convolutional feature maps and extracts region-specific representations using ROI Pooling.</li>
+<li><strong>(04) — Correct:</strong> Faster R-CNN replaces external region proposal generation with a trainable RPN. YOLO follows a single-stage strategy without a separate proposal network.</li>
+<li><strong>(08) — Incorrect:</strong> ROI Pooling is associated with Fast R-CNN and the original Faster R-CNN detection head. The original R-CNN processes cropped proposals independently, and YOLO does not require ROI Pooling for its standard detection pipeline.</li>
+<li><strong>(16) — Correct:</strong> NMS is a post-processing technique that retains high-confidence detections while suppressing sufficiently overlapping lower-confidence predictions.</li>
+<li><strong>(32) — Incorrect:</strong> Single-stage and two-stage refer to architectural organization, not the number of bounding boxes predicted. YOLO can detect multiple objects, while region-based detectors can also generate multiple predictions per object.</li>
+</ul>
+<p><strong>Sum:</strong> 01 + 02 + 04 + 16 = <strong>23</strong>.</p>
+<p><strong>Key Concept:</strong> Object detection combines bounding-box regression, classification, and the management of multiple predictions. R-CNN architectures progressively improve feature sharing and proposal generation, while YOLO integrates localization and classification into a single-stage framework. NMS can be applied to both families to reduce redundant detections.</p>
+</div>
+</details>
+
+### Question 41 – Image Classification, Object Detection, and Image Segmentation
+
+Computer Vision models can perform different prediction tasks depending on the required level of spatial information. Image classification, object detection, semantic segmentation, and instance segmentation differ in their output representations and ability to distinguish individual objects.
+
+**Evaluate the following statements.**
+
+**I.** Image classification predicts image-level categories but does not necessarily provide explicit information about the spatial location of objects.
+
+**II.** Object detection identifies and localizes individual objects, typically using bounding boxes and associated class predictions.
+
+**III.** Semantic segmentation assigns a class label to each pixel, but does not necessarily distinguish different instances belonging to the same class.
+
+**IV.** Instance segmentation combines pixel-level object localization with instance identification, allowing multiple objects of the same class to be distinguished.
+
+**V.** Semantic segmentation and object detection produce equivalent spatial representations because both require predicting rectangular bounding boxes around objects.
+
+**Which alternative identifies ALL correct statements?**
+
+**A)** I, II, and III only.
+
+**B)** I, III, and V only.
+
+**C)** II, III, IV, and V only.
+
+**D)** I, II, III, and IV only.
+
+**E)** I, II, IV, and V only.
+
+<details>
+<summary><strong>▶ Show answer</strong></summary>
+<div>
+<p><strong>Correct Answer: D</strong></p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><strong>I — Correct:</strong> Image classification predicts categories associated with the image, without necessarily producing explicit object locations.</li>
+<li><strong>II — Correct:</strong> Object detection predicts object categories and their spatial locations, commonly represented by bounding boxes.</li>
+<li><strong>III — Correct:</strong> Semantic segmentation assigns semantic categories to pixels but does not distinguish separate instances of the same class.</li>
+<li><strong>IV — Correct:</strong> Instance segmentation identifies individual object instances and predicts their corresponding pixel-level masks.</li>
+<li><strong>V — Incorrect:</strong> Semantic segmentation produces pixel-level class assignments, whereas object detection typically represents object locations using bounding boxes.</li>
+</ul>
+<p><strong>Key Concept:</strong> Classification operates at the image level, detection at the object level, semantic segmentation at the pixel-class level, and instance segmentation at the pixel-instance level.</p>
+</div>
+</details>
+
+---
+
+### Question 42 – Fully Convolutional Networks (FCNs) vs. U-Net
+
+![](./images/2a4b48b186d61246e50177d7622e7e6924ca64e0.png)
+
+Fully Convolutional Networks (FCNs) introduced an important architectural strategy for dense prediction by replacing traditional fully connected classification layers with convolutional operations.
+
+U-Net builds upon fully convolutional encoder–decoder principles and introduces architectural mechanisms designed to improve spatial reconstruction.
+
+**Which alternative CORRECTLY compares conventional FCN segmentation architectures and U-Net?**
+
+**A)** FCNs require fully connected layers to classify individual pixels, whereas U-Net eliminates convolutional layers and performs segmentation exclusively through transposed convolutions.
+
+**B)** FCNs and U-Net both support dense pixel-level predictions. However, U-Net uses a symmetric encoder–decoder structure with skip connections that transfer high-resolution features from the encoder to corresponding decoder stages, helping recover spatial details.
+
+**C)** FCNs perform object detection by predicting bounding boxes, whereas U-Net performs semantic segmentation by predicting class labels for the entire image.
+
+**D)** FCNs preserve the original image resolution throughout all convolutional layers, while U-Net performs downsampling without any mechanism for recovering spatial information.
+
+**E)** U-Net differs from FCNs primarily because it replaces convolutional feature extraction with recurrent neural networks, allowing the model to process images as sequences of pixels.
+
+<details>
+<summary><strong>▶ Show answer</strong></summary>
+<div>
+<p><strong>Correct Answer: B</strong></p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><strong>A — Incorrect:</strong> FCNs eliminate the need for traditional dense classification heads and perform dense predictions using convolutional operations. U-Net also relies extensively on convolutions.</li>
+<li><strong>B — Correct:</strong> Both FCNs and U-Net perform dense pixel-level prediction. U-Net employs an encoder–decoder architecture with skip connections between corresponding resolution levels, combining semantic information from deeper layers with spatial details from shallower layers.</li>
+<li><strong>C — Incorrect:</strong> FCNs and U-Net can both be used for semantic segmentation. Neither is inherently restricted to bounding-box detection or image-level classification.</li>
+<li><strong>D — Incorrect:</strong> Conventional FCNs may reduce spatial resolution and subsequently recover it through upsampling. U-Net also performs downsampling but uses decoder operations and skip connections to reconstruct spatial information.</li>
+<li><strong>E — Incorrect:</strong> U-Net is a convolutional architecture, not a recurrent neural network.</li>
+</ul>
+<p><strong>Key Concept:</strong> U-Net is itself a fully convolutional architecture. Its distinctive contribution is the encoder–decoder design with skip connections that combine high-level semantic representations and high-resolution spatial features. Earlier FCN architectures can also use skip connections, but U-Net employs them systematically across corresponding encoder and decoder stages.</p>
+</div>
+</details>
+
+---
+
+### Question 43 – U-Net Architecture and Spatial Feature Reconstruction
+
+U-Net is widely used for semantic segmentation, particularly in applications requiring precise localization of structures and object boundaries.
+
+Its architecture consists of a contracting path (encoder), an expanding path (decoder), and skip connections connecting corresponding resolution levels.
+
+Evaluate the following statements about **U-Net architecture**.
+
+Calculate the sum of the weights associated with the **CORRECT statements**.
+
+**(01)** The encoder progressively extracts higher-level semantic features, commonly reducing spatial resolution through pooling or strided convolutions.
+
+**(02)** The decoder progressively reconstructs spatial resolution using upsampling operations and convolutional layers to generate dense predictions.
+
+**(04)** Skip connections transfer feature maps from encoder stages to corresponding decoder stages, allowing the decoder to combine spatial details with higher-level semantic representations.
+
+**(08)** Skip connections eliminate the need for a decoder because the encoder feature maps already contain the final pixel-level segmentation predictions.
+
+**(16)** In the original U-Net architecture, encoder features are concatenated with corresponding decoder features after upsampling, increasing the number of channels available to subsequent convolutional operations.
+
+**(32)** The final segmentation layer must always use Softmax activation, even when the network performs binary segmentation with a single output channel.
+
+**Which alternative represents the CORRECT sum?**
+
+**A)** 07
+
+**B)** 15
+
+**C)** 19
+
+**D)** 23
+
+**E)** 55
+
+<details>
+<summary><strong>▶ Show answer</strong></summary>
+<div>
+<p><strong>Correct Answer: D — 23</strong></p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><strong>(01) — Correct:</strong> The encoder extracts increasingly abstract semantic representations while commonly reducing spatial resolution.</li>
+<li><strong>(02) — Correct:</strong> The decoder uses upsampling and convolutional operations to progressively recover spatial resolution and produce pixel-level predictions.</li>
+<li><strong>(04) — Correct:</strong> Skip connections transfer high-resolution encoder features to decoder stages, improving the reconstruction of fine spatial details.</li>
+<li><strong>(08) — Incorrect:</strong> Skip connections complement the decoder rather than replacing it. The decoder is responsible for reconstructing the spatial resolution required for dense predictions.</li>
+<li><strong>(16) — Correct:</strong> Original U-Net uses concatenation to combine encoder and decoder feature maps. This increases the channel dimension before subsequent convolutional processing.</li>
+<li><strong>(32) — Incorrect:</strong> Binary segmentation with one output channel commonly uses Sigmoid activation. Softmax is typically used for mutually exclusive multiclass segmentation with multiple output channels.</li>
+</ul>
+<p><strong>Sum:</strong> 01 + 02 + 04 + 16 = <strong>23</strong>.</p>
+<p><strong>Key Concept:</strong> U-Net combines a contracting path for semantic feature extraction, an expanding path for spatial reconstruction, and skip connections for preserving fine-grained spatial information.</p>
+</div>
+</details>
+
+---
+
+### Question 44 – U-Net Implementation and Skip Connections
+
+Consider the following simplified TensorFlow/Keras implementation of a U-Net architecture for **binary semantic segmentation**.
+
+The input images have dimensions `(128, 128, 3)`, and the network must produce a binary segmentation mask with dimensions `(128, 128, 1)`.
+
+```python
+import tensorflow as tf
+from tensorflow.keras import layers, Model
+
+inputs = layers.Input(shape=(128, 128, 3))
+
+# Encoder
+e1 = layers.Conv2D(32, 3, padding="same", activation="relu")(inputs)
+p1 = layers.MaxPooling2D(pool_size=(2, 2))(e1)
+
+e2 = layers.Conv2D(64, 3, padding="same", activation="relu")(p1)
+p2 = layers.MaxPooling2D(pool_size=(2, 2))(e2)
+
+# Bottleneck
+b = layers.Conv2D(128, 3, padding="same", activation="relu")(p2)
+
+# Decoder
+u1 = layers.UpSampling2D(size=(2, 2))(b)
+c1 = layers.Concatenate()([u1, e2])
+d1 = layers.Conv2D(64, 3, padding="same", activation="relu")(c1)
+
+u2 = layers.UpSampling2D(size=(2, 2))(d1)
+c2 = layers.Concatenate()([u2, e1])
+d2 = layers.Conv2D(32, 3, padding="same", activation="relu")(c2)
+
+outputs = layers.Conv2D(1, 1, activation="sigmoid")(d2)
+
+model = Model(inputs, outputs)
+```
+
+**Considering the architecture and the operations performed by each layer, which alternative is CORRECT?**
+
+**A)** The first skip connection concatenates feature maps with incompatible spatial dimensions because `u1` has shape `(128, 128, 128)` and `e2` has shape `(64, 64, 64)`.
+
+**B)** The model produces an output tensor with shape `(32, 32, 1)` because the bottleneck determines the final spatial resolution, independently of decoder operations.
+
+**C)** The encoder reduces spatial resolution from `128 × 128` to `32 × 32`, the decoder restores it to `128 × 128`, and the skip connections concatenate encoder and decoder feature maps at matching spatial resolutions.
+
+**D)** The concatenation operations perform element-wise addition between encoder and decoder feature maps, requiring both tensors to have identical numbers of channels.
+
+**E)** The final layer is incorrectly configured because binary segmentation requires two output channels with Softmax activation instead of one output channel with Sigmoid activation.
+
+<details>
+<summary><strong>▶ Show answer</strong></summary>
+<div>
+<p><strong>Correct Answer: C</strong></p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><strong>A — Incorrect:</strong> After the first upsampling operation, u1 has spatial dimensions 64 × 64, matching e2. Concatenation is therefore valid.</li>
+<li><strong>B — Incorrect:</strong> The decoder restores spatial resolution through two upsampling operations, producing an output with shape (128, 128, 1).</li>
+<li><strong>C — Correct:</strong> The encoder progressively reduces resolution from 128 × 128 to 64 × 64 and then 32 × 32. The decoder reverses this process through upsampling. Skip connections concatenate feature maps at matching spatial resolutions, preserving spatial information.</li>
+<li><strong>D — Incorrect:</strong> Concatenation combines feature maps along the channel dimension. Unlike element-wise addition, it does not require equal channel counts.</li>
+<li><strong>E — Incorrect:</strong> A single output channel with Sigmoid activation is appropriate for binary segmentation. It produces a probability for the foreground class at each pixel.</li>
+</ul>
+<p><strong>Tensor Shapes:</strong></p>
+<pre>
+Input:       (128, 128,   3)
+Encoder e1:  (128, 128,  32)
+Pooling p1:  ( 64,  64,  32)
+Encoder e2:  ( 64,  64,  64)
+Pooling p2:  ( 32,  32,  64)
+Bottleneck:  ( 32,  32, 128)
+Upsample u1: ( 64,  64, 128)
+Concat c1:   ( 64,  64, 192)
+Decoder d1:  ( 64,  64,  64)
+Upsample u2: (128, 128,  64)
+Concat c2:   (128, 128,  96)
+Decoder d2:  (128, 128,  32)
+Output:      (128, 128,   1)
+</pre>
+<p><strong>Key Concept:</strong> U-Net reconstructs spatial resolution through decoder upsampling operations while using skip connections to integrate high-resolution encoder features. Concatenation requires compatible spatial dimensions but allows different channel counts.</p>
+</div>
+</details>
+
+### Question 45 – U-Net Implementation: Code Reconstruction
+
+A researcher is implementing a simplified U-Net architecture using TensorFlow/Keras for binary semantic segmentation.
+
+The network receives RGB images of shape `(128, 128, 3)` and must produce pixel-level predictions with shape `(128, 128, 1)`.
+
+However, the following Python statements have been **randomly shuffled**.
+
+**Shuffled Code:**
+
+```python
+# A
+outputs = layers.Conv2D(1, 1, activation="sigmoid")(d1)
+
+# B
+p1 = layers.MaxPooling2D(pool_size=(2, 2))(e1)
+
+# C
+model = Model(inputs, outputs)
+
+# D
+d1 = layers.Conv2D(32, 3, padding="same", activation="relu")(c1)
+
+# E
+inputs = layers.Input(shape=(128, 128, 3))
+
+# F
+u1 = layers.UpSampling2D(size=(2, 2))(b)
+
+# G
+e1 = layers.Conv2D(32, 3, padding="same", activation="relu")(inputs)
+
+# H
+c1 = layers.Concatenate()([u1, e1])
+
+# I
+b = layers.Conv2D(64, 3, padding="same", activation="relu")(p1)
+```
+
+Assume that the necessary TensorFlow/Keras imports have already been performed.
+
+**Which alternative presents the CORRECT execution order to construct a valid U-Net-like architecture with an encoder, bottleneck, decoder, skip connection, and binary segmentation output?**
+
+**A)** E → G → B → I → F → H → D → A → C
+
+**B)** E → G → I → B → F → H → D → A → C
+
+**C)** E → G → B → I → H → F → D → A → C
+
+**D)** E → G → B → I → F → D → H → A → C
+
+**E)** E → G → B → I → F → H → A → D → C
+
+**F)** E → G → B → I → F → H → D → C → A
+
+<details>
+<summary><strong>▶ Show answer</strong></summary>
+<div>
+<p><strong>Correct Answer: A</strong></p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><strong>A — Correct:</strong> The execution order correctly initializes the input, constructs the encoder, performs downsampling, processes the bottleneck, upsamples the features, concatenates the encoder and decoder representations, applies decoder convolution, generates the segmentation output, and constructs the Keras model.</li>
+<li><strong>B — Incorrect:</strong> The bottleneck is computed before the pooling operation that defines its input tensor p1.</li>
+<li><strong>C — Incorrect:</strong> The concatenation operation is performed before the upsampling tensor u1 has been created.</li>
+<li><strong>D — Incorrect:</strong> The decoder convolution uses c1 before the concatenation operation defines it.</li>
+<li><strong>E — Incorrect:</strong> The output layer uses d1 before the decoder convolution defines it.</li>
+<li><strong>F — Incorrect:</strong> The Keras model is constructed before the output tensor has been defined.</li>
+</ul>
+<p><strong>Correct Implementation:</strong></p>
+<pre>
+E  Input
+G  Encoder convolution
+B  Max pooling
+I  Bottleneck
+F  Upsampling
+H  Skip connection (concatenation)
+D  Decoder convolution
+A  Binary segmentation output
+C  Model construction
+</pre>
+<p><strong>Tensor Dimensions:</strong></p>
+<pre>
+Input:        (128, 128,  3)
+Encoder:      (128, 128, 32)
+Pooling:      ( 64,  64, 32)
+Bottleneck:   ( 64,  64, 64)
+Upsampling:   (128, 128, 64)
+Concatenate:  (128, 128, 96)
+Decoder:      (128, 128, 32)
+Output:       (128, 128,  1)
+</pre>
+<p><strong>Key Concept:</strong> A U-Net-like architecture follows an encoder–decoder structure in which spatial resolution is reduced and subsequently restored. Skip connections combine high-resolution encoder features with decoder representations, while a final Sigmoid layer can produce pixel-level foreground probabilities for binary segmentation.</p>
+</div>
+</details>
+
+### Question 46 – Annotation and Computational Costs in Computer Vision Tasks
+
+Image classification, object detection, and image segmentation require different levels of annotation granularity and computational resources. These differences affect dataset construction, model training, inference, and the scalability of Computer Vision applications.
+
+**Evaluate the following statements regarding annotation effort and computational costs.**
+
+**I.** Image classification generally requires less annotation effort than object detection and segmentation because annotators typically assign image-level labels rather than specifying object locations or pixel-level boundaries.
+
+**II.** Object detection generally requires more detailed annotations than image classification because individual objects must be localized, commonly using bounding boxes. However, bounding-box annotation is typically less labor-intensive than manually producing precise pixel-level segmentation masks.
+
+**III.** Semantic segmentation generally requires more detailed spatial annotations than image classification, since each pixel must be assigned a class. Nevertheless, annotation effort can be reduced through automated labeling tools, weak supervision, or pre-existing masks.
+
+**IV.** Segmentation models always require more computational resources than object detection models because predicting pixel-level masks is inherently more expensive than predicting bounding boxes, regardless of network architecture, input resolution, or hardware.
+
+**V.** Computational cost depends not only on the prediction task but also on model architecture, input resolution, backbone complexity, training strategy, and the number of predicted objects or output classes.
+
+**VI.** Since image classification produces fewer output values than segmentation, classification models are guaranteed to have lower training and inference costs than any detection or segmentation architecture.
+
+**Which alternative identifies ALL correct statements?**
+
+**A)** I, II, and IV only.
+
+**B)** I, II, III, and V only.
+
+**C)** II, III, IV, and V only.
+
+**D)** I, III, V, and VI only.
+
+**E)** I, II, III, IV, and V only.
+
+**F)** I, II, III, V, and VI only.
+
+<details>
+<summary><strong>▶ Show answer</strong></summary>
+<div>
+<p><strong>Correct Answer: B</strong></p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><strong>I — Correct:</strong> Image-level annotation generally requires less manual effort than identifying individual object locations or drawing pixel-level masks.</li>
+<li><strong>II — Correct:</strong> Bounding-box annotation introduces localization requirements, increasing annotation effort compared with image classification. However, bounding boxes are generally faster to annotate than precise segmentation masks.</li>
+<li><strong>III — Correct:</strong> Semantic segmentation requires dense spatial labels, which can be expensive to produce manually. Semi-automated annotation, weak supervision, and other labeling strategies can reduce this burden.</li>
+<li><strong>IV — Incorrect:</strong> Computational cost cannot be determined solely by the task. A lightweight segmentation model may require fewer resources than a large object detection model, depending on architecture and experimental conditions.</li>
+<li><strong>V — Correct:</strong> Computational complexity depends on multiple factors, including model depth, feature-map dimensions, input resolution, backbone architecture, and training procedures.</li>
+<li><strong>VI — Incorrect:</strong> Output dimensionality alone does not determine computational cost. A large classification backbone may require substantially more computation than a lightweight detection or segmentation architecture.</li>
+</ul>
+<p><strong>Key Concept:</strong> Annotation costs generally increase with spatial annotation granularity: image-level labels, bounding boxes, and pixel-level masks. However, computational costs do not follow a universal ordering across classification, detection, and segmentation. They depend primarily on the specific architecture, data resolution, training configuration, and deployment constraints.</p>
 </div>
 </details>
